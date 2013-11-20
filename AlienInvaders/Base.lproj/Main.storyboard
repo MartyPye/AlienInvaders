@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="I2s-v3-Dvd">
             <objects>
-                <viewController id="UJf-fB-bwI" sceneMemberID="viewController">
+                <viewController id="UJf-fB-bwI" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KC2-YP-Khp"/>
                         <viewControllerLayoutGuide type="bottom" id="J2f-nI-4K4"/>
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
-                                <rect key="frame" x="117" y="267" width="87" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
+                                <rect key="frame" x="117" y="268" width="87" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Highscores">
@@ -27,8 +27,8 @@
                                     <segue destination="021-fC-0DQ" kind="push" id="qIb-Ix-56B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
-                                <rect key="frame" x="113" y="188" width="94" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
+                                <rect key="frame" x="113" y="189" width="94" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Select Level">
@@ -38,8 +38,8 @@
                                     <segue destination="xQS-4e-Scd" kind="push" id="MDY-HU-g5C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
-                                <rect key="frame" x="104" y="358" width="113" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
+                                <rect key="frame" x="104" y="359" width="113" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Upgrade Store">
@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="779" y="647"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Highscore View Controller-->
         <scene sceneID="RJd-aV-wfp">
             <objects>
-                <tableViewController id="021-fC-0DQ" sceneMemberID="viewController">
+                <tableViewController id="021-fC-0DQ" customClass="HighscoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="omB-2Q-JHz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1467" y="647"/>
         </scene>
-        <!--View Controller-->
+        <!--Upgrade Store View Controller-->
         <scene sceneID="UkW-OG-qja">
             <objects>
-                <viewController id="Gjb-I1-1JX" sceneMemberID="viewController">
+                <viewController id="Gjb-I1-1JX" customClass="UpgradeStoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jJ1-8i-Tz9"/>
                         <viewControllerLayoutGuide type="bottom" id="79w-yO-Y9i"/>
@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="1467" y="1350"/>
         </scene>
-        <!--View Controller-->
+        <!--Level Selection View Controller-->
         <scene sceneID="FFh-c1-inA">
             <objects>
-                <viewController id="xQS-4e-Scd" sceneMemberID="viewController">
+                <viewController id="xQS-4e-Scd" customClass="LevelSelectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xOp-rA-nI9"/>
                         <viewControllerLayoutGuide type="bottom" id="RlQ-ZC-m3q"/>
