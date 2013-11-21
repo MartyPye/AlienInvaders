@@ -16,34 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
-                                <rect key="frame" x="117" y="268" width="87" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
+                                <rect key="frame" x="78" y="267" width="164" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Highscores">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="HighscoresMenuItem.png">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="zg7-GK-4v2" kind="push" id="7LA-ws-gNb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
-                                <rect key="frame" x="113" y="189" width="94" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
+                                <rect key="frame" x="-21" y="193" width="361" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Select Level">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="LevelSelectionMenuItem.png"/>
                                 <connections>
                                     <segue destination="xQS-4e-Scd" kind="push" id="MDY-HU-g5C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
-                                <rect key="frame" x="104" y="359" width="113" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
+                                <rect key="frame" x="78" y="358" width="164" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Upgrade Store">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="UpgradeStoreMenuItem.png">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="Gjb-I1-1JX" kind="push" id="H9F-qN-iT7"/>
@@ -62,6 +60,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CwY-2o-OBk"/>
+                    <connections>
+                        <outlet property="highscoresButton" destination="uyC-TK-poj" id="75S-zv-aMI"/>
+                        <outlet property="levelSelectionButton" destination="UQp-69-Cn4" id="Ogq-XW-Zgu"/>
+                        <outlet property="upgradeStoreButton" destination="KBd-gW-02f" id="SrM-Cg-wg6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hp-s9-M12" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,6 +219,11 @@
             <point key="canvasLocation" x="253" y="647"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HighscoresMenuItem.png" width="164" height="33"/>
+        <image name="LevelSelectionMenuItem.png" width="237" height="27"/>
+        <image name="UpgradeStoreMenuItem.png" width="225" height="33"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <nil key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

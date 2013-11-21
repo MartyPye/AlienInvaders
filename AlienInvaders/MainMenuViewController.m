@@ -10,6 +10,10 @@
 
 @interface MainMenuViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *levelSelectionButton;
+@property (strong, nonatomic) IBOutlet UIButton *highscoresButton;
+@property (strong, nonatomic) IBOutlet UIButton *upgradeStoreButton;
+
 @end
 
 @implementation MainMenuViewController
@@ -25,10 +29,9 @@
 
 - (void)viewDidLoad
 {
-    [self addBackground];
-    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    [self addBackground];
 }
 
 - (void)viewWillAppear:(BOOL)animated

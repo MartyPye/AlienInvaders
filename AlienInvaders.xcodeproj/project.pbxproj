@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */; };
+		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
+		40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */; };
+		40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */; };
+		40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E4183E5B9A007E35CD /* HighscoresMenuItem@2x.png */; };
+		40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E7183E5BA5007E35CD /* UpgradeStoreMenuItem.png */; };
+		40F262EA183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E8183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png */; };
+		40F262EE183E5E8E007E35CD /* MainMenuBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40F262ED183E5E8E007E35CD /* MainMenuBackground.jpg */; };
 		78115496183D1AD300A61AD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115495183D1AD300A61AD2 /* Foundation.framework */; };
 		78115498183D1AD300A61AD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115497183D1AD300A61AD2 /* CoreGraphics.framework */; };
 		7811549A183D1AD300A61AD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115499183D1AD300A61AD2 /* UIKit.framework */; };
@@ -28,7 +35,6 @@
 		781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */; };
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
-		959D1A51183E30EF006B2F8A /* MainMenuBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,13 @@
 /* Begin PBXFileReference section */
 		40218C71183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighscoreLevelSelectionViewController.h; sourceTree = "<group>"; };
 		40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreLevelSelectionViewController.m; sourceTree = "<group>"; };
+		40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectionMenuItem.png; sourceTree = "<group>"; };
+		40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelSelectionMenuItem@2x.png"; sourceTree = "<group>"; };
+		40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HighscoresMenuItem.png; sourceTree = "<group>"; };
+		40F262E4183E5B9A007E35CD /* HighscoresMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HighscoresMenuItem@2x.png"; sourceTree = "<group>"; };
+		40F262E7183E5BA5007E35CD /* UpgradeStoreMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpgradeStoreMenuItem.png; sourceTree = "<group>"; };
+		40F262E8183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpgradeStoreMenuItem@2x.png"; sourceTree = "<group>"; };
+		40F262ED183E5E8E007E35CD /* MainMenuBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenuBackground.jpg; sourceTree = "<group>"; };
 		78115492183D1AD300A61AD2 /* AlienInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlienInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78115495183D1AD300A61AD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78115497183D1AD300A61AD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,7 +87,6 @@
 		781154E0183D30C400A61AD2 /* HighscoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreManager.m; sourceTree = "<group>"; };
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
-		959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenuBackground.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40218C74183E3FA200ABBF8A /* Custom Text */ = {
+			isa = PBXGroup;
+			children = (
+				40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */,
+				40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */,
+				40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */,
+				40F262E4183E5B9A007E35CD /* HighscoresMenuItem@2x.png */,
+				40F262E7183E5BA5007E35CD /* UpgradeStoreMenuItem.png */,
+				40F262E8183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png */,
+			);
+			name = "Custom Text";
+			sourceTree = "<group>";
+		};
 		78115489183D1AD200A61AD2 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +175,7 @@
 		7811549E183D1AD300A61AD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40218C74183E3FA200ABBF8A /* Custom Text */,
 				7811549F183D1AD300A61AD2 /* AlienInvaders-Info.plist */,
 				959D1A4F183E30DA006B2F8A /* Backgrounds */,
 				781154A0183D1AD300A61AD2 /* InfoPlist.strings */,
@@ -208,7 +234,7 @@
 		959D1A4F183E30DA006B2F8A /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */,
+				40F262ED183E5E8E007E35CD /* MainMenuBackground.jpg */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -290,9 +316,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
+				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
+				40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */,
+				40F262EA183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png in Resources */,
+				40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */,
+				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
+				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
-				959D1A51183E30EF006B2F8A /* MainMenuBackground.jpg in Resources */,
+				40F262EE183E5E8E007E35CD /* MainMenuBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
