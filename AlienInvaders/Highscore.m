@@ -39,4 +39,26 @@
     return  highscore;
 }
 
+
+// ----------------------------------------------------------------------------------------------------
+// Make NSCoding compliant
+// ----------------------------------------------------------------------------------------------------
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.score forKey:@"score"];
+    [encoder encodeObject:self.name forKey:@"name"];
+    [encoder encodeObject:self.date forKey:@"date"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.score = [decoder decodeObjectForKey:@"score"];
+        self.name = [decoder decodeObjectForKey:@"name"];
+        self.date = [decoder decodeObjectForKey:@"date"];
+    }
+    return self;
+}
+
+
 @end

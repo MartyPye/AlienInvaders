@@ -94,6 +94,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="vlW-c4-woF"/>
+                    <connections>
+                        <outlet property="highscoreView" destination="omB-2Q-JHz" id="Lgz-cO-inG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAs-ZK-aJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +129,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Nu0-Le-XKy"/>
+                    <connections>
+                        <outlet property="levelView" destination="wk7-Is-nNL" id="3yk-Ms-in2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zc-SY-mU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

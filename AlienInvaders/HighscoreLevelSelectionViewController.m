@@ -12,6 +12,7 @@
 @interface HighscoreLevelSelectionViewController () {
     // TODO: Implement level manager (Singleton)
     NSMutableArray *arrayOfLevels;
+    NSArray *imagesForLevels;
 }
 
 @end
@@ -30,6 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // make navigation bar dark
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    
+    // remove lines between cells
+    [self.levelView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -37,10 +46,18 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [self addBackground];
+    
      arrayOfLevels = [[NSMutableArray alloc] init];
     [arrayOfLevels addObject:@"Level 1"];
     [arrayOfLevels addObject:@"Level 2"];
     [arrayOfLevels addObject:@"Level 3"];
+    
+    imagesForLevels = [NSArray arrayWithObjects:
+                        [UIImage imageNamed:@"Level1MenuItem.png"],
+                        [UIImage imageNamed:@"Level2MenuItem.png"],
+                        [UIImage imageNamed:@"Level3MenuItem.png"],
+                        nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,10 +87,12 @@
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyIdentifier"];
 //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.backgroundColor = [UIColor clearColor];
     
 	// Set up the cell.
-    NSString *level = [arrayOfLevels objectAtIndex:indexPath.row];
-	cell.textLabel.text = level;
+//    NSString *level = [arrayOfLevels objectAtIndex:indexPath.row];
+//	cell.textLabel.text = level;
+    cell.imageView.image = [imagesForLevels objectAtIndex:indexPath.row];
     
 	return cell;
 }
@@ -82,6 +101,11 @@
 {
     // transition to detail highscore view of selected level.
     [self performSegueWithIdentifier:@"showLevelHighscoreSegue" sender:self];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 
 /*
@@ -122,6 +146,32 @@
     return YES;
 }
 */
+
+
+//----------------------------------------------------------
+// Background
+//----------------------------------------------------------
+
+- (void) addBackground
+{
+    UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-250, -250, 900, 900)];
+    iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
+    [self.view addSubview:iV];
+    [self.view sendSubviewToBack:iV];
+    [self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
+}
+
+- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
+{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 * rotations ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = repeat;
+    
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
 
 
 #pragma mark - Navigation

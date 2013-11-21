@@ -19,6 +19,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        NSLog(@"test");
     }
     return self;
 }
@@ -26,6 +27,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // make navigation bar dark
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    
+    // remove lines between cells
+    [self.highscoreView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self addBackground];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,14 +51,18 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // TODO: load highscore manager from userdefaults
-    self.highscoreManager = [[HighscoreManager alloc] init];
-    self.highscoreManager = [[NSUserDefaults standardUserDefaults] objectForKey:@"HighscoreManager"];
+    HighscoreManager *loadedHighscoreManager = [self loadHighscoreManagerWithKey:@"HighscoreManager"];
+    if (loadedHighscoreManager != nil) {
+        self.highscoreManager = loadedHighscoreManager;
+    }
     
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Dummy 1"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Dummy 2"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Dummy 3"];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:self.highscoreManager forKey:@"HighscoreManager"];
+    else {
+        self.highscoreManager = [[HighscoreManager alloc] init];
+        [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Dummy 1"];
+        [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Dummy 2"];
+        [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Dummy 3"];
+        [self saveHighscoreManager:self.highscoreManager key:@"HighscoreManager"];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +75,11 @@
 {
     // Return the number of time zone names.
 	return [self.highscoreManager totalAmountOfHighscores];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,7 +102,10 @@
     NSString *highscoreName = [self.highscoreManager nameOfPlayerAtPosition:indexPath.row];
     NSNumber *highscore     = [self.highscoreManager scoreOfPlayerAtPosition:indexPath.row];
 	cell.textLabel.text = highscoreName;
+    [cell.textLabel setFont:[UIFont fontWithName:@"Apple Casual" size:18]];
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     cell.detailTextLabel.text = [highscore stringValue];
+    cell.backgroundColor = [UIColor clearColor];
     
 	return cell;
 }
@@ -131,5 +160,53 @@
 }
 
  */
+
+//----------------------------------------------------------
+// Background
+//----------------------------------------------------------
+- (void) addBackground
+{
+    UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-250, -250, 900, 900)];
+    iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
+    [self.view addSubview:iV];
+    [self.view sendSubviewToBack:iV];
+    [self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
+}
+
+- (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
+{
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 * rotations ];
+    rotationAnimation.duration = duration;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = repeat;
+    
+    [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+}
+
+
+//----------------------------------------------------------
+// Saving the highscore manager to NSUserdefaults
+//----------------------------------------------------------
+- (void)saveHighscoreManager:(HighscoreManager*) highscoreManager key:(NSString *)key {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:highscoreManager];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+    [defaults synchronize];
+    
+}
+
+
+//----------------------------------------------------------
+// Restoring the highscore manager from NSUserdefaults
+//----------------------------------------------------------
+- (HighscoreManager*)loadHighscoreManagerWithKey:(NSString *)key {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    HighscoreManager *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return object;
+}
+
 
 @end

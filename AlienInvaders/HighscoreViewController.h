@@ -14,5 +14,6 @@
 // TODO: replace with Level class
 @property (nonatomic) NSUInteger level;
 @property (strong, nonatomic) HighscoreManager *highscoreManager;
+@property (strong, nonatomic) IBOutlet UITableView *highscoreView;
 
 @end

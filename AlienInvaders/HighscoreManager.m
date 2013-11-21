@@ -10,8 +10,10 @@
 #import "Highscore.h"
 
 @interface HighscoreManager() {
-    NSMutableArray *highscores;
+//    NSMutableArray *highscores;
 }
+
+@property (nonatomic) NSMutableArray *highscores;
 
 @end
 
@@ -21,7 +23,7 @@
 {
     self = [super init];
     if (self != Nil) {
-        highscores = [[NSMutableArray alloc] init];
+        self.highscores = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -34,14 +36,14 @@
 {
     // add the highscore
     Highscore *newHighscore = [Highscore highscoreWithScore:theScore andName:theName];
-    [highscores addObject:newHighscore];
+    [self.highscores addObject:newHighscore];
     
     // sort in descending order
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"score"
                                                  ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    highscores = [NSMutableArray arrayWithArray:[highscores sortedArrayUsingDescriptors:sortDescriptors]];
+    self.highscores = [NSMutableArray arrayWithArray:[self.highscores sortedArrayUsingDescriptors:sortDescriptors]];
 }
 
 
@@ -51,8 +53,8 @@
 - (NSString*) nameOfPlayerAtPosition:(NSUInteger)thePosition;
 {
     NSString *result = @"";
-    if (thePosition < highscores.count) {
-        result = [[highscores objectAtIndex:thePosition] name];
+    if (thePosition < self.highscores.count) {
+        result = [[self.highscores objectAtIndex:thePosition] name];
     }
     return result;
 }
@@ -64,8 +66,8 @@
 - (NSNumber*) scoreOfPlayerAtPosition:(NSUInteger)thePosition;
 {
     NSNumber *result = [[NSNumber alloc] init];
-    if (thePosition < highscores.count) {
-        result = [[highscores objectAtIndex:thePosition] score];
+    if (thePosition < self.highscores.count) {
+        result = [[self.highscores objectAtIndex:thePosition] score];
     }
     return result;
 }
@@ -76,7 +78,24 @@
 // ----------------------------------------------------------------------------------------------------
 - (NSUInteger) totalAmountOfHighscores;
 {
-    return highscores.count;
+    return self.highscores.count;
+}
+
+
+// ----------------------------------------------------------------------------------------------------
+// Make NSCoding compliant
+// ----------------------------------------------------------------------------------------------------
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.highscores forKey:@"highscores"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.highscores = [decoder decodeObjectForKey:@"highscores"];
+    }
+    return self;
 }
 
 @end

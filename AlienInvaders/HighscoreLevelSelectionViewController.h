@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HighscoreLevelSelectionViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UITableView *levelView;
 
 @end

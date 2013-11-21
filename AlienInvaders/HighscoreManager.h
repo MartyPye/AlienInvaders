@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HighscoreManager : NSObject
+@interface HighscoreManager : NSObject <NSCoding>
 
 - (void) addHighscore:(NSNumber*)theScore withName:(NSString*)theName;
 - (NSString*) nameOfPlayerAtPosition:(NSUInteger)thePosition;

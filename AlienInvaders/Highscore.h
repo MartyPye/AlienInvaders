@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Highscore : NSObject
+@interface Highscore : NSObject <NSCoding>
 
 @property(strong, nonatomic) NSNumber *score;
 @property(strong, nonatomic) NSString *name;
