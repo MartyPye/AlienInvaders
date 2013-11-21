@@ -27,6 +27,7 @@
 		781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */; };
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
+		959D1A51183E30EF006B2F8A /* MainMenuBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		781154E0183D30C400A61AD2 /* HighscoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreManager.m; sourceTree = "<group>"; };
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
+		959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MainMenuBackground.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7811549F183D1AD300A61AD2 /* AlienInvaders-Info.plist */,
+				959D1A4F183E30DA006B2F8A /* Backgrounds */,
 				781154A0183D1AD300A61AD2 /* InfoPlist.strings */,
 				781154A3183D1AD300A61AD2 /* main.m */,
 				781154A5183D1AD300A61AD2 /* AlienInvaders-Prefix.pch */,
@@ -195,6 +198,14 @@
 				781154E3183D30D200A61AD2 /* Highscore.m */,
 			);
 			name = Highscores;
+			sourceTree = "<group>";
+		};
+		959D1A4F183E30DA006B2F8A /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				959D1A50183E30EF006B2F8A /* MainMenuBackground.jpg */,
+			);
+			name = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
+				959D1A51183E30EF006B2F8A /* MainMenuBackground.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
