@@ -168,36 +168,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNJ-jP-z68">
-                                <rect key="frame" x="20" y="269" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNJ-jP-z68">
+                                <rect key="frame" x="75" y="190" width="170" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Level 1">
+                                <state key="normal" image="Level1MenuItem.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
+                                <rect key="frame" x="102" y="270" width="116" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Level2MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
-                                <rect key="frame" x="136" y="269" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
+                                <rect key="frame" x="102" y="350" width="115" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Level 2">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
-                                <rect key="frame" x="251" y="269" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Level 3">
+                                <state key="normal" image="Level3MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="kNJ-jP-z68" secondAttribute="centerY" id="Cxy-30-2EY"/>
-                            <constraint firstAttribute="centerX" secondItem="1ot-Rr-PTG" secondAttribute="centerX" id="HoI-zm-y1f"/>
-                            <constraint firstAttribute="centerY" secondItem="KEI-za-q2j" secondAttribute="centerY" id="NCP-1Z-b79"/>
-                            <constraint firstAttribute="trailing" secondItem="KEI-za-q2j" secondAttribute="trailing" constant="20" id="W90-O7-kfc"/>
-                            <constraint firstAttribute="centerY" secondItem="1ot-Rr-PTG" secondAttribute="centerY" id="dMD-3T-hXj"/>
-                            <constraint firstItem="kNJ-jP-z68" firstAttribute="leading" secondItem="mUv-Nw-qwX" secondAttribute="leading" constant="20" id="ycP-j3-Fbk"/>
+                            <constraint firstAttribute="centerX" secondItem="kNJ-jP-z68" secondAttribute="centerX" id="0mI-50-Fcx"/>
+                            <constraint firstAttribute="centerX" secondItem="KEI-za-q2j" secondAttribute="centerX" id="8hA-2K-DWm"/>
+                            <constraint firstAttribute="centerX" secondItem="1ot-Rr-PTG" secondAttribute="centerX" id="ZQN-7H-UNy"/>
+                            <constraint firstItem="KEI-za-q2j" firstAttribute="top" secondItem="1ot-Rr-PTG" secondAttribute="bottom" constant="53" id="cfy-Dq-3OP"/>
+                            <constraint firstItem="1ot-Rr-PTG" firstAttribute="top" secondItem="kNJ-jP-z68" secondAttribute="bottom" constant="53" id="kFL-eq-v9i"/>
+                            <constraint firstAttribute="centerY" secondItem="1ot-Rr-PTG" secondAttribute="centerY" id="zYi-IP-5is"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NMX-SD-PHL"/>
@@ -227,6 +225,9 @@
     </scenes>
     <resources>
         <image name="HighscoresMenuItem.png" width="164" height="33"/>
+        <image name="Level1MenuItem.png" width="112" height="27"/>
+        <image name="Level2MenuItem.png" width="116" height="27"/>
+        <image name="Level3MenuItem.png" width="115" height="27"/>
         <image name="LevelSelectionMenuItem.png" width="237" height="27"/>
         <image name="UpgradeStoreMenuItem.png" width="225" height="33"/>
     </resources>

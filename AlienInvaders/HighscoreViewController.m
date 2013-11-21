@@ -95,17 +95,22 @@
 
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MyIdentifier"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.backgroundColor = [UIColor clearColor];
 
     // TODO: only show highscores of specific level
     
 	// Set up the cell.
     NSString *highscoreName = [self.highscoreManager nameOfPlayerAtPosition:indexPath.row];
     NSNumber *highscore     = [self.highscoreManager scoreOfPlayerAtPosition:indexPath.row];
+    
+    // Name format
 	cell.textLabel.text = highscoreName;
-    [cell.textLabel setFont:[UIFont fontWithName:@"Apple Casual" size:18]];
+    [cell.textLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:18]];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
+    
+    // score format
+    [cell.detailTextLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:18]];
     cell.detailTextLabel.text = [highscore stringValue];
-    cell.backgroundColor = [UIColor clearColor];
     
 	return cell;
 }

@@ -22,6 +22,7 @@
 		40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262F9183E6658007E35CD /* Level2MenuItem@2x.png */; };
 		40F26300183E6658007E35CD /* Level3MenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262FA183E6658007E35CD /* Level3MenuItem.png */; };
 		40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262FB183E6658007E35CD /* Level3MenuItem@2x.png */; };
+		40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40F26304183E7BE2007E35CD /* Apple-casual.ttf */; };
 		78115496183D1AD300A61AD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115495183D1AD300A61AD2 /* Foundation.framework */; };
 		78115498183D1AD300A61AD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115497183D1AD300A61AD2 /* CoreGraphics.framework */; };
 		7811549A183D1AD300A61AD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78115499183D1AD300A61AD2 /* UIKit.framework */; };
@@ -71,6 +72,7 @@
 		40F262F9183E6658007E35CD /* Level2MenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level2MenuItem@2x.png"; sourceTree = "<group>"; };
 		40F262FA183E6658007E35CD /* Level3MenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level3MenuItem.png; sourceTree = "<group>"; };
 		40F262FB183E6658007E35CD /* Level3MenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level3MenuItem@2x.png"; sourceTree = "<group>"; };
+		40F26304183E7BE2007E35CD /* Apple-casual.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Apple-casual.ttf"; sourceTree = "<group>"; };
 		78115492183D1AD300A61AD2 /* AlienInvaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlienInvaders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78115495183D1AD300A61AD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78115497183D1AD300A61AD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +165,14 @@
 			name = "Level Text";
 			sourceTree = "<group>";
 		};
+		40F26302183E7BB8007E35CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				40F26304183E7BE2007E35CD /* Apple-casual.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		78115489183D1AD200A61AD2 = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 		7811549E183D1AD300A61AD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40F26302183E7BB8007E35CD /* Fonts */,
 				40218C74183E3FA200ABBF8A /* Custom Text */,
 				7811549F183D1AD300A61AD2 /* AlienInvaders-Info.plist */,
 				959D1A4F183E30DA006B2F8A /* Backgrounds */,
@@ -363,6 +374,7 @@
 				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
+				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
 				40F262FC183E6658007E35CD /* Level1MenuItem.png in Resources */,
