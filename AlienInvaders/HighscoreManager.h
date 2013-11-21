@@ -12,6 +12,7 @@
 
 - (void) addHighscore:(NSNumber*)theScore withName:(NSString*)theName;
 - (NSString*) nameOfPlayerAtPosition:(NSUInteger)thePosition;
+- (NSNumber*) scoreOfPlayerAtPosition:(NSUInteger)thePosition;
 - (NSUInteger) totalAmountOfHighscores;
 
 @end

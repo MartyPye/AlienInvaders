@@ -36,9 +36,9 @@
     // TODO: load highscore manager from userdefaults
     self.highscoreManager = [[HighscoreManager alloc] init];
     
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Verena"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Claude"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Marty"];
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Dummy 1"];
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Dummy 2"];
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Dummy 3"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,9 +63,16 @@
      */
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
+
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MyIdentifier"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    
 	// Set up the cell.
     NSString *highscoreName = [self.highscoreManager nameOfPlayerAtPosition:indexPath.row];
+    NSNumber *highscore     = [self.highscoreManager scoreOfPlayerAtPosition:indexPath.row];
 	cell.textLabel.text = highscoreName;
+    cell.detailTextLabel.text = [highscore stringValue];
     
 	return cell;
 }

@@ -59,6 +59,19 @@
 
 
 // ----------------------------------------------------------------------------------------------------
+// Returns the score of the player at a certain position;
+// ----------------------------------------------------------------------------------------------------
+- (NSNumber*) scoreOfPlayerAtPosition:(NSUInteger)thePosition;
+{
+    NSNumber *result = [[NSNumber alloc] init];
+    if (thePosition < highscores.count) {
+        result = [[highscores objectAtIndex:thePosition] score];
+    }
+    return result;
+}
+
+
+// ----------------------------------------------------------------------------------------------------
 // Returns the total amount of highscores
 // ----------------------------------------------------------------------------------------------------
 - (NSUInteger) totalAmountOfHighscores;
