@@ -35,10 +35,13 @@
     
     // TODO: load highscore manager from userdefaults
     self.highscoreManager = [[HighscoreManager alloc] init];
+    self.highscoreManager = [[NSUserDefaults standardUserDefaults] objectForKey:@"HighscoreManager"];
     
     [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Dummy 1"];
     [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Dummy 2"];
     [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Dummy 3"];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.highscoreManager forKey:@"HighscoreManager"];
 }
 
 - (void)didReceiveMemoryWarning
