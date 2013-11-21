@@ -73,11 +73,6 @@
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
-- (void) addRotatingBackground
-{
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
