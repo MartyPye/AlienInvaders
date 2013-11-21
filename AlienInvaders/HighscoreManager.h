@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Highscore.h"
 
 @interface HighscoreManager : NSObject
 
 - (void) addHighscore:(NSNumber*)theScore withName:(NSString*)theName;
 - (NSString*) nameOfPlayerAtPosition:(NSUInteger)thePosition;
+- (NSUInteger) totalAmountOfHighscores;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HighscoreManager.h"
 
 @interface HighscoreViewController : UITableViewController
+
+@property (strong, nonatomic) HighscoreManager *highscoreManager;
 
 @end

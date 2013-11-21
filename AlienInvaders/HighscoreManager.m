@@ -7,6 +7,7 @@
 //
 
 #import "HighscoreManager.h"
+#import "Highscore.h"
 
 @interface HighscoreManager() {
     NSMutableArray *highscores;
@@ -54,6 +55,15 @@
         result = [[highscores objectAtIndex:thePosition] name];
     }
     return result;
+}
+
+
+// ----------------------------------------------------------------------------------------------------
+// Returns the total amount of highscores
+// ----------------------------------------------------------------------------------------------------
+- (NSUInteger) totalAmountOfHighscores;
+{
+    return highscores.count;
 }
 
 @end

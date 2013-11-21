@@ -32,6 +32,13 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // TODO: load highscore manager from userdefaults
+    self.highscoreManager = [[HighscoreManager alloc] init];
+    
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Verena"];
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Claude"];
+    [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Marty"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,30 +47,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    // Return the number of time zone names.
+	return [self.highscoreManager totalAmountOfHighscores];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *MyIdentifier = @"MyIdentifier";
     
-    // Configure the cell...
+	/*
+     Retrieve a cell with the given identifier from the table view.
+     The cell is defined in the main storyboard: its identifier is MyIdentifier, and  its selection style is set to None.
+     */
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
-    return cell;
+	// Set up the cell.
+    NSString *highscoreName = [self.highscoreManager nameOfPlayerAtPosition:indexPath.row];
+	cell.textLabel.text = highscoreName;
+    
+	return cell;
 }
 
 /*
