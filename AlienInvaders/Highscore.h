@@ -13,6 +13,7 @@
 @property(strong, nonatomic) NSNumber *score;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) NSDate *date;
+// TODO: add level.
 
 + (Highscore*) highscoreWithScore:(NSNumber*)theScore andName:(NSString*)theName;
 

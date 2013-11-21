@@ -1,18 +1,22 @@
 //
-//  HighscoreViewController.m
+//  HighscoreLevelSelectionViewController.m
 //  AlienInvaders
 //
-//  Created by Marty on 11/20/13.
+//  Created by Marty Pye on 21/11/13.
 //  Copyright (c) 2013 Marty. All rights reserved.
 //
 
+#import "HighscoreLevelSelectionViewController.h"
 #import "HighscoreViewController.h"
 
-@interface HighscoreViewController ()
+@interface HighscoreLevelSelectionViewController () {
+    // TODO: Implement level manager (Singleton)
+    NSMutableArray *arrayOfLevels;
+}
 
 @end
 
-@implementation HighscoreViewController
+@implementation HighscoreLevelSelectionViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,12 +37,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // TODO: load highscore manager from userdefaults
-    self.highscoreManager = [[HighscoreManager alloc] init];
-    
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:100] withName:@"Dummy 1"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:200] withName:@"Dummy 2"];
-    [self.highscoreManager addHighscore:[NSNumber numberWithInt:300] withName:@"Dummy 3"];
+     arrayOfLevels = [[NSMutableArray alloc] init];
+    [arrayOfLevels addObject:@"Level 1"];
+    [arrayOfLevels addObject:@"Level 2"];
+    [arrayOfLevels addObject:@"Level 3"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,10 +49,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Table view data source
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of time zone names.
-	return [self.highscoreManager totalAmountOfHighscores];
+    return arrayOfLevels.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,19 +66,22 @@
      */
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
-
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"MyIdentifier"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
-    // TODO: only show highscores of specific level
+    
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyIdentifier"];
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
 	// Set up the cell.
-    NSString *highscoreName = [self.highscoreManager nameOfPlayerAtPosition:indexPath.row];
-    NSNumber *highscore     = [self.highscoreManager scoreOfPlayerAtPosition:indexPath.row];
-	cell.textLabel.text = highscoreName;
-    cell.detailTextLabel.text = [highscore stringValue];
+    NSString *level = [arrayOfLevels objectAtIndex:indexPath.row];
+	cell.textLabel.text = level;
     
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // transition to detail highscore view of selected level.
+    [self performSegueWithIdentifier:@"showLevelHighscoreSegue" sender:self];
 }
 
 /*
@@ -117,16 +123,14 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    // TODO: pass the level to the highscore view controller so he can show appropriate highscores
+//    [[segue destinationViewController] setLevel:1];
 }
-
- */
 
 @end
