@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSString *levelName;
 // possibly add difficulty index, score threshold for different stars.
 
+- (id) initWithIndex:(NSUInteger)theIndex andName:(NSString*) theName;
+
 @end

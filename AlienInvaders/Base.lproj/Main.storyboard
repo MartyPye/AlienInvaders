@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
-                                <rect key="frame" x="78" y="267" width="164" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyC-TK-poj">
+                                <rect key="frame" x="78" y="268" width="164" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="HighscoresMenuItem.png">
@@ -27,8 +27,8 @@
                                     <segue destination="zg7-GK-4v2" kind="push" id="7LA-ws-gNb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
-                                <rect key="frame" x="-21" y="193" width="361" height="28"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-69-Cn4">
+                                <rect key="frame" x="42" y="195" width="237" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="LevelSelectionMenuItem.png"/>
@@ -36,8 +36,8 @@
                                     <segue destination="xQS-4e-Scd" kind="push" id="MDY-HU-g5C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
-                                <rect key="frame" x="78" y="358" width="164" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBd-gW-02f">
+                                <rect key="frame" x="48" y="359" width="225" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" image="UpgradeStoreMenuItem.png">
@@ -47,16 +47,24 @@
                                     <segue destination="Gjb-I1-1JX" kind="push" id="H9F-qN-iT7"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AlienInvaderLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="x2L-bi-TwH">
+                                <rect key="frame" x="40" y="45" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HcV-ii-Hi5"/>
+                                    <constraint firstAttribute="height" constant="128" id="o6f-pO-fHE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="uyC-TK-poj" secondAttribute="centerX" id="38G-R6-BxF"/>
-                            <constraint firstAttribute="centerX" secondItem="uyC-TK-poj" secondAttribute="centerX" id="5zr-7P-Wgm"/>
-                            <constraint firstItem="uyC-TK-poj" firstAttribute="top" secondItem="UQp-69-Cn4" secondAttribute="bottom" constant="46" id="BEW-ZE-cmo"/>
-                            <constraint firstAttribute="centerX" secondItem="UQp-69-Cn4" secondAttribute="centerX" id="S9h-HT-P0D"/>
-                            <constraint firstAttribute="centerX" secondItem="KBd-gW-02f" secondAttribute="centerX" id="V9K-LR-3Ie"/>
-                            <constraint firstItem="KBd-gW-02f" firstAttribute="top" secondItem="uyC-TK-poj" secondAttribute="bottom" constant="58" id="cif-Zr-H82"/>
-                            <constraint firstAttribute="centerY" secondItem="uyC-TK-poj" secondAttribute="centerY" id="i5c-Fv-4CC"/>
+                            <constraint firstAttribute="trailing" secondItem="KBd-gW-02f" secondAttribute="trailing" constant="47" id="4QF-Yp-9a1"/>
+                            <constraint firstItem="uyC-TK-poj" firstAttribute="top" secondItem="UQp-69-Cn4" secondAttribute="bottom" constant="46" id="CA5-Z6-Gek"/>
+                            <constraint firstAttribute="centerY" secondItem="uyC-TK-poj" secondAttribute="centerY" id="HCA-Kf-Vb6"/>
+                            <constraint firstAttribute="trailing" secondItem="UQp-69-Cn4" secondAttribute="trailing" constant="41" id="Ksd-gx-Hgj"/>
+                            <constraint firstItem="KBd-gW-02f" firstAttribute="top" secondItem="uyC-TK-poj" secondAttribute="bottom" constant="58" id="bNa-cg-Bbd"/>
+                            <constraint firstItem="x2L-bi-TwH" firstAttribute="leading" secondItem="GO3-km-9XX" secondAttribute="leading" constant="40" id="bgN-ge-PAT"/>
+                            <constraint firstAttribute="trailing" secondItem="uyC-TK-poj" secondAttribute="trailing" constant="78" id="tMG-70-U8k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CwY-2o-OBk"/>
@@ -169,19 +177,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kNJ-jP-z68">
-                                <rect key="frame" x="75" y="190" width="170" height="27"/>
+                                <rect key="frame" x="75" y="191" width="170" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level1MenuItem.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
-                                <rect key="frame" x="102" y="270" width="116" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
+                                <rect key="frame" x="102" y="271" width="116" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level2MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
-                                <rect key="frame" x="102" y="350" width="115" height="27"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
+                                <rect key="frame" x="103" y="351" width="115" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level3MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,6 +232,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AlienInvaderLogo.png" width="1523" height="762"/>
         <image name="HighscoresMenuItem.png" width="164" height="33"/>
         <image name="Level1MenuItem.png" width="112" height="27"/>
         <image name="Level2MenuItem.png" width="116" height="27"/>

@@ -7,6 +7,7 @@
 //
 
 #import "LevelManager.h"
+#import "Level.h"
 
 @interface LevelManager() {
     NSMutableArray *levels;
@@ -25,6 +26,13 @@
     self = [super init];
     if (self != nil) {
         levels = [[NSMutableArray alloc] init];
+        Level* level1 = [[Level alloc] initWithIndex:0 andName:@"Level 1"];
+        Level* level2 = [[Level alloc] initWithIndex:1 andName:@"Level 2"];
+        Level* level3 = [[Level alloc] initWithIndex:2 andName:@"Level 3"];
+        
+        [levels addObject:level1];
+        [levels addObject:level2];
+        [levels addObject:level3];
     }
     
     return self;
@@ -46,6 +54,15 @@
         
         return sharedLevelManager;
     }
+}
+
+
+// ----------------------------------------------------------------------------------------------------
+// Returns the total amount of levels.
+// ----------------------------------------------------------------------------------------------------
+- (NSUInteger) totalAmountOfLevels;
+{
+    return levels.count;
 }
 
 @end

@@ -8,10 +8,9 @@
 
 #import "HighscoreLevelSelectionViewController.h"
 #import "HighscoreViewController.h"
+#import "LevelManager.h"
 
 @interface HighscoreLevelSelectionViewController () {
-    // TODO: Implement level manager (Singleton)
-    NSMutableArray *arrayOfLevels;
     NSArray *imagesForLevels;
 }
 
@@ -48,11 +47,6 @@
     
     [self addBackground];
     
-     arrayOfLevels = [[NSMutableArray alloc] init];
-    [arrayOfLevels addObject:@"Level 1"];
-    [arrayOfLevels addObject:@"Level 2"];
-    [arrayOfLevels addObject:@"Level 3"];
-    
     imagesForLevels = [NSArray arrayWithObjects:
                         [UIImage imageNamed:@"Level1MenuItem.png"],
                         [UIImage imageNamed:@"Level2MenuItem.png"],
@@ -70,7 +64,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return arrayOfLevels.count;
+    return [[LevelManager sharedLevelManager] totalAmountOfLevels];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

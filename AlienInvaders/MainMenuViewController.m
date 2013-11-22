@@ -79,4 +79,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration;
+{
+    
+}
+
 @end

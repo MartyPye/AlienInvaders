@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Level.h"
 
 @interface LevelManager : NSObject
 
 + (LevelManager*) sharedLevelManager;
+- (NSUInteger) totalAmountOfLevels;
 
 @end
