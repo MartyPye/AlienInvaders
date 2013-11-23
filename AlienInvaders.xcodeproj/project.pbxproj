@@ -47,6 +47,8 @@
 		781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */; };
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
+		959219C3184104B0005645B1 /* AllWeapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* AllWeapons.m */; };
+		959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959219C5184112FA005645B1 /* tempWeapon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,9 @@
 		781154E0183D30C400A61AD2 /* HighscoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreManager.m; sourceTree = "<group>"; };
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
+		959219C1184104B0005645B1 /* AllWeapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllWeapons.h; sourceTree = "<group>"; };
+		959219C2184104B0005645B1 /* AllWeapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllWeapons.m; sourceTree = "<group>"; };
+		959219C5184112FA005645B1 /* tempWeapon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempWeapon.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +235,7 @@
 			children = (
 				40DB3C87183F82E6009FD3FA /* Levels */,
 				781154DE183D2EC300A61AD2 /* Highscores */,
+				959219C018410452005645B1 /* Weapons and Shields */,
 				781154D4183D2A6E00A61AD2 /* Menu */,
 				781154A6183D1AD300A61AD2 /* AppDelegate.h */,
 				781154A7183D1AD300A61AD2 /* AppDelegate.m */,
@@ -246,6 +252,7 @@
 				40F26302183E7BB8007E35CD /* Fonts */,
 				40218C74183E3FA200ABBF8A /* Custom Text */,
 				7811549F183D1AD300A61AD2 /* AlienInvaders-Info.plist */,
+				959219C4184112ED005645B1 /* Images */,
 				959D1A4F183E30DA006B2F8A /* Backgrounds */,
 				781154A0183D1AD300A61AD2 /* InfoPlist.strings */,
 				781154A3183D1AD300A61AD2 /* main.m */,
@@ -298,6 +305,23 @@
 				40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */,
 			);
 			name = Highscores;
+			sourceTree = "<group>";
+		};
+		959219C018410452005645B1 /* Weapons and Shields */ = {
+			isa = PBXGroup;
+			children = (
+				959219C1184104B0005645B1 /* AllWeapons.h */,
+				959219C2184104B0005645B1 /* AllWeapons.m */,
+			);
+			name = "Weapons and Shields";
+			sourceTree = "<group>";
+		};
+		959219C4184112ED005645B1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				959219C5184112FA005645B1 /* tempWeapon.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		959D1A4F183E30DA006B2F8A /* Backgrounds */ = {
@@ -389,6 +413,7 @@
 			files = (
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
 				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
+				959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */,
 				40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */,
 				40F262F2183E6146007E35CD /* MainMenuBackground@2x.jpg in Resources */,
 				40F26300183E6658007E35CD /* Level3MenuItem.png in Resources */,
@@ -426,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				781154A8183D1AD300A61AD2 /* AppDelegate.m in Sources */,
+				959219C3184104B0005645B1 /* AllWeapons.m in Sources */,
 				40DB3C8D183F8319009FD3FA /* Level.m in Sources */,
 				781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
