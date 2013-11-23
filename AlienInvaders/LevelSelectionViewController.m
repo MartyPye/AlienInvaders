@@ -27,9 +27,6 @@
 {
     [self addBackground];
     
-    // make navigation bar dark
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-    
     [super viewDidLoad];
 }
 

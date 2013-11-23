@@ -32,6 +32,10 @@
     [super viewDidLoad];
 
     [self addBackground];
+    
+    // make navigation bar dark
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
