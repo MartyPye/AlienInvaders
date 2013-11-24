@@ -29,6 +29,8 @@ static AllWeapons *_allWeaponsSingleton = nil;
     return _allWeaponsSingleton;
 }
 
+
+
 - (NSArray*) getAllPurchasedWeapons
 {
     NSArray *returnArray = [self getWeaponArrayForKey:@"purchased"];
@@ -52,7 +54,7 @@ static AllWeapons *_allWeaponsSingleton = nil;
 
 
 //----------------------------------------------------------
-// Restoring the highscore manager from NSUserdefaults
+// Restoring all the weapons from NSUserdefaults
 //----------------------------------------------------------
 - (NSArray*)getWeaponArrayForKey:(NSString*)key
 {
@@ -63,7 +65,7 @@ static AllWeapons *_allWeaponsSingleton = nil;
 }
 
 //----------------------------------------------------------
-// Saving the highscore manager to NSUserdefaults
+// Saving all the weapons to NSUserdefaults
 //----------------------------------------------------------
 - (void)saveWeaponArrays
 {

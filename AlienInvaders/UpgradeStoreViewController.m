@@ -31,10 +31,13 @@
     
     [_segmentController addTarget:self action:@selector(viewSwitched) forControlEvents:UIControlEventValueChanged];
     
+    //WeaponView
+    [_weaponTableView setEditing:YES];
+    
+    //Shieldview
+    [self updateShieldView];
     [_shieldView setHidden:YES];
     _shieldViewIsDisplayed = NO;
-    
-    [_weaponTableView setEditing:YES];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -58,6 +61,15 @@
         [_weaponView setHidden:YES];
         _shieldViewIsDisplayed = YES;
     }
+}
+
+
+- (void) updateShieldView
+{
+    [_upgradeButton setHidden:![[AllShields allShieldsSingleton] shieldLevelCanBeUpdated]];
+    [_shieldLabel setText:[NSString stringWithFormat:@"Shieldlevel %d",[[AllShields allShieldsSingleton] getCurrentShieldLevel]]];
+    [_timeLabel setText:[NSString stringWithFormat:@"Time: %d",[[AllShields allShieldsSingleton] getShieldTime]]];
+    [_regenerationLabel setText:[NSString stringWithFormat:@"Regeneration: %d",[[AllShields allShieldsSingleton] getShieldRecuperation]]];
 }
 
 

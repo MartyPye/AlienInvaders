@@ -263,8 +263,12 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="regenerationLabel" destination="f20-ne-Thl" id="VBK-6U-xJM"/>
                         <outlet property="segmentController" destination="9tJ-SE-a2a" id="b1K-cl-pmR"/>
+                        <outlet property="shieldLabel" destination="e4N-O9-rX8" id="u7B-oh-sAA"/>
                         <outlet property="shieldView" destination="cbh-GK-6Wm" id="XHB-sA-88s"/>
+                        <outlet property="timeLabel" destination="0IF-gt-TxZ" id="VPJ-2B-YF5"/>
+                        <outlet property="upgradeButton" destination="upA-l8-Xob" id="YXL-bI-LJI"/>
                         <outlet property="weaponTableView" destination="30L-o0-uun" id="Uot-9A-wVK"/>
                         <outlet property="weaponView" destination="nR3-i5-9bz" id="lmQ-wm-TvW"/>
                     </connections>

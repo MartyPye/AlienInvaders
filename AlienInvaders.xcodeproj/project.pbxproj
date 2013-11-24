@@ -48,6 +48,7 @@
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
+		95640EDB1842256B00D67AAB /* AllShields.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* AllShields.m */; };
 		959219C3184104B0005645B1 /* AllWeapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* AllWeapons.m */; };
 		959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959219C5184112FA005645B1 /* tempWeapon.jpg */; };
 /* End PBXBuildFile section */
@@ -117,6 +118,8 @@
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
+		95640ED91842256B00D67AAB /* AllShields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllShields.h; sourceTree = "<group>"; };
+		95640EDA1842256B00D67AAB /* AllShields.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllShields.m; sourceTree = "<group>"; };
 		959219C1184104B0005645B1 /* AllWeapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllWeapons.h; sourceTree = "<group>"; };
 		959219C2184104B0005645B1 /* AllWeapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllWeapons.m; sourceTree = "<group>"; };
 		959219C5184112FA005645B1 /* tempWeapon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempWeapon.jpg; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 			children = (
 				959219C1184104B0005645B1 /* AllWeapons.h */,
 				959219C2184104B0005645B1 /* AllWeapons.m */,
+				95640ED91842256B00D67AAB /* AllShields.h */,
+				95640EDA1842256B00D67AAB /* AllShields.m */,
 			);
 			name = "Weapons and Shields";
 			sourceTree = "<group>";
@@ -464,6 +469,7 @@
 				781154D7183D2AA600A61AD2 /* LevelSelectionViewController.m in Sources */,
 				40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */,
 				781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */,
+				95640EDB1842256B00D67AAB /* AllShields.m in Sources */,
 				781154DA183D2ACD00A61AD2 /* HighscoreViewController.m in Sources */,
 				781154A4183D1AD300A61AD2 /* main.m in Sources */,
 			);
