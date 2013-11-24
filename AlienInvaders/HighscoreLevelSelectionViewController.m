@@ -152,7 +152,7 @@
     iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
     [self.view addSubview:iV];
     [self.view sendSubviewToBack:iV];
-    [self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
+    //[self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
 }
 
 - (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;

@@ -115,7 +115,7 @@
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                        reuseIdentifier:MyIdentifier];
     }
     
@@ -124,12 +124,14 @@
     
     if (indexPath.section == 0) {
         cell.textLabel.text = [[[AllWeapons allWeaponsSingleton] getAllPurchasedWeapons] objectAtIndex:indexPath.row];
+        cell.textLabel.textColor = [UIColor whiteColor];
     } else {
         cell.textLabel.text = [[[AllWeapons allWeaponsSingleton] getAllLockedWeapons] objectAtIndex:indexPath.row];
+        cell.textLabel.textColor = [UIColor lightGrayColor];
+        cell.detailTextLabel.text = @"40£";
     }
     
     [cell.textLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:18]];
-    cell.textLabel.textColor = [UIColor whiteColor];
     cell.backgroundColor = [UIColor clearColor];
     
     return cell;
