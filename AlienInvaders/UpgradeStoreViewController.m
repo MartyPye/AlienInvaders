@@ -131,7 +131,6 @@
                                        reuseIdentifier:MyIdentifier];
     }
     
-    [cell.imageView setImage:[UIImage imageNamed:@"tempWeapon.jpg"]];
     //               placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     if (indexPath.section == 0) {
@@ -143,6 +142,7 @@
         cell.detailTextLabel.text = @"40£";
     }
     
+    [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",cell.textLabel.text]]];
     [cell.textLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:18]];
     cell.backgroundColor = [UIColor clearColor];
     

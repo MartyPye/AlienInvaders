@@ -46,7 +46,7 @@ static AllWeapons *_allWeaponsSingleton = nil;
 {
     NSArray *returnArray = [self getWeaponArrayForKey:@"locked"];
     if (returnArray == nil) {
-        returnArray = @[@"Double Shot",@"Shotgun",@"Laser",@"Grenade Shooter"];
+        returnArray = @[@"Double Shot",@"Shotgun",@"Laser",@"Atom Bomb"];
     }
     
     return returnArray;
