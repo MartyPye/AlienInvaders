@@ -39,6 +39,9 @@
     [_shieldView setHidden:YES];
     _shieldViewIsDisplayed = NO;
     
+    UIEdgeInsets inset = UIEdgeInsetsMake(20, 0, 0, 0);
+    self.weaponTableView.contentInset = inset;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
