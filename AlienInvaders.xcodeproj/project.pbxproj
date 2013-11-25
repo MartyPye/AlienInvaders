@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */; };
-		40A6905A183FB889000680DF /* AlienInvaderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A69058183FB889000680DF /* AlienInvaderLogo.png */; };
-		40A6905B183FB889000680DF /* AlienInvaderLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A69059183FB889000680DF /* AlienInvaderLogo@2x.png */; };
+		40D25B7918438E0E009D24F8 /* AlienInvaderLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */; };
+		40D25B8518439865009D24F8 /* Atom Bomb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8418439865009D24F8 /* Atom Bomb@2x.png */; };
+		40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8618439C72009D24F8 /* Laser@2x.png */; };
+		40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8818439E57009D24F8 /* Double Shot@2x.png */; };
+		40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8918439E57009D24F8 /* Shotgun@2x.png */; };
+		40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8A18439E57009D24F8 /* Single Shot@2x.png */; };
 		40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C89183F82FB009FD3FA /* LevelManager.m */; };
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
@@ -47,11 +51,6 @@
 		781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */; };
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
-		95283DD41842485400EF7304 /* Atom Bomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 95283DCF1842485300EF7304 /* Atom Bomb.png */; };
-		95283DD51842485400EF7304 /* Shotgun.png in Resources */ = {isa = PBXBuildFile; fileRef = 95283DD01842485300EF7304 /* Shotgun.png */; };
-		95283DD61842485400EF7304 /* Double Shot.png in Resources */ = {isa = PBXBuildFile; fileRef = 95283DD11842485300EF7304 /* Double Shot.png */; };
-		95283DD71842485400EF7304 /* Single Shot.png in Resources */ = {isa = PBXBuildFile; fileRef = 95283DD21842485300EF7304 /* Single Shot.png */; };
-		95283DD81842485400EF7304 /* Laser.png in Resources */ = {isa = PBXBuildFile; fileRef = 95283DD31842485300EF7304 /* Laser.png */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
 		959219C3184104B0005645B1 /* WeaponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* WeaponManager.m */; };
@@ -71,8 +70,12 @@
 /* Begin PBXFileReference section */
 		40218C71183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighscoreLevelSelectionViewController.h; sourceTree = "<group>"; };
 		40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreLevelSelectionViewController.m; sourceTree = "<group>"; };
-		40A69058183FB889000680DF /* AlienInvaderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienInvaderLogo.png; sourceTree = "<group>"; };
-		40A69059183FB889000680DF /* AlienInvaderLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlienInvaderLogo@2x.png"; sourceTree = "<group>"; };
+		40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlienInvaderLogo@2x.png"; sourceTree = "<group>"; };
+		40D25B8418439865009D24F8 /* Atom Bomb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Atom Bomb@2x.png"; sourceTree = "<group>"; };
+		40D25B8618439C72009D24F8 /* Laser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Laser@2x.png"; sourceTree = "<group>"; };
+		40D25B8818439E57009D24F8 /* Double Shot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double Shot@2x.png"; sourceTree = "<group>"; };
+		40D25B8918439E57009D24F8 /* Shotgun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shotgun@2x.png"; sourceTree = "<group>"; };
+		40D25B8A18439E57009D24F8 /* Single Shot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Single Shot@2x.png"; sourceTree = "<group>"; };
 		40DB3C88183F82FB009FD3FA /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		40DB3C89183F82FB009FD3FA /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		40DB3C8B183F8319009FD3FA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
@@ -122,11 +125,6 @@
 		781154E0183D30C400A61AD2 /* HighscoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreManager.m; sourceTree = "<group>"; };
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
-		95283DCF1842485300EF7304 /* Atom Bomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Atom Bomb.png"; sourceTree = "<group>"; };
-		95283DD01842485300EF7304 /* Shotgun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shotgun.png; sourceTree = "<group>"; };
-		95283DD11842485300EF7304 /* Double Shot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double Shot.png"; sourceTree = "<group>"; };
-		95283DD21842485300EF7304 /* Single Shot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Single Shot.png"; sourceTree = "<group>"; };
-		95283DD31842485300EF7304 /* Laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Laser.png; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
@@ -326,11 +324,11 @@
 		95283DCE1842484400EF7304 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
-				95283DCF1842485300EF7304 /* Atom Bomb.png */,
-				95283DD01842485300EF7304 /* Shotgun.png */,
-				95283DD11842485300EF7304 /* Double Shot.png */,
-				95283DD21842485300EF7304 /* Single Shot.png */,
-				95283DD31842485300EF7304 /* Laser.png */,
+				40D25B8818439E57009D24F8 /* Double Shot@2x.png */,
+				40D25B8918439E57009D24F8 /* Shotgun@2x.png */,
+				40D25B8A18439E57009D24F8 /* Single Shot@2x.png */,
+				40D25B8618439C72009D24F8 /* Laser@2x.png */,
+				40D25B8418439865009D24F8 /* Atom Bomb@2x.png */,
 			);
 			name = Weapons;
 			sourceTree = "<group>";
@@ -358,8 +356,7 @@
 		959D1A4F183E30DA006B2F8A /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				40A69058183FB889000680DF /* AlienInvaderLogo.png */,
-				40A69059183FB889000680DF /* AlienInvaderLogo@2x.png */,
+				40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */,
 				40F262EF183E6146007E35CD /* MainMenuBackground.jpg */,
 				40F262F0183E6146007E35CD /* MainMenuBackground@2x.jpg */,
 			);
@@ -444,29 +441,28 @@
 			files = (
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
 				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
-				95283DD81842485400EF7304 /* Laser.png in Resources */,
+				40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */,
+				40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */,
 				959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */,
 				40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */,
 				40F262F2183E6146007E35CD /* MainMenuBackground@2x.jpg in Resources */,
 				40F26300183E6658007E35CD /* Level3MenuItem.png in Resources */,
-				40A6905A183FB889000680DF /* AlienInvaderLogo.png in Resources */,
 				40F262FD183E6658007E35CD /* Level1MenuItem@2x.png in Resources */,
-				95283DD51842485400EF7304 /* Shotgun.png in Resources */,
-				40A6905B183FB889000680DF /* AlienInvaderLogo@2x.png in Resources */,
-				95283DD71842485400EF7304 /* Single Shot.png in Resources */,
+				40D25B7918438E0E009D24F8 /* AlienInvaderLogo@2x.png in Resources */,
+				40D25B8518439865009D24F8 /* Atom Bomb@2x.png in Resources */,
 				40F262EA183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png in Resources */,
-				95283DD61842485400EF7304 /* Double Shot.png in Resources */,
 				40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */,
 				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
-				95283DD41842485400EF7304 /* Atom Bomb.png in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
+				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
 				954123AF184210900033FBD8 /* tempShield.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
 				40F262FC183E6658007E35CD /* Level1MenuItem.png in Resources */,
 				40F262F1183E6146007E35CD /* MainMenuBackground.jpg in Resources */,
+				40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */,
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
 				40F262FE183E6658007E35CD /* Level2MenuItem.png in Resources */,
 			);

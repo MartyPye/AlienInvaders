@@ -23,7 +23,7 @@ static ShieldManager *_allShieldsSingleton = nil;
     self = [super init];
     if (self != nil) {
         // default shield level
-        _shieldLevel = 1;
+        _shieldLevel = 0;
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"shieldLevel"] != nil) {
             _shieldLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"shieldLevel"] integerValue];
