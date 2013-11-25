@@ -70,7 +70,9 @@
 - (void) updateShieldView
 {
     [_upgradeButton setHidden:![[ShieldManager sharedShieldManager] shieldLevelCanBeUpdated]];
-    [_shieldLabel setText:[NSString stringWithFormat:@"Shieldlevel %i",(int)[[ShieldManager sharedShieldManager] shieldLevel]]];
+    // + 1 because humans start counting at 1
+    NSString *humanReadableLevelLabel = [NSString stringWithFormat:@"Shield Level: %i", (int)[ShieldManager sharedShieldManager].shieldLevel + 1];
+    [_shieldLabel setText:[NSString stringWithFormat:@"%@", humanReadableLevelLabel]];
     [_timeLabel setText:[NSString stringWithFormat:@"Time: %i",(int)[[ShieldManager sharedShieldManager] shieldTime]]];
     [_regenerationLabel setText:[NSString stringWithFormat:@"Regeneration: %i",(int)[[ShieldManager sharedShieldManager] shieldRegenerationTime]]];
 }

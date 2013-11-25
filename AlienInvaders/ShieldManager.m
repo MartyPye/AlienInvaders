@@ -8,11 +8,9 @@
 
 #import "ShieldManager.h"
 
-#define MAX_SHIELD_LEVEL 5
+#define MAX_SHIELD_LEVEL 4
 
 @interface ShieldManager ()
-
-@property (nonatomic) NSUInteger currentShieldLevel;
 
 @end
 
@@ -24,8 +22,12 @@ static ShieldManager *_allShieldsSingleton = nil;
 - (id) init {
     self = [super init];
     if (self != nil) {
-        _shieldLevel = 0;
-        [self restoreShieldLevel];
+        // default shield level
+        _shieldLevel = 1;
+        
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"shieldLevel"] != nil) {
+            _shieldLevel = [[[NSUserDefaults standardUserDefaults] objectForKey:@"shieldLevel"] integerValue];
+        }
     }
     
     return self;
@@ -49,7 +51,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (NSUInteger) shieldTime
 {
-    NSDictionary *tempDict = [self getShieldDetails:_currentShieldLevel];
+    NSDictionary *tempDict = [self getShieldDetails:self.shieldLevel];
     NSUInteger time = [[tempDict objectForKey:@"time"] integerValue];
     return time;
 }
@@ -60,7 +62,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (NSUInteger) shieldRegenerationTime
 {
-    NSDictionary *tempDict = [self getShieldDetails:_currentShieldLevel];
+    NSDictionary *tempDict = [self getShieldDetails:_shieldLevel];
     NSUInteger reg = [[tempDict objectForKey:@"regeneration"] integerValue];
     return reg;
 }
@@ -71,7 +73,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (void) updateShieldLevel
 {
-    _currentShieldLevel = MIN(_currentShieldLevel+1, MAX_SHIELD_LEVEL);
+    _shieldLevel = MIN(_shieldLevel+1, MAX_SHIELD_LEVEL);
     [self saveShieldLevel];
 }
 
@@ -81,7 +83,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (BOOL) shieldLevelCanBeUpdated
 {
-    if (_currentShieldLevel < MAX_SHIELD_LEVEL) {
+    if (self.shieldLevel < MAX_SHIELD_LEVEL) {
         return YES;
     } else {
         return NO;
@@ -95,19 +97,19 @@ static ShieldManager *_allShieldsSingleton = nil;
 {
     NSDictionary *shieldDetails = [[NSDictionary alloc] init];
     switch (shield) {
-        case 1:
+        case 0:
             shieldDetails = @{@"time": [NSNumber numberWithInt:4], @"regeneration": [NSNumber numberWithInt:30]};
             break;
-        case 2:
+        case 1:
             shieldDetails = @{@"time": [NSNumber numberWithInt:6], @"regeneration": [NSNumber numberWithInt:28]};
             break;
-        case 3:
+        case 2:
             shieldDetails = @{@"time": [NSNumber numberWithInt:8], @"regeneration": [NSNumber numberWithInt:26]};
             break;
-        case 4:
+        case 3:
             shieldDetails = @{@"time": [NSNumber numberWithInt:10], @"regeneration": [NSNumber numberWithInt:24]};
             break;
-        case 5:
+        case 4:
             shieldDetails = @{@"time": [NSNumber numberWithInt:12], @"regeneration": [NSNumber numberWithInt:22]};
             break;
             
@@ -125,7 +127,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSUInteger shieldLevel = [[defaults objectForKey:@"shieldLevel"] integerValue];
-    _currentShieldLevel = shieldLevel;
+    _shieldLevel = shieldLevel;
 }
 
 //----------------------------------------------------------
@@ -134,7 +136,7 @@ static ShieldManager *_allShieldsSingleton = nil;
 - (void)saveShieldLevel
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[NSNumber numberWithInteger:_currentShieldLevel] forKey:@"shieldLevel"];
+    [defaults setObject:[NSNumber numberWithInteger:_shieldLevel] forKey:@"shieldLevel"];
     [defaults synchronize];
 }
 

@@ -21,6 +21,25 @@
 
 static WeaponManager *_allWeaponsSingleton = nil;
 
+- (id) init;
+{
+    self = [super init];
+    if (self != nil){
+        
+        // default weapons
+        self.purchasedWeapons = @[@"Single Shot"];
+        self.lockedWeapons    = @[@"Double Shot",@"Shotgun",@"Laser",@"Atom Bomb"];
+
+        
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"purchased"] != nil) {
+            self.purchasedWeapons = [self getWeaponArrayForKey:@"purchased"];
+            self.lockedWeapons    = [self getWeaponArrayForKey:@"locked"];
+        }
+    }
+    
+    return self;
+}
+
 
 // ----------------------------------------------------------------------------------------------------
 // Singleton
@@ -39,12 +58,7 @@ static WeaponManager *_allWeaponsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (NSArray*) allPurchasedWeapons
 {
-    NSArray *returnArray = [self getWeaponArrayForKey:@"purchased"];
-    if (returnArray == nil) {
-        returnArray = @[@"Single Shot"];
-    }
-    
-    return returnArray;
+    return self.purchasedWeapons;
 }
 
 
@@ -53,12 +67,7 @@ static WeaponManager *_allWeaponsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 - (NSArray*) allLockedWeapons
 {
-    NSArray *returnArray = [self getWeaponArrayForKey:@"locked"];
-    if (returnArray == nil) {
-        returnArray = @[@"Double Shot",@"Shotgun",@"Laser",@"Atom Bomb"];
-    }
-    
-    return returnArray;
+    return self.lockedWeapons;
 }
 
 
