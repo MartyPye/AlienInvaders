@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AllWeapons.h"
-#import "AllShields.h"
+#import "WeaponManager.h"
+#import "ShieldManager.h"
 
 @interface UpgradeStoreViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 

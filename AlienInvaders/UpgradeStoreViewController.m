@@ -66,10 +66,10 @@
 
 - (void) updateShieldView
 {
-    [_upgradeButton setHidden:![[AllShields allShieldsSingleton] shieldLevelCanBeUpdated]];
-    [_shieldLabel setText:[NSString stringWithFormat:@"Shieldlevel %d",[[AllShields allShieldsSingleton] getCurrentShieldLevel]]];
-    [_timeLabel setText:[NSString stringWithFormat:@"Time: %d",[[AllShields allShieldsSingleton] getShieldTime]]];
-    [_regenerationLabel setText:[NSString stringWithFormat:@"Regeneration: %d",[[AllShields allShieldsSingleton] getShieldRecuperation]]];
+    [_upgradeButton setHidden:![[ShieldManager sharedShieldManager] shieldLevelCanBeUpdated]];
+    [_shieldLabel setText:[NSString stringWithFormat:@"Shieldlevel %i",(int)[[ShieldManager sharedShieldManager] shieldLevel]]];
+    [_timeLabel setText:[NSString stringWithFormat:@"Time: %i",(int)[[ShieldManager sharedShieldManager] shieldTime]]];
+    [_regenerationLabel setText:[NSString stringWithFormat:@"Regeneration: %i",(int)[[ShieldManager sharedShieldManager] shieldRegenerationTime]]];
 }
 
 
@@ -112,9 +112,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return [[AllWeapons allWeaponsSingleton] getAllPurchasedWeapons].count;
+        return [[WeaponManager sharedWeaponManager] allPurchasedWeapons].count;
     } else {
-        return [[AllWeapons allWeaponsSingleton] getAllLockedWeapons].count;
+        return [[WeaponManager sharedWeaponManager] allLockedWeapons].count;
     }
 }
 
@@ -134,10 +134,10 @@
     //               placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     if (indexPath.section == 0) {
-        cell.textLabel.text = [[[AllWeapons allWeaponsSingleton] getAllPurchasedWeapons] objectAtIndex:indexPath.row];
+        cell.textLabel.text = [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] objectAtIndex:indexPath.row];
         cell.textLabel.textColor = [UIColor whiteColor];
     } else {
-        cell.textLabel.text = [[[AllWeapons allWeaponsSingleton] getAllLockedWeapons] objectAtIndex:indexPath.row];
+        cell.textLabel.text = [[[WeaponManager sharedWeaponManager] allLockedWeapons] objectAtIndex:indexPath.row];
         cell.textLabel.textColor = [UIColor lightGrayColor];
         cell.detailTextLabel.text = @"40£";
     }

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AllWeapons : NSObject
+@interface WeaponManager : NSObject
 
-- (NSArray*) getAllPurchasedWeapons;
-- (NSArray*) getAllLockedWeapons;
+- (NSArray*) allPurchasedWeapons;
+- (NSArray*) allLockedWeapons;
 
-+(AllWeapons *)allWeaponsSingleton;
++(WeaponManager *)sharedWeaponManager;
 
 @end

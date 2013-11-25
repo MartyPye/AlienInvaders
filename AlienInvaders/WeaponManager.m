@@ -6,32 +6,38 @@
 //  Copyright (c) 2013 Marty. All rights reserved.
 //
 
-#import "AllWeapons.h"
+#import "WeaponManager.h"
 
 #define dummyPurchased @[]
 
-@interface AllWeapons ()
+@interface WeaponManager ()
 
 @property (nonatomic) NSArray *purchasedWeapons;
 @property (nonatomic) NSArray *lockedWeapons;
 
 @end
 
-@implementation AllWeapons
+@implementation WeaponManager
 
-static AllWeapons *_allWeaponsSingleton = nil;
+static WeaponManager *_allWeaponsSingleton = nil;
 
-+(AllWeapons *)allWeaponsSingleton
+
+// ----------------------------------------------------------------------------------------------------
+// Singleton
+// ----------------------------------------------------------------------------------------------------
++(WeaponManager *)sharedWeaponManager
 {
     if (!_allWeaponsSingleton) {
-        _allWeaponsSingleton = [[AllWeapons alloc] init];
+        _allWeaponsSingleton = [[WeaponManager alloc] init];
     }
     return _allWeaponsSingleton;
 }
 
 
-
-- (NSArray*) getAllPurchasedWeapons
+// ----------------------------------------------------------------------------------------------------
+// Returns the purchased weapon array
+// ----------------------------------------------------------------------------------------------------
+- (NSArray*) allPurchasedWeapons
 {
     NSArray *returnArray = [self getWeaponArrayForKey:@"purchased"];
     if (returnArray == nil) {
@@ -42,7 +48,10 @@ static AllWeapons *_allWeaponsSingleton = nil;
 }
 
 
-- (NSArray*) getAllLockedWeapons
+// ----------------------------------------------------------------------------------------------------
+// Returns the locked weapons array
+// ----------------------------------------------------------------------------------------------------
+- (NSArray*) allLockedWeapons
 {
     NSArray *returnArray = [self getWeaponArrayForKey:@"locked"];
     if (returnArray == nil) {
