@@ -15,6 +15,7 @@
 		40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8818439E57009D24F8 /* Double Shot@2x.png */; };
 		40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8918439E57009D24F8 /* Shotgun@2x.png */; };
 		40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8A18439E57009D24F8 /* Single Shot@2x.png */; };
+		40D25B8F18450159009D24F8 /* standardEnemy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8E18450159009D24F8 /* standardEnemy@2x.png */; };
 		40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C89183F82FB009FD3FA /* LevelManager.m */; };
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
@@ -61,7 +62,6 @@
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
-		95D589E41844D2CD0069BCC6 /* standardEnemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589E31844D2CD0069BCC6 /* standardEnemy.png */; };
 		95D589E81844D7980069BCC6 /* Mothership.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E71844D7980069BCC6 /* Mothership.m */; };
 		95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589F31844E8C40069BCC6 /* MotherShip@2x.png */; };
 /* End PBXBuildFile section */
@@ -86,6 +86,7 @@
 		40D25B8818439E57009D24F8 /* Double Shot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double Shot@2x.png"; sourceTree = "<group>"; };
 		40D25B8918439E57009D24F8 /* Shotgun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shotgun@2x.png"; sourceTree = "<group>"; };
 		40D25B8A18439E57009D24F8 /* Single Shot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Single Shot@2x.png"; sourceTree = "<group>"; };
+		40D25B8E18450159009D24F8 /* standardEnemy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "standardEnemy@2x.png"; sourceTree = "<group>"; };
 		40DB3C88183F82FB009FD3FA /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		40DB3C89183F82FB009FD3FA /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		40DB3C8B183F8319009FD3FA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		95D589DC1844D0080069BCC6 /* StandardEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardEnemy.m; sourceTree = "<group>"; };
 		95D589DF1844D0D60069BCC6 /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		95D589E01844D0D60069BCC6 /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
-		95D589E31844D2CD0069BCC6 /* standardEnemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standardEnemy.png; sourceTree = "<group>"; };
 		95D589E61844D7980069BCC6 /* Mothership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mothership.h; sourceTree = "<group>"; };
 		95D589E71844D7980069BCC6 /* Mothership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mothership.m; sourceTree = "<group>"; };
 		95D589F31844E8C40069BCC6 /* MotherShip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MotherShip@2x.png"; sourceTree = "<group>"; };
@@ -427,8 +427,8 @@
 		95D589E21844D2420069BCC6 /* Enemies and Ships */ = {
 			isa = PBXGroup;
 			children = (
+				40D25B8E18450159009D24F8 /* standardEnemy@2x.png */,
 				95D589F31844E8C40069BCC6 /* MotherShip@2x.png */,
-				95D589E31844D2CD0069BCC6 /* standardEnemy.png */,
 			);
 			name = "Enemies and Ships";
 			sourceTree = "<group>";
@@ -520,6 +520,7 @@
 			files = (
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
 				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
+				40D25B8F18450159009D24F8 /* standardEnemy@2x.png in Resources */,
 				40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */,
 				40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */,
 				959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */,
@@ -546,7 +547,6 @@
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
 				95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */,
 				40F262FE183E6658007E35CD /* Level2MenuItem.png in Resources */,
-				95D589E41844D2CD0069BCC6 /* standardEnemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
