@@ -36,10 +36,23 @@
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
-
 - (void) enemyGotHit
 {
-    NSLog(@"TODO: Do a nice explosion");
+    [self removeAllChildren];
+    
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"explosion" ofType:@"sks"];
+    SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    smokeTrail.position = CGPointMake(0, 0);
+    
+    [self addChild:smokeTrail];
+    
+    SKAction *fadeout = [SKAction fadeOutWithDuration:0.25];
+    SKAction *waiting = [SKAction waitForDuration:2.0];
+    
+    SKAction *sequence = [SKAction sequence:@[fadeout,waiting]];
+    [self runAction:sequence completion:^{
+        [self removeFromParent];
+    }];
 }
 
 

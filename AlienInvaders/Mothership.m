@@ -17,10 +17,11 @@
     _wholeLife = life;
     _lifeLeft = life;
     
-    self.position = CGPointMake(50, 160);
+    self.position = CGPointMake(150, 160);
     self.zPosition = 10;
     
     [self addBodyToMothership];
+    [self addBurst];
     
     return self;
 }
@@ -51,6 +52,16 @@
                                                     [Categories getCategoryBitMask:cMeteor];
     self.physicsBody.collisionBitMask = 0;
     self.physicsBody.usesPreciseCollisionDetection = YES;
+}
+
+
+- (void) addBurst
+{
+    //adding the smokeTrail
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"mothershipBurst" ofType:@"sks"];
+    SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    smokeTrail.position = CGPointMake(-20, 0);
+    [self addChild:smokeTrail];
 }
 
 @end

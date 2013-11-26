@@ -20,8 +20,19 @@
 
     self.movingDuration = duration;
     [self addBodyToEnemy];
+    
+    [self addBurst];
         
     return self;
+}
+
+- (void) addBurst
+{
+    //adding the smokeTrail
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"enemyBurst" ofType:@"sks"];
+    SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    smokeTrail.position = CGPointMake(13, 0);
+    [self addChild:smokeTrail];
 }
 
 

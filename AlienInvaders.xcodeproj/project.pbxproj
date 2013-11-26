@@ -66,6 +66,10 @@
 		95D589E81844D7980069BCC6 /* Mothership.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E71844D7980069BCC6 /* Mothership.m */; };
 		95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589F31844E8C40069BCC6 /* MotherShip@2x.png */; };
 		95D589FD1845062A0069BCC6 /* EnemyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589FC1845062A0069BCC6 /* EnemyFactory.m */; };
+		95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FE184514C00069BCC6 /* mothershipBurst.sks */; };
+		95D58A01184514C00069BCC6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FF184514C00069BCC6 /* spark.png */; };
+		95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A04184517370069BCC6 /* enemyBurst.sks */; };
+		95D58A07184518880069BCC6 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A06184518880069BCC6 /* explosion.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +164,10 @@
 		95D589F31844E8C40069BCC6 /* MotherShip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MotherShip@2x.png"; sourceTree = "<group>"; };
 		95D589FB1845062A0069BCC6 /* EnemyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyFactory.h; sourceTree = "<group>"; };
 		95D589FC1845062A0069BCC6 /* EnemyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyFactory.m; sourceTree = "<group>"; };
+		95D589FE184514C00069BCC6 /* mothershipBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mothershipBurst.sks; sourceTree = "<group>"; };
+		95D589FF184514C00069BCC6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		95D58A04184517370069BCC6 /* enemyBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = enemyBurst.sks; sourceTree = "<group>"; };
+		95D58A06184518880069BCC6 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +426,8 @@
 				95D589DC1844D0080069BCC6 /* StandardEnemy.m */,
 				95D589FB1845062A0069BCC6 /* EnemyFactory.h */,
 				95D589FC1845062A0069BCC6 /* EnemyFactory.m */,
+				95D58A04184517370069BCC6 /* enemyBurst.sks */,
+				95D58A06184518880069BCC6 /* explosion.sks */,
 			);
 			name = Enemies;
 			sourceTree = "<group>";
@@ -446,6 +456,8 @@
 			children = (
 				95D589E61844D7980069BCC6 /* Mothership.h */,
 				95D589E71844D7980069BCC6 /* Mothership.m */,
+				95D589FE184514C00069BCC6 /* mothershipBurst.sks */,
+				95D589FF184514C00069BCC6 /* spark.png */,
 			);
 			name = Mothership;
 			sourceTree = "<group>";
@@ -544,16 +556,20 @@
 				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
+				95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
+				95D58A07184518880069BCC6 /* explosion.sks in Resources */,
 				954123AF184210900033FBD8 /* tempShield.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
 				40F262FC183E6658007E35CD /* Level1MenuItem.png in Resources */,
 				40F262F1183E6146007E35CD /* MainMenuBackground.jpg in Resources */,
 				40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */,
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
+				95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */,
+				95D58A01184514C00069BCC6 /* spark.png in Resources */,
 				95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */,
 				40F262FE183E6658007E35CD /* Level2MenuItem.png in Resources */,
 			);
