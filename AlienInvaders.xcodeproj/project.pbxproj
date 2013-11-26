@@ -16,7 +16,6 @@
 		40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8918439E57009D24F8 /* Shotgun@2x.png */; };
 		40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8A18439E57009D24F8 /* Single Shot@2x.png */; };
 		40D25B8F18450159009D24F8 /* standardEnemy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8E18450159009D24F8 /* standardEnemy@2x.png */; };
-		40D25B931845062B009D24F8 /* Bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B921845062B009D24F8 /* Bullet@2x.png */; };
 		40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C89183F82FB009FD3FA /* LevelManager.m */; };
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
@@ -89,7 +88,6 @@
 		40D25B8918439E57009D24F8 /* Shotgun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shotgun@2x.png"; sourceTree = "<group>"; };
 		40D25B8A18439E57009D24F8 /* Single Shot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Single Shot@2x.png"; sourceTree = "<group>"; };
 		40D25B8E18450159009D24F8 /* standardEnemy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "standardEnemy@2x.png"; sourceTree = "<group>"; };
-		40D25B921845062B009D24F8 /* Bullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bullet@2x.png"; sourceTree = "<group>"; };
 		40DB3C88183F82FB009FD3FA /* LevelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelManager.h; sourceTree = "<group>"; };
 		40DB3C89183F82FB009FD3FA /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		40DB3C8B183F8319009FD3FA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 		95D589E21844D2420069BCC6 /* Enemies and Ships */ = {
 			isa = PBXGroup;
 			children = (
-				40D25B921845062B009D24F8 /* Bullet@2x.png */,
 				40D25B8E18450159009D24F8 /* standardEnemy@2x.png */,
 				95D589F31844E8C40069BCC6 /* MotherShip@2x.png */,
 			);
@@ -540,7 +537,6 @@
 				40D25B8518439865009D24F8 /* Atom Bomb@2x.png in Resources */,
 				40F262EA183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png in Resources */,
 				40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */,
-				40D25B931845062B009D24F8 /* Bullet@2x.png in Resources */,
 				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
