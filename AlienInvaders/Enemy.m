@@ -17,6 +17,7 @@
     return self;
 }
 
+// This method moves the enemy from the right to the left
 - (void) moveEnemy
 {
     [self runAction:[SKAction moveToX:-50 duration:self.movingDuration] completion:^{

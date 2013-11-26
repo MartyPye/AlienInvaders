@@ -25,6 +25,9 @@
     return self;
 }
 
+// This methond is getting called when the user moves the ship with his finger
+// We do not want the ship to be higher than 280, because in that area we have our health bar an other stuff
+// TODO: Limit the position on the bottom?
 - (void) moveToY:(int)yCoord
 {
     int y;
@@ -36,6 +39,7 @@
     
     [self setPosition:CGPointMake(self.position.x, y)];
 }
+
 
 - (void) addBodyToMothership
 {

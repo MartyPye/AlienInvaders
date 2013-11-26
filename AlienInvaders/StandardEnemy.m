@@ -16,14 +16,11 @@
     self = [super initWithImageNamed:@"standardEnemy"];
     
     self.position = CGPointMake(600, pos);
-    self.size = CGSizeMake(25, 22);
+//    self.size = CGSizeMake(25, 22);
+
     self.movingDuration = duration;
     [self addBodyToEnemy];
-    
-    //[self addBody];
-    //[self animate];
-    //[self addColor];
-    
+        
     return self;
 }
 
