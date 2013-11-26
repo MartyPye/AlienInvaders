@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A8B64F1844EBA4008BF4D2 /* bloody frame@2x.png */; };
 		40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */; };
 		40D25B7918438E0E009D24F8 /* AlienInvaderLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */; };
 		40D25B8518439865009D24F8 /* Atom Bomb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8418439865009D24F8 /* Atom Bomb@2x.png */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03A8B64F1844EBA4008BF4D2 /* bloody frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bloody frame@2x.png"; sourceTree = "<group>"; };
 		40218C71183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighscoreLevelSelectionViewController.h; sourceTree = "<group>"; };
 		40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreLevelSelectionViewController.m; sourceTree = "<group>"; };
 		40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlienInvaderLogo@2x.png"; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		959D1A4F183E30DA006B2F8A /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				03A8B64F1844EBA4008BF4D2 /* bloody frame@2x.png */,
 				40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */,
 				40F262EF183E6146007E35CD /* MainMenuBackground.jpg */,
 				40F262F0183E6146007E35CD /* MainMenuBackground@2x.jpg */,
@@ -475,6 +478,7 @@
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
+				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
 				954123AF184210900033FBD8 /* tempShield.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
