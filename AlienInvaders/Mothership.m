@@ -17,7 +17,7 @@
     _wholeLife = life;
     _lifeLeft = life;
     
-    self.position = CGPointMake(150, 160);
+    self.position = CGPointMake(50, 160);
     self.zPosition = 10;
     
     [self addBodyToMothership];

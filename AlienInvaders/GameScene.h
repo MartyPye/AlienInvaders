@@ -10,10 +10,13 @@
 #import "Enemy.h"
 #import "StandardEnemy.h"
 #import "Mothership.h"
+#import "MothershipWeapons.h"
+#import "MothershipSingleShot.h"
 #import "Categories.h"
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
+@property (nonatomic) MothershipWeapons *currentMothershipWeapon;
 
 @end

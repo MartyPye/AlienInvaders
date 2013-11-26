@@ -56,6 +56,10 @@
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
+		9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapons.m */; };
+		9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */; };
+		9573ACC118455B140030F8F3 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACC018455B140030F8F3 /* Bullet.m */; };
+		9573ACC3184563460030F8F3 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9573ACC2184563460030F8F3 /* explosion.sks */; };
 		957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957B37221844B4780086EC8B /* GameSceneViewController.m */; };
 		957B372A1844B51B0086EC8B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 957B37291844B51B0086EC8B /* GameScene.m */; };
 		959219C3184104B0005645B1 /* WeaponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* WeaponManager.m */; };
@@ -69,7 +73,6 @@
 		95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FE184514C00069BCC6 /* mothershipBurst.sks */; };
 		95D58A01184514C00069BCC6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FF184514C00069BCC6 /* spark.png */; };
 		95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A04184517370069BCC6 /* enemyBurst.sks */; };
-		95D58A07184518880069BCC6 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A06184518880069BCC6 /* explosion.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,13 @@
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
+		9573ACB81845587D0030F8F3 /* MothershipWeapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapons.h; sourceTree = "<group>"; };
+		9573ACB91845587D0030F8F3 /* MothershipWeapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipWeapons.m; sourceTree = "<group>"; };
+		9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipSingleShot.h; sourceTree = "<group>"; };
+		9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipSingleShot.m; sourceTree = "<group>"; };
+		9573ACBF18455B140030F8F3 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		9573ACC018455B140030F8F3 /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
+		9573ACC2184563460030F8F3 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		957B37211844B4780086EC8B /* GameSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSceneViewController.h; sourceTree = "<group>"; };
 		957B37221844B4780086EC8B /* GameSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSceneViewController.m; sourceTree = "<group>"; };
 		957B37281844B51B0086EC8B /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -167,7 +177,6 @@
 		95D589FE184514C00069BCC6 /* mothershipBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mothershipBurst.sks; sourceTree = "<group>"; };
 		95D589FF184514C00069BCC6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		95D58A04184517370069BCC6 /* enemyBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = enemyBurst.sks; sourceTree = "<group>"; };
-		95D58A06184518880069BCC6 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +386,19 @@
 			name = Weapons;
 			sourceTree = "<group>";
 		};
+		9573ACBB184558900030F8F3 /* Mothership */ = {
+			isa = PBXGroup;
+			children = (
+				9573ACB81845587D0030F8F3 /* MothershipWeapons.h */,
+				9573ACB91845587D0030F8F3 /* MothershipWeapons.m */,
+				9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */,
+				9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */,
+				9573ACBF18455B140030F8F3 /* Bullet.h */,
+				9573ACC018455B140030F8F3 /* Bullet.m */,
+			);
+			name = Mothership;
+			sourceTree = "<group>";
+		};
 		957B37241844B4CB0086EC8B /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +415,7 @@
 				959219C2184104B0005645B1 /* WeaponManager.m */,
 				95640ED91842256B00D67AAB /* ShieldManager.h */,
 				95640EDA1842256B00D67AAB /* ShieldManager.m */,
+				9573ACBB184558900030F8F3 /* Mothership */,
 			);
 			name = "Weapons and Shields";
 			sourceTree = "<group>";
@@ -427,7 +450,7 @@
 				95D589FB1845062A0069BCC6 /* EnemyFactory.h */,
 				95D589FC1845062A0069BCC6 /* EnemyFactory.m */,
 				95D58A04184517370069BCC6 /* enemyBurst.sks */,
-				95D58A06184518880069BCC6 /* explosion.sks */,
+				9573ACC2184563460030F8F3 /* explosion.sks */,
 			);
 			name = Enemies;
 			sourceTree = "<group>";
@@ -561,7 +584,7 @@
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
-				95D58A07184518880069BCC6 /* explosion.sks in Resources */,
+				9573ACC3184563460030F8F3 /* explosion.sks in Resources */,
 				954123AF184210900033FBD8 /* tempShield.png in Resources */,
 				781154AB183D1AD300A61AD2 /* Main.storyboard in Resources */,
 				40F262FC183E6658007E35CD /* Level1MenuItem.png in Resources */,
@@ -598,9 +621,12 @@
 				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
+				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
+				9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
+				9573ACC118455B140030F8F3 /* Bullet.m in Sources */,
 				781154D7183D2AA600A61AD2 /* LevelSelectionViewController.m in Sources */,
 				40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */,
 				95D589E11844D0D60069BCC6 /* Categories.m in Sources */,

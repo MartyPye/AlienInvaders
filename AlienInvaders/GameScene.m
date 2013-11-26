@@ -28,6 +28,7 @@
     [self addChild:tempEnemy];
     [tempEnemy moveEnemy];
     
+    _currentMothershipWeapon = [[MothershipSingleShot alloc] initWithScene:self];
     
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
@@ -73,7 +74,7 @@
     CGPoint myTouch = [touch locationInNode:self];
     if (myTouch.x > 250)
     {
-        //TODO: SHOOOOOOOOOOT
+        [_currentMothershipWeapon fireFromPosition:_mothership.position];
     }
     
 }
@@ -105,12 +106,13 @@
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
-    //The mothership hits something
-    if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShip] || contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cShip]){
+    // !!! The mothership hits something
+    if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShip] || contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cShip])
+    {
         //The mothership always has a smaller bitmask
         if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
         {
-            //[_mothership mothershipGotHitWithDamage:5];
+            //TODO: [_mothership mothershipGotHitWithDamage:5];
             if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
                 Enemy * enemy = (Enemy*)contact.bodyB.node;
@@ -124,6 +126,34 @@
             {
                 Enemy * enemy = (Enemy*)contact.bodyA.node;
                 [enemy enemyGotHit];
+            }
+        }
+    }
+    
+    // !!! The enemy hits something (except the mothership)
+    else if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemy] || contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
+    {
+        //The enemy always has a smaller bitmask
+        if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+        {
+            Enemy *enemy = (Enemy*)contact.bodyA.node;
+            [enemy enemyGotHit];
+
+            if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])
+            {
+                Bullet *bullet = (Bullet*)contact.bodyB.node;
+                [bullet bulletHitSomething];
+            }
+        }
+        else
+        {
+            Enemy *enemy = (Enemy*)contact.bodyB.node;
+            [enemy enemyGotHit];
+            
+            if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])
+            {
+                Bullet *bullet = (Bullet*)contact.bodyA.node;
+                [bullet bulletHitSomething];
             }
         }
     }
