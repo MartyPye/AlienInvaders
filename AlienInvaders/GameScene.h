@@ -7,7 +7,13 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Enemy.h"
+#import "StandardEnemy.h"
+#import "Mothership.h"
+#import "Categories.h"
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene<SKPhysicsContactDelegate>
+
+@property (nonatomic) Mothership *mothership;
 
 @end

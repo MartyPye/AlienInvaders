@@ -58,6 +58,12 @@
 		957B372A1844B51B0086EC8B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 957B37291844B51B0086EC8B /* GameScene.m */; };
 		959219C3184104B0005645B1 /* WeaponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* WeaponManager.m */; };
 		959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959219C5184112FA005645B1 /* tempWeapon.jpg */; };
+		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
+		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
+		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
+		95D589E41844D2CD0069BCC6 /* standardEnemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589E31844D2CD0069BCC6 /* standardEnemy.png */; };
+		95D589E81844D7980069BCC6 /* Mothership.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E71844D7980069BCC6 /* Mothership.m */; };
+		95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589F31844E8C40069BCC6 /* MotherShip@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +145,16 @@
 		959219C1184104B0005645B1 /* WeaponManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponManager.h; sourceTree = "<group>"; };
 		959219C2184104B0005645B1 /* WeaponManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponManager.m; sourceTree = "<group>"; };
 		959219C5184112FA005645B1 /* tempWeapon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempWeapon.jpg; sourceTree = "<group>"; };
+		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
+		95D589DC1844D0080069BCC6 /* StandardEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardEnemy.m; sourceTree = "<group>"; };
+		95D589DF1844D0D60069BCC6 /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		95D589E01844D0D60069BCC6 /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
+		95D589E31844D2CD0069BCC6 /* standardEnemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = standardEnemy.png; sourceTree = "<group>"; };
+		95D589E61844D7980069BCC6 /* Mothership.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mothership.h; sourceTree = "<group>"; };
+		95D589E71844D7980069BCC6 /* Mothership.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mothership.m; sourceTree = "<group>"; };
+		95D589F31844E8C40069BCC6 /* MotherShip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MotherShip@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +275,9 @@
 				959219C018410452005645B1 /* Weapons and Shields */,
 				781154D4183D2A6E00A61AD2 /* Menu */,
 				957B37241844B4CB0086EC8B /* GameScene */,
+				95D589E51844D76F0069BCC6 /* Mothership */,
+				95D589D71844CC470069BCC6 /* Enemies */,
+				95D589DE1844D0BA0069BCC6 /* Helpers */,
 				781154A6183D1AD300A61AD2 /* AppDelegate.h */,
 				781154A7183D1AD300A61AD2 /* AppDelegate.m */,
 				781154A9183D1AD300A61AD2 /* Main.storyboard */,
@@ -274,6 +293,7 @@
 				40F26302183E7BB8007E35CD /* Fonts */,
 				40218C74183E3FA200ABBF8A /* Custom Text */,
 				7811549F183D1AD300A61AD2 /* AlienInvaders-Info.plist */,
+				95D589E21844D2420069BCC6 /* Enemies and Ships */,
 				95283DCE1842484400EF7304 /* Weapons */,
 				959219C4184112ED005645B1 /* Temporary Images */,
 				959D1A4F183E30DA006B2F8A /* Backgrounds */,
@@ -384,6 +404,44 @@
 			name = Backgrounds;
 			sourceTree = "<group>";
 		};
+		95D589D71844CC470069BCC6 /* Enemies */ = {
+			isa = PBXGroup;
+			children = (
+				95D589D81844CC9C0069BCC6 /* Enemy.h */,
+				95D589D91844CC9C0069BCC6 /* Enemy.m */,
+				95D589DB1844D0080069BCC6 /* StandardEnemy.h */,
+				95D589DC1844D0080069BCC6 /* StandardEnemy.m */,
+			);
+			name = Enemies;
+			sourceTree = "<group>";
+		};
+		95D589DE1844D0BA0069BCC6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95D589DF1844D0D60069BCC6 /* Categories.h */,
+				95D589E01844D0D60069BCC6 /* Categories.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		95D589E21844D2420069BCC6 /* Enemies and Ships */ = {
+			isa = PBXGroup;
+			children = (
+				95D589F31844E8C40069BCC6 /* MotherShip@2x.png */,
+				95D589E31844D2CD0069BCC6 /* standardEnemy.png */,
+			);
+			name = "Enemies and Ships";
+			sourceTree = "<group>";
+		};
+		95D589E51844D76F0069BCC6 /* Mothership */ = {
+			isa = PBXGroup;
+			children = (
+				95D589E61844D7980069BCC6 /* Mothership.h */,
+				95D589E71844D7980069BCC6 /* Mothership.m */,
+			);
+			name = Mothership;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,7 +544,9 @@
 				40F262F1183E6146007E35CD /* MainMenuBackground.jpg in Resources */,
 				40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */,
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
+				95D589F41844E8C40069BCC6 /* MotherShip@2x.png in Resources */,
 				40F262FE183E6658007E35CD /* Level2MenuItem.png in Resources */,
+				95D589E41844D2CD0069BCC6 /* standardEnemy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +565,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */,
 				781154A8183D1AD300A61AD2 /* AppDelegate.m in Sources */,
 				959219C3184104B0005645B1 /* WeaponManager.m in Sources */,
 				40DB3C8D183F8319009FD3FA /* Level.m in Sources */,
 				781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */,
+				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
@@ -516,9 +578,11 @@
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
 				781154D7183D2AA600A61AD2 /* LevelSelectionViewController.m in Sources */,
 				40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */,
+				95D589E11844D0D60069BCC6 /* Categories.m in Sources */,
 				781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */,
 				95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */,
 				781154DA183D2ACD00A61AD2 /* HighscoreViewController.m in Sources */,
+				95D589E81844D7980069BCC6 /* Mothership.m in Sources */,
 				781154A4183D1AD300A61AD2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
