@@ -30,6 +30,16 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     
+    UIApplication* application = [UIApplication sharedApplication];
+    if (application.statusBarOrientation == UIInterfaceOrientationPortrait)
+    {
+        UIViewController *c = [[UIViewController alloc]init];
+        [self.navigationController presentViewController:c animated:NO completion:^{
+            [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            }];
+        }];
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -59,6 +69,7 @@
     
 }
 
+
 - (BOOL)shouldAutorotate {
     return NO;
 }
@@ -66,6 +77,7 @@
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
+ 
 
 /*
 - (void)viewDidLoad
