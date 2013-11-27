@@ -390,6 +390,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="menuButtonPressed:" destination="Bkl-YS-fUK" eventType="touchUpInside" id="WD7-CQ-3SH"/>
                                             <segue destination="UJf-fB-bwI" kind="push" id="4sn-wq-3Sd"/>
                                         </connections>
                                     </button>

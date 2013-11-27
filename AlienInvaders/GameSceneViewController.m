@@ -48,9 +48,10 @@
 {
     [super viewWillLayoutSubviews];
     
-    
-    self.skView = [[SKView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:self.skView];
+    if (self.skView == nil) {
+        self.skView = [[SKView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.skView];
+    }
     
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
@@ -76,17 +77,23 @@
 }
 
 - (IBAction)restartButtonPressed:(id)sender {
+    // hide the pause view and remove everything in the gameScene.
     self.pauseView.hidden = YES;
     [self.gameScene removeAllChildren];
     
-    // Create and configure the scene.
+    // Create and configure the new scene.
     self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
-    // Present the scene.
+    // Replace the old scene with the new one.
     [self.skView presentScene:self.gameScene];
-//    [[LevelManager sharedLevelManager] setScene:self.gameScene];
-//    [[LevelManager sharedLevelManager] setupCurrentLevel];
+}
+
+
+- (IBAction)menuButtonPressed:(id)sender {
+    // hide the pause view and remove everything in the gameScene.
+    self.pauseView.hidden = YES;
+    [self.gameScene removeAllChildren];
 }
 
 - (BOOL)shouldAutorotate {

@@ -14,7 +14,7 @@
     BOOL paused;
 }
 
-@property (weak) NSTimer *repeatingTimer;
+@property NSTimer *repeatingTimer;
 
 @end
 
@@ -36,7 +36,6 @@
 {
     _levelIndex = levelIndex;
     paused = NO;
-    [self startRepeatingTimer];
 }
 
 - (void) spawnEnemy;
@@ -47,34 +46,22 @@
         NSLog(@"spawned Enemy");
         [newEnemy moveEnemy];
     }
-    
-    else {
-        [self.repeatingTimer invalidate];
-        self.repeatingTimer = nil;
-    }
 }
 
 - (void) pause;
 {
     paused = !paused;
-    if (!paused) {
-        [self startRepeatingTimer];
-
-    }
-    
-    else {
-        [self.repeatingTimer invalidate];
-        self.repeatingTimer = nil;
-    }
 }
 
 - (void) startRepeatingTimer;
 {
-    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
+    if (self.repeatingTimer == nil) {
+        self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
                                                            target:self
                                                          selector:@selector(spawnEnemy)
                                                          userInfo:nil
                                                           repeats:YES];
+    }
     
 }
 
