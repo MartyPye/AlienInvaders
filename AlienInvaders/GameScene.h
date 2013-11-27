@@ -14,6 +14,7 @@
 #import "MothershipSingleShot.h"
 #import "MothershipDoubleShot.h"
 #import "MothershipShotgun.h"
+#import "MothershipAtombomb.h"
 #import "Categories.h"
 #import "MotherShipLaser.h"
 #import "LifeIndicator.h"

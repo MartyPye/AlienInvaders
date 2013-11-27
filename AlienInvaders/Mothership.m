@@ -73,6 +73,8 @@
     //TODO: Verena add the blood!!! something like: [self.parent addChild:[SKSpriteNode spriteNodeWithImage@"blood"]]
     // BUT: Do this with SKAction so we have a nice animation :)
     
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    
     _lifeLeft = _lifeLeft - damage;
     [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
     if (_lifeLeft <= 0) {
