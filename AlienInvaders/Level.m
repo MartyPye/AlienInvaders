@@ -14,6 +14,8 @@
     BOOL paused;
 }
 
+@property (weak) NSTimer *repeatingTimer;
+
 @end
 
 @implementation Level
@@ -22,18 +24,20 @@
 {
     self = [super init];
     if (self != nil) {
-        self.levelIndex = theIndex;
-        self.scene = theScene;
-//        paused = NO;
+        _levelIndex = theIndex;
+        _scene = theScene;
         // TODO: think of time interval dependent on difficulty
-        [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
-                                         target:self
-                                       selector:@selector(spawnEnemy)
-                                       userInfo:nil
-                                        repeats:YES];
+        [self startRepeatingTimer];
     }
     
     return self;
+}
+
+- (void) setLevelIndex:(NSUInteger)levelIndex;
+{
+    _levelIndex = levelIndex;
+    paused = NO;
+    [self startRepeatingTimer];
 }
 
 - (void) spawnEnemy;
@@ -44,11 +48,35 @@
         NSLog(@"spawned Enemy");
         [newEnemy moveEnemy];
     }
+    
+    else {
+        [self.repeatingTimer invalidate];
+        self.repeatingTimer = nil;
+    }
 }
 
 - (void) pause;
 {
     paused = !paused;
+    if (!paused) {
+        [self startRepeatingTimer];
+
+    }
+    
+    else {
+        [self.repeatingTimer invalidate];
+        self.repeatingTimer = nil;
+    }
+}
+
+- (void) startRepeatingTimer;
+{
+    self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
+                                                           target:self
+                                                         selector:@selector(spawnEnemy)
+                                                         userInfo:nil
+                                                          repeats:YES];
+    
 }
 
 
