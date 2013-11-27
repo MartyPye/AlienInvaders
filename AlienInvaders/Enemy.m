@@ -36,6 +36,11 @@
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
+- (void) removeBodyFromEnemy
+{
+    self.physicsBody = nil;
+}
+
 - (void) enemyGotHit
 {
     [self removeAllChildren];

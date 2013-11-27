@@ -12,7 +12,7 @@
 @interface Bullet : SKSpriteNode
 
 - (id) initWithPosition:(CGPoint)pos;
-- (void) moveToPosition:(CGPoint)newPos;
+- (void) moveToPosition:(CGPoint)newPos withDuration:(float)duration;
 - (void) bulletHitSomething;
 
 @end

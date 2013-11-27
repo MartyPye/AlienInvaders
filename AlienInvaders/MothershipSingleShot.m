@@ -22,7 +22,7 @@
 {
     Bullet *bullet = [[Bullet alloc] initWithPosition:pos];
     [self.scene addChild:bullet];
-    [bullet moveToPosition:CGPointMake(600, pos.y)];
+    [bullet moveToPosition:CGPointMake(600, pos.y) withDuration:5.0];
 }
 
 @end
