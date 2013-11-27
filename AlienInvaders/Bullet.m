@@ -20,9 +20,9 @@
     return self;
 }
 
-- (void) moveToPosition:(CGPoint)newPos
+- (void) moveToPosition:(CGPoint)newPos withDuration:(float)duration
 {
-    [self runAction:[SKAction moveToX:600 duration:5.0] completion:^{
+    [self runAction:[SKAction moveTo:newPos duration:duration] completion:^{
         [self removeFromParent];
     }];
 }

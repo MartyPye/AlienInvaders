@@ -29,7 +29,7 @@
     [tempEnemy moveEnemy];
     
     //Equip the mothership with the single shot
-    _currentMothershipWeapon = [[MothershipSingleShot alloc] initWithScene:self];
+    _currentMothershipWeapon = [[MothershipShotgun alloc] initWithScene:self];
     
     //Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
@@ -145,6 +145,7 @@
         if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
         {
             Enemy *enemy = (Enemy*)contact.bodyA.node;
+            [enemy removeBodyFromEnemy];
             [enemy enemyGotHit];
 
             if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])
@@ -156,6 +157,7 @@
         else
         {
             Enemy *enemy = (Enemy*)contact.bodyB.node;
+            [enemy removeBodyFromEnemy];
             [enemy enemyGotHit];
             
             if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])

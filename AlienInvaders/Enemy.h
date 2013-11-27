@@ -18,6 +18,7 @@
 - (id)initWithYPos:(int)pos AndDuration:(float)duration;
 - (void) moveEnemy;
 - (void) addBodyToEnemy;
+- (void) removeBodyFromEnemy;
 - (void) enemyGotHit;
 
 @end

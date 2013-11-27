@@ -67,6 +67,8 @@
 		957B372A1844B51B0086EC8B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 957B37291844B51B0086EC8B /* GameScene.m */; };
 		959219C3184104B0005645B1 /* WeaponManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 959219C2184104B0005645B1 /* WeaponManager.m */; };
 		959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959219C5184112FA005645B1 /* tempWeapon.jpg */; };
+		95950ED21845FE0000CBF5E0 /* MothershipDoubleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */; };
+		95950ED51845FF3000CBF5E0 /* MothershipShotgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */; };
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
@@ -170,6 +172,10 @@
 		959219C1184104B0005645B1 /* WeaponManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponManager.h; sourceTree = "<group>"; };
 		959219C2184104B0005645B1 /* WeaponManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponManager.m; sourceTree = "<group>"; };
 		959219C5184112FA005645B1 /* tempWeapon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tempWeapon.jpg; sourceTree = "<group>"; };
+		95950ED01845FE0000CBF5E0 /* MothershipDoubleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipDoubleShot.h; sourceTree = "<group>"; };
+		95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipDoubleShot.m; sourceTree = "<group>"; };
+		95950ED31845FF3000CBF5E0 /* MothershipShotgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipShotgun.h; sourceTree = "<group>"; };
+		95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipShotgun.m; sourceTree = "<group>"; };
 		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
@@ -402,6 +408,10 @@
 				9573ACB91845587D0030F8F3 /* MothershipWeapons.m */,
 				9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */,
 				9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */,
+				95950ED01845FE0000CBF5E0 /* MothershipDoubleShot.h */,
+				95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */,
+				95950ED31845FF3000CBF5E0 /* MothershipShotgun.h */,
+				95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */,
 				9573ACBF18455B140030F8F3 /* Bullet.h */,
 				9573ACC018455B140030F8F3 /* Bullet.m */,
 			);
@@ -645,6 +655,7 @@
 				95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */,
 				781154A8183D1AD300A61AD2 /* AppDelegate.m in Sources */,
 				959219C3184104B0005645B1 /* WeaponManager.m in Sources */,
+				95950ED51845FF3000CBF5E0 /* MothershipShotgun.m in Sources */,
 				40DB3C8D183F8319009FD3FA /* Level.m in Sources */,
 				781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */,
 				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
@@ -666,6 +677,7 @@
 				781154DA183D2ACD00A61AD2 /* HighscoreViewController.m in Sources */,
 				95D589E81844D7980069BCC6 /* Mothership.m in Sources */,
 				781154A4183D1AD300A61AD2 /* main.m in Sources */,
+				95950ED21845FE0000CBF5E0 /* MothershipDoubleShot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
