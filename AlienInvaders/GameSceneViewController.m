@@ -69,7 +69,7 @@
 
 - (IBAction)pauseButtonPressed:(id)sender {
     self.gameScene.paused = !self.gameScene.paused;
-    self.pauseView.hidden = self.pauseView.hidden;
+    self.pauseView.hidden = !self.pauseView.hidden;
 }
 
 
