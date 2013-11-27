@@ -17,5 +17,6 @@
 // possibly add difficulty index, score threshold for different stars.
 
 - (id) initWithIndex:(NSUInteger)theIndex andScene:(SKScene*)theScene;
+- (void) pause;
 
 @end

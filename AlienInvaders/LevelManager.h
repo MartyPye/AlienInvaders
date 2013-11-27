@@ -18,5 +18,6 @@
 + (LevelManager*) sharedLevelManager;
 - (NSUInteger) totalAmountOfLevels;
 - (void) setupCurrentLevel;
+- (void) pauseLevel;
 
 @end

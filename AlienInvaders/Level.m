@@ -10,6 +10,12 @@
 #import "EnemyFactory.h"
 
 
+@interface Level() {
+    BOOL paused;
+}
+
+@end
+
 @implementation Level
 
 - (id) initWithIndex:(NSUInteger)theIndex andScene:(SKScene *)theScene;
@@ -18,6 +24,7 @@
     if (self != nil) {
         self.levelIndex = theIndex;
         self.scene = theScene;
+//        paused = NO;
         // TODO: think of time interval dependent on difficulty
         [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
                                          target:self
@@ -31,10 +38,17 @@
 
 - (void) spawnEnemy;
 {
-    Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:1];
-    [self.scene addChild:newEnemy];
-    NSLog(@"spawned Enemy");
-    [newEnemy moveEnemy];
+    if (paused == NO) {
+        Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:1];
+        [self.scene addChild:newEnemy];
+        NSLog(@"spawned Enemy");
+        [newEnemy moveEnemy];
+    }
+}
+
+- (void) pause;
+{
+    paused = !paused;
 }
 
 

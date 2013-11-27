@@ -67,10 +67,15 @@
 }
 
 
-
+// called when the game scene is setup
 - (void) setupCurrentLevel;
 {
     currentLevel = [[Level alloc] initWithIndex:self.currentLevelIndex andScene:self.scene];
+}
+
+- (void) pauseLevel;
+{
+    [currentLevel pause];
 }
 
 @end
