@@ -17,6 +17,8 @@
     _wholeLife = life;
     _lifeLeft = life;
     
+    _lifePercentage = [NSNumber numberWithFloat:100];
+    
     self.position = CGPointMake(50, 160);
     self.zPosition = 10;
     
@@ -47,9 +49,9 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.size.width, self.size.height)];
     self.physicsBody.dynamic = YES;
     self.physicsBody.categoryBitMask = [Categories getCategoryBitMask:cShip];
-    self.physicsBody.contactTestBitMask =    [Categories getCategoryBitMask:cEnemy] |
-                                                    [Categories getCategoryBitMask:cEnemyProjectile] |
-                                                    [Categories getCategoryBitMask:cMeteor];
+    self.physicsBody.contactTestBitMask =   [Categories getCategoryBitMask:cEnemy] |
+                                            [Categories getCategoryBitMask:cEnemyProjectile] |
+                                            [Categories getCategoryBitMask:cMeteor];
     self.physicsBody.collisionBitMask = 0;
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
@@ -62,6 +64,20 @@
     SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
     smokeTrail.position = CGPointMake(-20, 0);
     [self addChild:smokeTrail];
+}
+
+
+
+- (void) mothershipGotHitWithDamage:(float)damage
+{
+    //TODO: Verena add the blood!!! something like: [self.parent addChild:[SKSpriteNode spriteNodeWithImage@"blood"]]
+    // BUT: Do this with SKAction so we have a nice animation :)
+    
+    _lifeLeft = _lifeLeft - damage;
+    [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
+    if (_lifeLeft < 0) {
+        //TODO: Present LevelLostScene/LevelLostView
+    }
 }
 
 @end

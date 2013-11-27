@@ -14,7 +14,8 @@ typedef enum Category : NSUInteger {
     cEnemy,
     cShipProjectile,
     cEnemyProjectile,
-    cMeteor
+    cMeteor,
+    cCoin
 } Category;
 
 @interface Categories : NSObject

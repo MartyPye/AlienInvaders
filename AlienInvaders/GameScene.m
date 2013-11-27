@@ -28,11 +28,19 @@
     [self addChild:tempEnemy];
     [tempEnemy moveEnemy];
     
+    //Equip the mothership with the single shot
     _currentMothershipWeapon = [[MothershipSingleShot alloc] initWithScene:self];
     
+    //Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
     
+    //Add the life indicator to the scene
+    _lifeIndicator = [[LifeIndicator alloc] init];
+    [self addChild:_lifeIndicator];
+    
+    //whenever the mothership gets hit, we have to update the lifeIndicator
+    [_mothership addObserver:_lifeIndicator forKeyPath:@"lifePercentage" options:NSKeyValueObservingOptionNew context:nil];
     
     return self;
 }
@@ -112,7 +120,7 @@
         //The mothership always has a smaller bitmask
         if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
         {
-            //TODO: [_mothership mothershipGotHitWithDamage:5];
+            [_mothership mothershipGotHitWithDamage:20];
             if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
                 Enemy * enemy = (Enemy*)contact.bodyB.node;
@@ -121,7 +129,7 @@
         }
         else
         {
-            //[_mothership mothershipGotHitWithDamage:5];
+            [_mothership mothershipGotHitWithDamage:20];
             if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
                 Enemy * enemy = (Enemy*)contact.bodyA.node;

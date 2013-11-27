@@ -14,8 +14,10 @@
 
 @property (nonatomic) float wholeLife;
 @property (nonatomic) float lifeLeft;
+@property (nonatomic) NSNumber *lifePercentage; //Used for the observer
 
 - (id) initWithLife:(float)life;
 - (void) moveToY:(int)yCoord;
+- (void) mothershipGotHitWithDamage:(float)damage;
 
 @end

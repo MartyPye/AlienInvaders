@@ -13,10 +13,12 @@
 #import "MothershipWeapons.h"
 #import "MothershipSingleShot.h"
 #import "Categories.h"
+#import "LifeIndicator.h"
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
 @property (nonatomic) MothershipWeapons *currentMothershipWeapon;
+@property (nonatomic) LifeIndicator *lifeIndicator;
 
 @end
