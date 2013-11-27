@@ -10,6 +10,10 @@
 
 @interface GameSceneViewController ()
 
+@property (nonatomic) SKScene* gameScene;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIView *pauseView;
+
 @end
 
 @implementation GameSceneViewController
@@ -50,12 +54,22 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [GameScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.gameScene = [GameScene sceneWithSize:skView.bounds.size];
+    self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.gameScene];
     
+    // add pause button
+    [skView addSubview:self.pauseButton];
+    [skView addSubview:self.pauseView];
+    
+}
+
+
+- (IBAction)pauseButtonPressed:(id)sender {
+    self.gameScene.paused = !self.gameScene.paused;
+    self.pauseView.hidden = self.pauseView.hidden;
 }
 
 

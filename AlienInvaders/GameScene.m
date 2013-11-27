@@ -25,9 +25,9 @@
     }
    
     //TODO: place the creation of the enemy to the enemyfactory
-    Enemy *tempEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
-    [self addChild:tempEnemy];
-    [tempEnemy moveEnemy];
+//    Enemy *tempEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
+//    [self addChild:tempEnemy];
+//    [tempEnemy moveEnemy];
     
     // setup levelManager with current scence
     [[LevelManager sharedLevelManager] setScene:self];

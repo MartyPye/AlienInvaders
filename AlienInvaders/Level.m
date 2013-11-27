@@ -33,8 +33,8 @@
 {
     Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:1];
     [self.scene addChild:newEnemy];
+    NSLog(@"spawned Enemy");
     [newEnemy moveEnemy];
-    NSLog(@"spawned enemy");
 }
 
 

@@ -20,8 +20,8 @@
     
     switch (type) {
         case standardEnemy:
-//            returnEnemy = [[StandardEnemy alloc] initWithYPos:10+arc4random()%270 AndDuration:minDuration+arc4random()%4];
-            returnEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
+            returnEnemy = [[StandardEnemy alloc] initWithYPos:10+arc4random()%270 AndDuration:minDuration+arc4random()%4];
+//            returnEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
             break;
             
         case nurseEnemy:
