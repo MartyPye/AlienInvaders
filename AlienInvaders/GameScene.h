@@ -15,6 +15,7 @@
 #import "MothershipDoubleShot.h"
 #import "MothershipShotgun.h"
 #import "Categories.h"
+#import "MotherShipLaser.h"
 #import "LifeIndicator.h"
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
