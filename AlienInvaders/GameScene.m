@@ -35,12 +35,13 @@
     // tell the level manager to initialize the level.
     [[LevelManager sharedLevelManager] setupCurrentLevel];
     
-    //Equip the mothership with the single shot
-    _currentMothershipWeapon = [[MothershipShotgun alloc] initWithScene:self];
-    
     //Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
+    
+    //Equip the mothership with the single shot
+    _currentMothershipWeapon = [[MotherShipLaser alloc] initWithScene:self];
+    [_currentMothershipWeapon setCurrentMothership:_mothership];
     
     //Add the life indicator to the scene
     _lifeIndicator = [[LifeIndicator alloc] init];

@@ -69,6 +69,9 @@
 		959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 959219C5184112FA005645B1 /* tempWeapon.jpg */; };
 		95950ED21845FE0000CBF5E0 /* MothershipDoubleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */; };
 		95950ED51845FF3000CBF5E0 /* MothershipShotgun.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */; };
+		95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED91846259700CBF5E0 /* MotherShipLaser.m */; };
+		95950EDD18462CE700CBF5E0 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EDC18462CE700CBF5E0 /* Laser.m */; };
+		95950EE11846313800CBF5E0 /* laserbeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95950EE01846313800CBF5E0 /* laserbeam@2x.png */; };
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
@@ -176,6 +179,11 @@
 		95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipDoubleShot.m; sourceTree = "<group>"; };
 		95950ED31845FF3000CBF5E0 /* MothershipShotgun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipShotgun.h; sourceTree = "<group>"; };
 		95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipShotgun.m; sourceTree = "<group>"; };
+		95950ED81846259700CBF5E0 /* MotherShipLaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotherShipLaser.h; sourceTree = "<group>"; };
+		95950ED91846259700CBF5E0 /* MotherShipLaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotherShipLaser.m; sourceTree = "<group>"; };
+		95950EDB18462CE700CBF5E0 /* Laser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Laser.h; sourceTree = "<group>"; };
+		95950EDC18462CE700CBF5E0 /* Laser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
+		95950EE01846313800CBF5E0 /* laserbeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laserbeam@2x.png"; sourceTree = "<group>"; };
 		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
@@ -412,8 +420,12 @@
 				95950ED11845FE0000CBF5E0 /* MothershipDoubleShot.m */,
 				95950ED31845FF3000CBF5E0 /* MothershipShotgun.h */,
 				95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */,
+				95950ED81846259700CBF5E0 /* MotherShipLaser.h */,
+				95950ED91846259700CBF5E0 /* MotherShipLaser.m */,
 				9573ACBF18455B140030F8F3 /* Bullet.h */,
 				9573ACC018455B140030F8F3 /* Bullet.m */,
+				95950EDB18462CE700CBF5E0 /* Laser.h */,
+				95950EDC18462CE700CBF5E0 /* Laser.m */,
 			);
 			name = Mothership;
 			sourceTree = "<group>";
@@ -505,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				40D25B921845062B009D24F8 /* Bullet@2x.png */,
+				95950EE01846313800CBF5E0 /* laserbeam@2x.png */,
 				40D25B8E18450159009D24F8 /* standardEnemy@2x.png */,
 				95D589F31844E8C40069BCC6 /* MotherShip@2x.png */,
 			);
@@ -606,6 +619,7 @@
 				9573ACC9184569BF0030F8F3 /* white.png in Resources */,
 				959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */,
 				40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */,
+				95950EE11846313800CBF5E0 /* laserbeam@2x.png in Resources */,
 				40F262F2183E6146007E35CD /* MainMenuBackground@2x.jpg in Resources */,
 				40F26300183E6658007E35CD /* Level3MenuItem.png in Resources */,
 				40F262FD183E6658007E35CD /* Level1MenuItem@2x.png in Resources */,
@@ -661,10 +675,12 @@
 				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
 				9573ACC7184568810030F8F3 /* LifeIndicator.m in Sources */,
+				95950EDD18462CE700CBF5E0 /* Laser.m in Sources */,
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
 				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
 				9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */,
+				95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
 				9573ACC118455B140030F8F3 /* Bullet.m in Sources */,

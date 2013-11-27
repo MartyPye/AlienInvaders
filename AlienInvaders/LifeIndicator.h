@@ -10,4 +10,6 @@
 
 @interface LifeIndicator : SKSpriteNode
 
+@property (nonatomic) SKSpriteNode *redCross;
+
 @end

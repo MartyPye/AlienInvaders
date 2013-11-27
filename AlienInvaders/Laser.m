@@ -1,33 +1,22 @@
 //
-//  Bullet.m
+//  Laser.m
 //  AlienInvaders
 //
-//  Created by Claude Bemtgen on 11/26/13.
+//  Created by Claude Bemtgen on 11/27/13.
 //  Copyright (c) 2013 Marty. All rights reserved.
 //
 
-#import "Bullet.h"
+#import "Laser.h"
 
-@implementation Bullet
+@implementation Laser
 
-- (id)initWithPosition:(CGPoint)pos
-{
-    self = [super initWithImageNamed:@"Bullet"];
-    self.position = CGPointMake(pos.x+20, pos.y);
+- (id) init {
+    self = [super initWithImageNamed:@"laserbeam"];
     
-    [self addBodyToBullet];
- 
     return self;
 }
 
-- (void) moveToPosition:(CGPoint)newPos withDuration:(float)duration
-{
-    [self runAction:[SKAction moveTo:newPos duration:duration] completion:^{
-        [self removeFromParent];
-    }];
-}
-
-- (void) addBodyToBullet
+- (void) addBodyToLaser
 {
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.size.width, self.size.height)];
     self.physicsBody.dynamic = YES;
@@ -38,10 +27,24 @@
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
+- (void) addLaserToShip:(SKSpriteNode*)ship withDuration:(float)duration
+{
+    [ship addChild:self];
+    
+    SKAction *fadein = [SKAction fadeInWithDuration:0.25];
+    SKAction *waiting = [SKAction waitForDuration:duration-1];
+    SKAction *fadeout = [SKAction fadeOutWithDuration:0.25];
+    
+    SKAction *sequence = [SKAction sequence:@[fadein,waiting,fadeout]];
+    [self runAction:sequence completion:^{
+        [self removeFromParent];
+    }];
+}
+
 
 - (void) bulletHitSomething
 {
-    [self removeFromParent];
+    // Don't do anything here
 }
 
 @end
