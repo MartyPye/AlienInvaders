@@ -26,7 +26,6 @@
     if (self != nil) {
         _levelIndex = theIndex;
         _scene = theScene;
-        // TODO: think of time interval dependent on difficulty
         [self startRepeatingTimer];
     }
     

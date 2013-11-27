@@ -12,6 +12,7 @@
 @interface GameSceneViewController ()
 
 @property (nonatomic) SKScene* gameScene;
+@property (nonatomic) SKView *skView;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 
@@ -48,22 +49,22 @@
     [super viewWillLayoutSubviews];
     
     
-    SKView *skView = [[SKView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:skView];
+    self.skView = [[SKView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:self.skView];
     
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    self.gameScene = [GameScene sceneWithSize:skView.bounds.size];
+    self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:self.gameScene];
+    [self.skView presentScene:self.gameScene];
     
     // add pause button
-    [skView addSubview:self.pauseButton];
-    [skView addSubview:self.pauseView];
+    [self.skView addSubview:self.pauseButton];
+    [self.skView addSubview:self.pauseView];
     
 }
 
@@ -74,6 +75,19 @@
     [[LevelManager sharedLevelManager] pauseLevel];
 }
 
+- (IBAction)restartButtonPressed:(id)sender {
+    self.pauseView.hidden = YES;
+    [self.gameScene removeAllChildren];
+    
+    // Create and configure the scene.
+    self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
+    self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Present the scene.
+    [self.skView presentScene:self.gameScene];
+//    [[LevelManager sharedLevelManager] setScene:self.gameScene];
+//    [[LevelManager sharedLevelManager] setupCurrentLevel];
+}
 
 - (BOOL)shouldAutorotate {
     return NO;
