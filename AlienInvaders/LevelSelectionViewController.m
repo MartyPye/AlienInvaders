@@ -7,6 +7,7 @@
 //
 
 #import "LevelSelectionViewController.h"
+#import "LevelManager.h"
 
 @interface LevelSelectionViewController ()
 
@@ -61,6 +62,11 @@
     
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
+
+- (IBAction)levelWasSelected:(UIButton *)sender {
+    [[LevelManager sharedLevelManager] setCurrentLevelIndex:sender.tag];
+}
+
 
 
 @end

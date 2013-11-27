@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Level.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface LevelManager : NSObject
 
+// this is set when the user select a level in the Level Selection View
+@property (nonatomic) NSUInteger currentLevelIndex;
+@property (nonatomic) SKScene *scene;
+
 + (LevelManager*) sharedLevelManager;
 - (NSUInteger) totalAmountOfLevels;
+- (void) setupCurrentLevel;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "GameScene.h"
+#import "LevelManager.h"
 
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
@@ -27,6 +28,12 @@
     Enemy *tempEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
     [self addChild:tempEnemy];
     [tempEnemy moveEnemy];
+    
+    // setup levelManager with current scence
+    [[LevelManager sharedLevelManager] setScene:self];
+    
+    // tell the level manager to initialize the level.
+    [[LevelManager sharedLevelManager] setupCurrentLevel];
     
     //Equip the mothership with the single shot
     _currentMothershipWeapon = [[MothershipSingleShot alloc] initWithScene:self];

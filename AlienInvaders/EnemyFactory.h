@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Enemy.h"
-#import "StandardEnemy.h"
 
 typedef enum {
     standardEnemy,
@@ -17,6 +16,6 @@ typedef enum {
 
 @interface EnemyFactory : NSObject
 
-+ (Enemy*)createEnemyOfType:(EnemyType)type withMinimumDuration:(float)minDuration;
++ (Enemy*)enemyOfType:(EnemyType)type withMinimumDuration:(float)minDuration;
 
 @end

@@ -294,26 +294,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level1MenuItem.png"/>
                                 <connections>
+                                    <action selector="levelWasSelected:" destination="xQS-4e-Scd" eventType="touchUpInside" id="8Yu-TR-Xvm"/>
                                     <segue destination="Bkl-YS-fUK" kind="push" id="XD6-4x-lDh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ot-Rr-PTG">
                                 <rect key="frame" x="102" y="271" width="116" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level2MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="levelWasSelected:" destination="xQS-4e-Scd" eventType="touchUpInside" id="2u6-ol-QW4"/>
                                     <segue destination="Bkl-YS-fUK" kind="push" id="zpN-wh-NfV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEI-za-q2j">
                                 <rect key="frame" x="103" y="351" width="115" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Level3MenuItem.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="levelWasSelected:" destination="xQS-4e-Scd" eventType="touchUpInside" id="ajY-5u-Y8j"/>
                                     <segue destination="Bkl-YS-fUK" kind="push" id="bzg-O5-h51"/>
                                 </connections>
                             </button>
