@@ -81,6 +81,7 @@
 		95950EE418463B6900CBF5E0 /* MothershipAtombomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EE318463B6900CBF5E0 /* MothershipAtombomb.m */; };
 		95950EE718463B8D00CBF5E0 /* Atombomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EE618463B8D00CBF5E0 /* Atombomb.m */; };
 		95950EE918463F0600CBF5E0 /* atomExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95950EE818463F0600CBF5E0 /* atomExplosion.sks */; };
+		95972B4818478D7100644CB3 /* LevelFinishedScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95972B4718478D7100644CB3 /* LevelFinishedScene.m */; };
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
@@ -208,6 +209,8 @@
 		95950EE518463B8D00CBF5E0 /* Atombomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atombomb.h; sourceTree = "<group>"; };
 		95950EE618463B8D00CBF5E0 /* Atombomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atombomb.m; sourceTree = "<group>"; };
 		95950EE818463F0600CBF5E0 /* atomExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = atomExplosion.sks; sourceTree = "<group>"; };
+		95972B4618478D7100644CB3 /* LevelFinishedScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFinishedScene.h; sourceTree = "<group>"; };
+		95972B4718478D7100644CB3 /* LevelFinishedScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFinishedScene.m; sourceTree = "<group>"; };
 		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
@@ -341,7 +344,7 @@
 				781154DE183D2EC300A61AD2 /* Highscores */,
 				959219C018410452005645B1 /* Weapons and Shields */,
 				781154D4183D2A6E00A61AD2 /* Menu */,
-				957B37241844B4CB0086EC8B /* GameScene */,
+				957B37241844B4CB0086EC8B /* Scenes */,
 				95D589E51844D76F0069BCC6 /* Mothership */,
 				95D589D71844CC470069BCC6 /* Enemies */,
 				95D589DE1844D0BA0069BCC6 /* Helpers */,
@@ -494,13 +497,15 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
-		957B37241844B4CB0086EC8B /* GameScene */ = {
+		957B37241844B4CB0086EC8B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				957B37281844B51B0086EC8B /* GameScene.h */,
 				957B37291844B51B0086EC8B /* GameScene.m */,
+				95972B4618478D7100644CB3 /* LevelFinishedScene.h */,
+				95972B4718478D7100644CB3 /* LevelFinishedScene.m */,
 			);
-			name = GameScene;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		959219C018410452005645B1 /* Weapons and Shields */ = {
@@ -742,6 +747,7 @@
 				40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */,
 				9520895718477DA30084DFD3 /* CoinManager.m in Sources */,
 				95D589E11844D0D60069BCC6 /* Categories.m in Sources */,
+				95972B4818478D7100644CB3 /* LevelFinishedScene.m in Sources */,
 				781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */,
 				95D589FD1845062A0069BCC6 /* EnemyFactory.m in Sources */,
 				95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */,

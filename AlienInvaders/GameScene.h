@@ -21,6 +21,7 @@
 #import "WeaponController.h"
 #import "CoinIndicator.h"
 #import "CoinManager.h"
+#import "LevelFinishedScene.h"
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
@@ -29,5 +30,7 @@
 @property (nonatomic) LifeIndicator *lifeIndicator;
 @property (nonatomic) CoinIndicator *coinIndicator;
 @property (nonatomic) WeaponController* weaponController;
+
+- (void) goToLevelFinishedScene;
 
 @end

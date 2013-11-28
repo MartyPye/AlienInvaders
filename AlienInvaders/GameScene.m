@@ -204,5 +204,18 @@
 }
 
 
+//---------------------------------------------------------------------------------------------------------
+// Scene transitions
+//---------------------------------------------------------------------------------------------------------
+- (void)goToLevelFinishedScene
+{
+    [self runAction:[SKAction waitForDuration:0.2f] completion:^{
+        SKTransition *reveal = [SKTransition fadeWithDuration:2.0];
+        SKScene * levelFinishedScene = [[LevelFinishedScene alloc] initWithSize:self.scene.size];
+        [self.scene.view presentScene:levelFinishedScene transition: reveal];
+    }];
+}
+
+
 
 @end
