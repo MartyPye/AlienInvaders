@@ -36,6 +36,7 @@
 {
     _levelIndex = levelIndex;
     paused = NO;
+    [self startRepeatingTimer];
 }
 
 - (void) spawnEnemy;
@@ -51,18 +52,33 @@
 - (void) pause;
 {
     paused = !paused;
+    if (paused) {
+        [self stopRepeatingTimer];
+    }
+    
+    else {
+        [self startRepeatingTimer];
+    }
 }
 
 - (void) startRepeatingTimer;
 {
-    if (self.repeatingTimer == nil) {
-        self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
-                                                           target:self
-                                                         selector:@selector(spawnEnemy)
-                                                         userInfo:nil
-                                                          repeats:YES];
-    }
+    // Cancel a preexisting timer.
+    [self.repeatingTimer invalidate];
     
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
+                                                      target:self
+                                                    selector:@selector(spawnEnemy)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    self.repeatingTimer = timer;
+    
+}
+
+- (void) stopRepeatingTimer;
+{
+    [self.repeatingTimer invalidate];
+    self.repeatingTimer = nil;
 }
 
 
