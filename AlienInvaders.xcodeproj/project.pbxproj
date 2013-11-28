@@ -22,6 +22,11 @@
 		40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC7160184748E700E271C1 /* pauseMenu@2x.png */; };
 		40DC716318474F1500E271C1 /* pauseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716218474F1500E271C1 /* pauseButton@2x.png */; };
 		40DC7166184752BD00E271C1 /* WeaponController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC7165184752BD00E271C1 /* WeaponController.m */; };
+		40DC71681847807500E271C1 /* SingleShotButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC71671847807500E271C1 /* SingleShotButton@2x.png */; };
+		40DC716A184787B700E271C1 /* LockedButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC7169184787B700E271C1 /* LockedButton@2x.png */; };
+		40DC716C18478A2400E271C1 /* AtomBombButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716B18478A2400E271C1 /* AtomBombButton@2x.png */; };
+		40DC716E18478A4400E271C1 /* DoubleShotButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716D18478A4400E271C1 /* DoubleShotButton@2x.png */; };
+		40DC717018478F0400E271C1 /* LaserButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716F18478F0400E271C1 /* LaserButton@2x.png */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
 		40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */; };
 		40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */; };
@@ -123,6 +128,11 @@
 		40DC716218474F1500E271C1 /* pauseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseButton@2x.png"; sourceTree = "<group>"; };
 		40DC7164184752BD00E271C1 /* WeaponController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponController.h; sourceTree = "<group>"; };
 		40DC7165184752BD00E271C1 /* WeaponController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponController.m; sourceTree = "<group>"; };
+		40DC71671847807500E271C1 /* SingleShotButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SingleShotButton@2x.png"; sourceTree = "<group>"; };
+		40DC7169184787B700E271C1 /* LockedButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockedButton@2x.png"; sourceTree = "<group>"; };
+		40DC716B18478A2400E271C1 /* AtomBombButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AtomBombButton@2x.png"; sourceTree = "<group>"; };
+		40DC716D18478A4400E271C1 /* DoubleShotButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DoubleShotButton@2x.png"; sourceTree = "<group>"; };
+		40DC716F18478F0400E271C1 /* LaserButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaserButton@2x.png"; sourceTree = "<group>"; };
 		40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectionMenuItem.png; sourceTree = "<group>"; };
 		40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelSelectionMenuItem@2x.png"; sourceTree = "<group>"; };
 		40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HighscoresMenuItem.png; sourceTree = "<group>"; };
@@ -493,6 +503,11 @@
 				9573ACC8184569BF0030F8F3 /* white.png */,
 				9573ACCB184570F30030F8F3 /* redCross@2x.png */,
 				40DC716218474F1500E271C1 /* pauseButton@2x.png */,
+				40DC71671847807500E271C1 /* SingleShotButton@2x.png */,
+				40DC7169184787B700E271C1 /* LockedButton@2x.png */,
+				40DC716B18478A2400E271C1 /* AtomBombButton@2x.png */,
+				40DC716D18478A4400E271C1 /* DoubleShotButton@2x.png */,
+				40DC716F18478F0400E271C1 /* LaserButton@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -664,11 +679,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				781154A2183D1AD300A61AD2 /* InfoPlist.strings in Resources */,
+				40DC71681847807500E271C1 /* SingleShotButton@2x.png in Resources */,
 				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
 				40D25B8F18450159009D24F8 /* standardEnemy@2x.png in Resources */,
 				40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */,
 				40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */,
 				9573ACC9184569BF0030F8F3 /* white.png in Resources */,
+				40DC716C18478A2400E271C1 /* AtomBombButton@2x.png in Resources */,
 				959219C6184112FA005645B1 /* tempWeapon.jpg in Resources */,
 				40F262E9183E5BA5007E35CD /* UpgradeStoreMenuItem.png in Resources */,
 				95950EE11846313800CBF5E0 /* laserbeam@2x.png in Resources */,
@@ -690,6 +707,7 @@
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
+				40DC717018478F0400E271C1 /* LaserButton@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
 				9573ACC3184563460030F8F3 /* explosion.sks in Resources */,
@@ -698,6 +716,8 @@
 				40F262FC183E6658007E35CD /* Level1MenuItem.png in Resources */,
 				40F262F1183E6146007E35CD /* MainMenuBackground.jpg in Resources */,
 				40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */,
+				40DC716E18478A4400E271C1 /* DoubleShotButton@2x.png in Resources */,
+				40DC716A184787B700E271C1 /* LockedButton@2x.png in Resources */,
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
 				95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */,
 				95D58A01184514C00069BCC6 /* spark.png in Resources */,
