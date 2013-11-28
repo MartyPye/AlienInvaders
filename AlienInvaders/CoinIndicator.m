@@ -10,6 +10,7 @@
 
 @implementation CoinIndicator
 
+
 - (id) initCoinIndicator {
     self = [super initWithFontNamed:@"Marker Felt"];
     self.fontSize = 14;
@@ -23,13 +24,17 @@
     return self;
 }
 
-
+// ----------------------------------------------------------------------------------------------------
+// Updates the labal of the coinIndicator with the amout that is specified
+// ----------------------------------------------------------------------------------------------------
 - (void) updateIndicatorWithCoin:(int)amount
 {
     self.text = [NSString stringWithFormat:@"%d", amount];
 }
 
-
+// ----------------------------------------------------------------------------------------------------
+// This observer is getting called when we collected a coin
+// ----------------------------------------------------------------------------------------------------
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     [self updateIndicatorWithCoin:[[change objectForKey:NSKeyValueChangeNewKey] integerValue]];

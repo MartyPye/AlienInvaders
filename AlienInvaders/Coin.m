@@ -10,6 +10,9 @@
 
 @implementation Coin
 
+// ----------------------------------------------------------------------------------------------------
+// Initializes the coin with a certain position
+// ----------------------------------------------------------------------------------------------------
 - (id)initWithPos:(CGPoint)pos
 {
     self = [super initWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
@@ -22,6 +25,9 @@
     return self;
 }
 
+// ----------------------------------------------------------------------------------------------------
+// Adds the body to the coin for the collision detection
+// ----------------------------------------------------------------------------------------------------
 - (void) addBodyToCoin
 {
     self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:1.0];
@@ -32,6 +38,10 @@
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
+
+// ----------------------------------------------------------------------------------------------------
+// Moves the coin to the left edge of the screen
+// ----------------------------------------------------------------------------------------------------
 - (void) moveCoinToTheLeft
 {
     [self runAction:[SKAction moveToX:-50 duration:5.0] completion:^{
@@ -39,12 +49,13 @@
     }];
 }
 
+
+// ----------------------------------------------------------------------------------------------------
+// Gets called when the mothership hits a coin
+// ----------------------------------------------------------------------------------------------------
 - (void) collectedTheCoin
 {
     [self removeAllActions];
-    
-    //Tell the coinManager that we collected a coin
-    [[CoinManager sharedCoinManager] increaseCoinsCollectedInCurrentLevelBy:1];
     
     SKAction *moveCoin = [SKAction moveTo:CGPointMake(160, 300) duration:1.0];
     SKAction *increaseCoin = [SKAction scaleBy:5.0 duration:1.0];
@@ -54,6 +65,11 @@
     SKAction *sequence = [SKAction sequence:@[moveCoin,group]];
     
     [self runAction:sequence completion:^{
+        
+        //Tell the coinManager that we collected a coin
+        [[CoinManager sharedCoinManager] increaseCoinsCollectedInCurrentLevelBy:1];
+        
+        // Remove the coin from the scene
         [self removeFromParent];
     }];
 }

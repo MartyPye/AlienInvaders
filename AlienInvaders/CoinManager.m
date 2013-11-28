@@ -24,11 +24,18 @@ static CoinManager *_coinManagerSingleton = nil;
     return _coinManagerSingleton;
 }
 
+
+// ----------------------------------------------------------------------------------------------------
+// (Re)initializes the amount of coins collected in the current level
+// ----------------------------------------------------------------------------------------------------
 - (void) initCoinsCollectedInCurrentLevel
 {
     _coinsCollectedInCurrentLevel = 0;
 }
 
+// ----------------------------------------------------------------------------------------------------
+// Increases the amount of coins collected in the current level
+// ----------------------------------------------------------------------------------------------------
 - (void) increaseCoinsCollectedInCurrentLevelBy:(int)amount
 {
     [self setCoinsCollectedInCurrentLevel:_coinsCollectedInCurrentLevel + amount];

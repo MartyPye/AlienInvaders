@@ -24,10 +24,6 @@
         [self addChild:bg];
     }
    
-    //TODO: place the creation of the enemy to the enemyfactory
-//    Enemy *tempEnemy = [[StandardEnemy alloc] initWithYPos:200 AndDuration:8];
-//    [self addChild:tempEnemy];
-//    [tempEnemy moveEnemy];
     
     // setup levelManager with current scence
     [[LevelManager sharedLevelManager] setScene:self];
@@ -35,7 +31,7 @@
     // tell the level manager to initialize the level.
     [[LevelManager sharedLevelManager] setupCurrentLevel];
     
-    //Init the mothership
+    // Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
     
@@ -49,7 +45,7 @@
 //    _currentMothershipWeapon = [[MotherShipLaser alloc] initWithScene:self];
 //    [_currentMothershipWeapon setCurrentMothership:_mothership];
     
-    //Add the life indicator to the scene
+    // Add the life indicator to the scene
     _lifeIndicator = [[LifeIndicator alloc] init];
     [self addChild:_lifeIndicator];
     
@@ -60,10 +56,10 @@
     // init the coinManager with 0 coins collected currently
     [[CoinManager sharedCoinManager] initCoinsCollectedInCurrentLevel];
     
-    //whenever the mothership gets hit, we have to update the lifeIndicator
+    // whenever the mothership gets hit, we have to update the lifeIndicator
     [_mothership addObserver:_lifeIndicator forKeyPath:@"lifePercentage" options:NSKeyValueObservingOptionNew context:nil];
     
-    //whenever we collect a coin, we want to update the coinIndicator
+    // whenever we collect a coin, we want to update the coinIndicator
     [[CoinManager sharedCoinManager] addObserver:_coinIndicator forKeyPath:@"coinsCollectedInCurrentLevel" options:NSKeyValueObservingOptionNew context:nil];
     
     return self;
