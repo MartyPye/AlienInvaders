@@ -17,7 +17,9 @@
     return self;
 }
 
-// This method moves the enemy from the right to the left
+// ----------------------------------------------------------------------------------------------------
+// Move enemy from right to left
+// ----------------------------------------------------------------------------------------------------
 - (void) moveEnemy
 {
     [self runAction:[SKAction moveToX:-50 duration:self.movingDuration] completion:^{
@@ -25,6 +27,10 @@
     }];
 }
 
+
+// ----------------------------------------------------------------------------------------------------
+// Adding a body to an enemy
+// ----------------------------------------------------------------------------------------------------
 - (void) addBodyToEnemy
 {
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.size.width, self.size.height)];
@@ -36,12 +42,18 @@
     self.physicsBody.usesPreciseCollisionDetection = YES;
 }
 
+// ----------------------------------------------------------------------------------------------------
+// Removing the body from an enemy
+// ----------------------------------------------------------------------------------------------------
 - (void) removeBodyFromEnemy
 {
     self.physicsBody = nil;
 }
 
-- (void) enemyGotHit
+// ----------------------------------------------------------------------------------------------------
+// When the enemy is getting hit by the Ship, we don't want it to transform into a coin
+// ----------------------------------------------------------------------------------------------------
+- (void) enemyGotHitByShip
 {
     [self removeAllChildren];
     
@@ -58,6 +70,35 @@
     [self runAction:sequence completion:^{
         [self removeFromParent];
     }];
+    
+}
+
+
+// ----------------------------------------------------------------------------------------------------
+// When the enemy is getting hit by a prjectile, we want it to transform into a coin
+// ----------------------------------------------------------------------------------------------------
+- (void) enemyGotHitByWeapon
+{
+    [self removeAllChildren];
+    
+    //Place a coin at the position where the enemy got hit
+    Coin *coin = [[Coin alloc] initWithPos:self.position];
+    [self.scene addChild:coin];
+    
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"explosion" ofType:@"sks"];
+    SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    smokeTrail.position = CGPointMake(0, 0);
+    
+    [self addChild:smokeTrail];
+    
+    SKAction *fadeout = [SKAction fadeOutWithDuration:0.25];
+    SKAction *waiting = [SKAction waitForDuration:2.0];
+    
+    SKAction *sequence = [SKAction sequence:@[fadeout,waiting]];
+    [self runAction:sequence completion:^{
+        [self removeFromParent];
+    }];
+    
 }
 
 

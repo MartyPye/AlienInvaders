@@ -62,6 +62,9 @@
 		781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */; };
 		781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E0183D30C400A61AD2 /* HighscoreManager.m */; };
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
+		95208950184777A70084DFD3 /* CoinIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520894F184777A70084DFD3 /* CoinIndicator.m */; };
+		9520895418477D900084DFD3 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520895318477D900084DFD3 /* Coin.m */; };
+		9520895718477DA30084DFD3 /* CoinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520895618477DA30084DFD3 /* CoinManager.m */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
 		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
@@ -174,6 +177,12 @@
 		781154E0183D30C400A61AD2 /* HighscoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreManager.m; sourceTree = "<group>"; };
 		781154E2183D30D200A61AD2 /* Highscore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Highscore.h; sourceTree = "<group>"; };
 		781154E3183D30D200A61AD2 /* Highscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Highscore.m; sourceTree = "<group>"; };
+		9520894E184777A70084DFD3 /* CoinIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinIndicator.h; sourceTree = "<group>"; };
+		9520894F184777A70084DFD3 /* CoinIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinIndicator.m; sourceTree = "<group>"; };
+		9520895218477D900084DFD3 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		9520895318477D900084DFD3 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
+		9520895518477DA30084DFD3 /* CoinManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinManager.h; sourceTree = "<group>"; };
+		9520895618477DA30084DFD3 /* CoinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinManager.m; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
@@ -346,6 +355,7 @@
 				95D589E51844D76F0069BCC6 /* Mothership */,
 				95D589D71844CC470069BCC6 /* Enemies */,
 				95D589DE1844D0BA0069BCC6 /* Helpers */,
+				9520895118477D5A0084DFD3 /* Coins */,
 				9573ACC41845681A0030F8F3 /* Other things on screen */,
 				781154A6183D1AD300A61AD2 /* AppDelegate.h */,
 				781154A7183D1AD300A61AD2 /* AppDelegate.m */,
@@ -424,6 +434,17 @@
 			name = Highscores;
 			sourceTree = "<group>";
 		};
+		9520895118477D5A0084DFD3 /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				9520895218477D900084DFD3 /* Coin.h */,
+				9520895318477D900084DFD3 /* Coin.m */,
+				9520895518477DA30084DFD3 /* CoinManager.h */,
+				9520895618477DA30084DFD3 /* CoinManager.m */,
+			);
+			name = Coins;
+			sourceTree = "<group>";
+		};
 		95283DCE1842484400EF7304 /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +488,8 @@
 			children = (
 				9573ACC5184568810030F8F3 /* LifeIndicator.h */,
 				9573ACC6184568810030F8F3 /* LifeIndicator.m */,
+				9520894E184777A70084DFD3 /* CoinIndicator.h */,
+				9520894F184777A70084DFD3 /* CoinIndicator.m */,
 			);
 			name = "Other things on screen";
 			sourceTree = "<group>";
@@ -729,12 +752,15 @@
 				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
 				9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */,
+				95208950184777A70084DFD3 /* CoinIndicator.m in Sources */,
 				95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
+				9520895418477D900084DFD3 /* Coin.m in Sources */,
 				9573ACC118455B140030F8F3 /* Bullet.m in Sources */,
 				781154D7183D2AA600A61AD2 /* LevelSelectionViewController.m in Sources */,
 				40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */,
+				9520895718477DA30084DFD3 /* CoinManager.m in Sources */,
 				95D589E11844D0D60069BCC6 /* Categories.m in Sources */,
 				781154E1183D30C400A61AD2 /* HighscoreManager.m in Sources */,
 				95D589FD1845062A0069BCC6 /* EnemyFactory.m in Sources */,

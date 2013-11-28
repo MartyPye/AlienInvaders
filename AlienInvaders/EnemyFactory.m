@@ -12,7 +12,7 @@
 @implementation EnemyFactory
 
 
-//This method creates an enemy depending on the type you specify
+// This method creates an enemy depending on the type you specify
 // The minDuration parameter specifies the minimum of time, an enemy needs to pass the screen
 + (Enemy*)enemyOfType:(EnemyType)type withMinimumDuration:(float)minDuration
 {
