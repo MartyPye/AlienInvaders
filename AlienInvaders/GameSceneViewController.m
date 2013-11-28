@@ -77,11 +77,7 @@
     [self.restartButton.titleLabel setTextColor:[UIColor whiteColor]];
     [self.menuButton.titleLabel setTextColor:[UIColor whiteColor]];
     
-//    // setup pause view
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pauseMenu"]];
-//    imageView.center = self.skView.center;
-//    [self.pauseView addSubview:imageView];
-//    [self.pauseView sendSubviewToBack:imageView];
+    // setup pause view
     [self.skView addSubview:self.pauseView];
     
 }
@@ -127,6 +123,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end
