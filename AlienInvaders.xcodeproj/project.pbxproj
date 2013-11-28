@@ -19,6 +19,8 @@
 		40D25B931845062B009D24F8 /* Bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B921845062B009D24F8 /* Bullet@2x.png */; };
 		40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C89183F82FB009FD3FA /* LevelManager.m */; };
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
+		40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC7160184748E700E271C1 /* pauseMenu@2x.png */; };
+		40DC716318474F1500E271C1 /* pauseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716218474F1500E271C1 /* pauseButton@2x.png */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
 		40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */; };
 		40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */; };
@@ -56,7 +58,7 @@
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
-		9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapons.m */; };
+		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
 		9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */; };
 		9573ACC118455B140030F8F3 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACC018455B140030F8F3 /* Bullet.m */; };
 		9573ACC3184563460030F8F3 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9573ACC2184563460030F8F3 /* explosion.sks */; };
@@ -72,6 +74,9 @@
 		95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950ED91846259700CBF5E0 /* MotherShipLaser.m */; };
 		95950EDD18462CE700CBF5E0 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EDC18462CE700CBF5E0 /* Laser.m */; };
 		95950EE11846313800CBF5E0 /* laserbeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95950EE01846313800CBF5E0 /* laserbeam@2x.png */; };
+		95950EE418463B6900CBF5E0 /* MothershipAtombomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EE318463B6900CBF5E0 /* MothershipAtombomb.m */; };
+		95950EE718463B8D00CBF5E0 /* Atombomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EE618463B8D00CBF5E0 /* Atombomb.m */; };
+		95950EE918463F0600CBF5E0 /* atomExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95950EE818463F0600CBF5E0 /* atomExplosion.sks */; };
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
@@ -109,6 +114,8 @@
 		40DB3C89183F82FB009FD3FA /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		40DB3C8B183F8319009FD3FA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		40DB3C8C183F8319009FD3FA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		40DC7160184748E700E271C1 /* pauseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseMenu@2x.png"; sourceTree = "<group>"; };
+		40DC716218474F1500E271C1 /* pauseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseButton@2x.png"; sourceTree = "<group>"; };
 		40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectionMenuItem.png; sourceTree = "<group>"; };
 		40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelSelectionMenuItem@2x.png"; sourceTree = "<group>"; };
 		40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HighscoresMenuItem.png; sourceTree = "<group>"; };
@@ -157,8 +164,8 @@
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
-		9573ACB81845587D0030F8F3 /* MothershipWeapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapons.h; sourceTree = "<group>"; };
-		9573ACB91845587D0030F8F3 /* MothershipWeapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipWeapons.m; sourceTree = "<group>"; };
+		9573ACB81845587D0030F8F3 /* MothershipWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapon.h; sourceTree = "<group>"; };
+		9573ACB91845587D0030F8F3 /* MothershipWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipWeapon.m; sourceTree = "<group>"; };
 		9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipSingleShot.h; sourceTree = "<group>"; };
 		9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipSingleShot.m; sourceTree = "<group>"; };
 		9573ACBF18455B140030F8F3 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
@@ -184,6 +191,11 @@
 		95950EDB18462CE700CBF5E0 /* Laser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Laser.h; sourceTree = "<group>"; };
 		95950EDC18462CE700CBF5E0 /* Laser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
 		95950EE01846313800CBF5E0 /* laserbeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "laserbeam@2x.png"; sourceTree = "<group>"; };
+		95950EE218463B6900CBF5E0 /* MothershipAtombomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipAtombomb.h; sourceTree = "<group>"; };
+		95950EE318463B6900CBF5E0 /* MothershipAtombomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipAtombomb.m; sourceTree = "<group>"; };
+		95950EE518463B8D00CBF5E0 /* Atombomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atombomb.h; sourceTree = "<group>"; };
+		95950EE618463B8D00CBF5E0 /* Atombomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Atombomb.m; sourceTree = "<group>"; };
+		95950EE818463F0600CBF5E0 /* atomExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = atomExplosion.sks; sourceTree = "<group>"; };
 		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
@@ -412,8 +424,8 @@
 		9573ACBB184558900030F8F3 /* Mothership */ = {
 			isa = PBXGroup;
 			children = (
-				9573ACB81845587D0030F8F3 /* MothershipWeapons.h */,
-				9573ACB91845587D0030F8F3 /* MothershipWeapons.m */,
+				9573ACB81845587D0030F8F3 /* MothershipWeapon.h */,
+				9573ACB91845587D0030F8F3 /* MothershipWeapon.m */,
 				9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */,
 				9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */,
 				95950ED01845FE0000CBF5E0 /* MothershipDoubleShot.h */,
@@ -422,10 +434,15 @@
 				95950ED41845FF3000CBF5E0 /* MothershipShotgun.m */,
 				95950ED81846259700CBF5E0 /* MotherShipLaser.h */,
 				95950ED91846259700CBF5E0 /* MotherShipLaser.m */,
+				95950EE218463B6900CBF5E0 /* MothershipAtombomb.h */,
+				95950EE318463B6900CBF5E0 /* MothershipAtombomb.m */,
 				9573ACBF18455B140030F8F3 /* Bullet.h */,
 				9573ACC018455B140030F8F3 /* Bullet.m */,
 				95950EDB18462CE700CBF5E0 /* Laser.h */,
 				95950EDC18462CE700CBF5E0 /* Laser.m */,
+				95950EE518463B8D00CBF5E0 /* Atombomb.h */,
+				95950EE618463B8D00CBF5E0 /* Atombomb.m */,
+				95950EE818463F0600CBF5E0 /* atomExplosion.sks */,
 			);
 			name = Mothership;
 			sourceTree = "<group>";
@@ -444,6 +461,7 @@
 			children = (
 				9573ACC8184569BF0030F8F3 /* white.png */,
 				9573ACCB184570F30030F8F3 /* redCross@2x.png */,
+				40DC716218474F1500E271C1 /* pauseButton@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -485,6 +503,7 @@
 				40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */,
 				40F262EF183E6146007E35CD /* MainMenuBackground.jpg */,
 				40F262F0183E6146007E35CD /* MainMenuBackground@2x.jpg */,
+				40DC7160184748E700E271C1 /* pauseMenu@2x.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -628,12 +647,15 @@
 				40F262EA183E5BA5007E35CD /* UpgradeStoreMenuItem@2x.png in Resources */,
 				40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */,
 				40D25B931845062B009D24F8 /* Bullet@2x.png in Resources */,
+				40DC716318474F1500E271C1 /* pauseButton@2x.png in Resources */,
 				9573ACCC184570F30030F8F3 /* redCross@2x.png in Resources */,
 				40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */,
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
+				95950EE918463F0600CBF5E0 /* atomExplosion.sks in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
 				95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
+				40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
@@ -668,6 +690,7 @@
 			files = (
 				95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */,
 				781154A8183D1AD300A61AD2 /* AppDelegate.m in Sources */,
+				95950EE718463B8D00CBF5E0 /* Atombomb.m in Sources */,
 				959219C3184104B0005645B1 /* WeaponManager.m in Sources */,
 				95950ED51845FF3000CBF5E0 /* MothershipShotgun.m in Sources */,
 				40DB3C8D183F8319009FD3FA /* Level.m in Sources */,
@@ -679,7 +702,7 @@
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
 				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
-				9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */,
+				9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */,
 				95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
@@ -694,6 +717,7 @@
 				95D589E81844D7980069BCC6 /* Mothership.m in Sources */,
 				781154A4183D1AD300A61AD2 /* main.m in Sources */,
 				95950ED21845FE0000CBF5E0 /* MothershipDoubleShot.m in Sources */,
+				95950EE418463B6900CBF5E0 /* MothershipAtombomb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

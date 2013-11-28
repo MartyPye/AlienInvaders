@@ -12,9 +12,14 @@
 @interface GameSceneViewController ()
 
 @property (nonatomic) SKScene* gameScene;
+@property (nonatomic) SKView *skView;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 @property (weak, nonatomic) IBOutlet UIView *bloodView;
+
+@property (weak, nonatomic) IBOutlet UIButton *resumeButton;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end
 
@@ -48,19 +53,20 @@
 {
     [super viewWillLayoutSubviews];
     
+    if (self.skView == nil) {
+        self.skView = [[SKView alloc] initWithFrame:self.view.frame];
+        [self.view addSubview:self.skView];
+    }
     
-    SKView *skView = [[SKView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:skView];
-    
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    self.gameScene = [GameScene sceneWithSize:skView.bounds.size];
+    self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
-    [skView presentScene:self.gameScene];
+    [self.skView presentScene:self.gameScene];
     
     // add pause button
     [skView addSubview:self.pauseButton];
@@ -72,8 +78,29 @@
 - (IBAction)pauseButtonPressed:(id)sender {
     self.gameScene.paused = !self.gameScene.paused;
     self.pauseView.hidden = !self.pauseView.hidden;
+    [[LevelManager sharedLevelManager] pauseLevel];
 }
 
+- (IBAction)restartButtonPressed:(id)sender {
+    // hide the pause view and remove everything in the gameScene.
+    self.pauseView.hidden = YES;
+    [self.gameScene removeAllChildren];
+    
+    // Create and configure the new scene.
+    self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
+    self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Replace the old scene with the new one.
+    SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:0.5];
+    [self.skView presentScene:self.gameScene transition:reveal];
+}
+
+
+- (IBAction)menuButtonPressed:(id)sender {
+    // hide the pause view and remove everything in the gameScene.
+    self.pauseView.hidden = YES;
+    [self.gameScene removeAllChildren];
+}
 
 - (BOOL)shouldAutorotate {
     return NO;
@@ -88,6 +115,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 @end

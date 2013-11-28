@@ -10,31 +10,75 @@
 #import "EnemyFactory.h"
 
 
+@interface Level() {
+    BOOL paused;
+}
+
+@property NSTimer *repeatingTimer;
+
+@end
+
 @implementation Level
 
 - (id) initWithIndex:(NSUInteger)theIndex andScene:(SKScene *)theScene;
 {
     self = [super init];
     if (self != nil) {
-        self.levelIndex = theIndex;
-        self.scene = theScene;
-        // TODO: think of time interval dependent on difficulty
-        [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
-                                         target:self
-                                       selector:@selector(spawnEnemy)
-                                       userInfo:nil
-                                        repeats:YES];
+        _levelIndex = theIndex;
+        _scene = theScene;
+        [self startRepeatingTimer];
     }
     
     return self;
 }
 
+- (void) setLevelIndex:(NSUInteger)levelIndex;
+{
+    _levelIndex = levelIndex;
+    paused = NO;
+    [self startRepeatingTimer];
+}
+
 - (void) spawnEnemy;
 {
-    Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:1];
-    [self.scene addChild:newEnemy];
-    NSLog(@"spawned Enemy");
-    [newEnemy moveEnemy];
+    if (paused == NO) {
+        Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:1];
+        [self.scene addChild:newEnemy];
+        NSLog(@"spawned Enemy");
+        [newEnemy moveEnemy];
+    }
+}
+
+- (void) pause;
+{
+    paused = !paused;
+    if (paused) {
+        [self stopRepeatingTimer];
+    }
+    
+    else {
+        [self startRepeatingTimer];
+    }
+}
+
+- (void) startRepeatingTimer;
+{
+    // Cancel a preexisting timer.
+    [self.repeatingTimer invalidate];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
+                                                      target:self
+                                                    selector:@selector(spawnEnemy)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    self.repeatingTimer = timer;
+    
+}
+
+- (void) stopRepeatingTimer;
+{
+    [self.repeatingTimer invalidate];
+    self.repeatingTimer = nil;
 }
 
 

@@ -7,8 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "MothershipWeapons.h"
+#import "MothershipWeapon.h"
 
-@interface MothershipSingleShot : MothershipWeapons
+@interface MothershipSingleShot : MothershipWeapon
 
 @end

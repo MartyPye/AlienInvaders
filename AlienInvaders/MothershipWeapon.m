@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Marty. All rights reserved.
 //
 
-#import "MothershipWeapons.h"
+#import "MothershipWeapon.h"
 
-@implementation MothershipWeapons
+@implementation MothershipWeapon
 
 - (id) initWithScene:(SKScene*)scene{
     

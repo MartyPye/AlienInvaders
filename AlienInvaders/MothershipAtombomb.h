@@ -1,5 +1,5 @@
 //
-//  MothershipShotgun.h
+//  MothershipAtombomb.h
 //  AlienInvaders
 //
 //  Created by Claude Bemtgen on 11/27/13.
@@ -7,7 +7,8 @@
 //
 
 #import "MothershipWeapon.h"
+#import "Atombomb.h"
 
-@interface MothershipShotgun : MothershipWeapon
+@interface MothershipAtombomb : MothershipWeapon
 
 @end

@@ -10,10 +10,11 @@
 #import "Enemy.h"
 #import "StandardEnemy.h"
 #import "Mothership.h"
-#import "MothershipWeapons.h"
+#import "MothershipWeapon.h"
 #import "MothershipSingleShot.h"
 #import "MothershipDoubleShot.h"
 #import "MothershipShotgun.h"
+#import "MothershipAtombomb.h"
 #import "Categories.h"
 #import "MotherShipLaser.h"
 #import "LifeIndicator.h"
@@ -21,7 +22,7 @@
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
-@property (nonatomic) MothershipWeapons *currentMothershipWeapon;
+@property (nonatomic) MothershipWeapon *currentMothershipWeapon;
 @property (nonatomic) LifeIndicator *lifeIndicator;
 
 @end
