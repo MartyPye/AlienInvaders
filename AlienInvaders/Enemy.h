@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 #import "Categories.h"
+#import "Coin.h"
 
 @interface Enemy : SKSpriteNode
 
@@ -19,6 +20,7 @@
 - (void) moveEnemy;
 - (void) addBodyToEnemy;
 - (void) removeBodyFromEnemy;
-- (void) enemyGotHit;
+- (void) enemyGotHitByShip;
+- (void) enemyGotHitByWeapon;
 
 @end

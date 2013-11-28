@@ -53,8 +53,18 @@
     _lifeIndicator = [[LifeIndicator alloc] init];
     [self addChild:_lifeIndicator];
     
+    // Add the coin indicator to the scene
+    _coinIndicator = [[CoinIndicator alloc] initCoinIndicator];
+    [self addChild:_coinIndicator];
+    
+    // init the coinManager with 0 coins collected currently
+    [[CoinManager sharedCoinManager] initCoinsCollectedInCurrentLevel];
+    
     //whenever the mothership gets hit, we have to update the lifeIndicator
     [_mothership addObserver:_lifeIndicator forKeyPath:@"lifePercentage" options:NSKeyValueObservingOptionNew context:nil];
+    
+    //whenever we collect a coin, we want to update the coinIndicator
+    [[CoinManager sharedCoinManager] addObserver:_coinIndicator forKeyPath:@"coinsCollectedInCurrentLevel" options:NSKeyValueObservingOptionNew context:nil];
     
     return self;
 }
@@ -134,21 +144,35 @@
         //The mothership always has a smaller bitmask
         if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
         {
-            [_mothership mothershipGotHitWithDamage:20];
+            //Detect what the mothership hit
             if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
                 Enemy * enemy = (Enemy*)contact.bodyB.node;
-                [enemy enemyGotHit];
+                [enemy enemyGotHitByShip];
+                
+                [_mothership mothershipGotHitWithDamage:20];
+            }
+            else if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cCoin])
+            {
+                Coin *coin = (Coin*)contact.bodyB.node;
+                [coin collectedTheCoin];
             }
         }
         else
         {
             [_mothership mothershipGotHitWithDamage:20];
+            //Detect what the mothership hit
             if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
                 Enemy * enemy = (Enemy*)contact.bodyA.node;
-                [enemy enemyGotHit];
+                [enemy enemyGotHitByShip];
+                
+                [_mothership mothershipGotHitWithDamage:20];
             }
+            else if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cCoin])
+            {
+                Coin *coin = (Coin*)contact.bodyB.node;
+                [coin collectedTheCoin];            }
         }
     }
     
@@ -160,7 +184,7 @@
         {
             Enemy *enemy = (Enemy*)contact.bodyA.node;
             [enemy removeBodyFromEnemy];
-            [enemy enemyGotHit];
+            [enemy enemyGotHitByWeapon];
 
             if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])
             {
@@ -172,7 +196,7 @@
         {
             Enemy *enemy = (Enemy*)contact.bodyB.node;
             [enemy removeBodyFromEnemy];
-            [enemy enemyGotHit];
+            [enemy enemyGotHitByWeapon];
             
             if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShipProjectile])
             {

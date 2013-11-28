@@ -19,12 +19,15 @@
 #import "MotherShipLaser.h"
 #import "LifeIndicator.h"
 #import "WeaponController.h"
+#import "CoinIndicator.h"
+#import "CoinManager.h"
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
 @property (nonatomic) MothershipWeapon *currentMothershipWeapon;
 @property (nonatomic) LifeIndicator *lifeIndicator;
+@property (nonatomic) CoinIndicator *coinIndicator;
 @property (nonatomic) WeaponController* weaponController;
 
 @end

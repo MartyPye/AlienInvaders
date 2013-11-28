@@ -41,7 +41,9 @@
     self.physicsBody = nil;
 }
 
-- (void) enemyGotHit
+
+//When the enemy is getting hit by the Ship, we don't want it to transform into a coin
+- (void) enemyGotHitByShip
 {
     [self removeAllChildren];
     
@@ -58,6 +60,31 @@
     [self runAction:sequence completion:^{
         [self removeFromParent];
     }];
+    
+}
+
+- (void) enemyGotHitByWeapon
+{
+    [self removeAllChildren];
+    
+    //Place a coin at the position where the enemy got hit
+    Coin *coin = [[Coin alloc] initWithPos:self.position];
+    [self.scene addChild:coin];
+    
+    NSString *smokePath = [[NSBundle mainBundle] pathForResource:@"explosion" ofType:@"sks"];
+    SKEmitterNode *smokeTrail = [NSKeyedUnarchiver unarchiveObjectWithFile:smokePath];
+    smokeTrail.position = CGPointMake(0, 0);
+    
+    [self addChild:smokeTrail];
+    
+    SKAction *fadeout = [SKAction fadeOutWithDuration:0.25];
+    SKAction *waiting = [SKAction waitForDuration:2.0];
+    
+    SKAction *sequence = [SKAction sequence:@[fadeout,waiting]];
+    [self runAction:sequence completion:^{
+        [self removeFromParent];
+    }];
+    
 }
 
 
