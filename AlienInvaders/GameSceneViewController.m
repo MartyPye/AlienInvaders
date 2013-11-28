@@ -8,6 +8,7 @@
 
 #import "GameSceneViewController.h"
 #import "LevelManager.h"
+#import "WeaponManager.h"
 
 @interface GameSceneViewController ()
 
@@ -20,8 +21,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
-@property (weak, nonatomic) IBOutlet UIButton *singleShotButton;
-@property (weak, nonatomic) IBOutlet UIButton *laserButton;
+@property (weak, nonatomic) IBOutlet UIButton *weapon1Button;
+@property (weak, nonatomic) IBOutlet UIButton *weapon2Button;
+@property (weak, nonatomic) IBOutlet UIButton *weapon3Button;
+
+@property (nonatomic) NSMutableDictionary* weaponButtonImages;
+
 
 @end
 
@@ -72,8 +77,6 @@
     
     // add pause button
     [self.skView addSubview:self.pauseButton];
-    // add weapon selection view
-    [self.skView addSubview:self.weaponSelectionView];
     
     [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
     [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
@@ -86,6 +89,30 @@
     // setup pause view
     [self.skView addSubview:self.pauseView];
     
+    self.weaponButtonImages = [[NSMutableDictionary alloc] init];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"SingleShotButton.png"] forKey:@"Single Shot"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"DoubleShotButton.png"] forKey:@"Double Shot"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"LaserButton.png"] forKey:@"Laser"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"AtomBombButton.png"] forKey:@"Atom Bomb"];
+    
+    // assign the weapon buttons with the correct names (TODO: images)
+    NSArray* purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
+    if (![[purchasedWeapons objectAtIndex:0] isEqualToString:@""]) {
+        [self.weapon1Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:0]] forState:UIControlStateNormal];
+    }
+    else
+        [self.weapon1Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    if (![[purchasedWeapons objectAtIndex:1] isEqualToString:@""])
+        [self.weapon2Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:1]] forState:UIControlStateNormal];
+    else
+        [self.weapon2Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    if (![[purchasedWeapons objectAtIndex:2] isEqualToString:@""])
+        [self.weapon3Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:2]] forState:UIControlStateNormal];
+    else
+        [self.weapon3Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    
+    // setup weapon view
+    [self.skView addSubview:self.weaponSelectionView];
 }
 
 
@@ -119,20 +146,42 @@
 
 - (IBAction)weaponSelected:(UIButton*)sender {
     // send something to weaponController
-    if (sender.tag == 0) {
-        // tell the weaponController to select the single shot
-        [self.gameScene.weaponController chooseWeapon:[[MothershipSingleShot alloc] initWithScene:self.gameScene]];
-        // set the current weapon of the game scene.
-        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
-        // assign the mothership to the weapon.
-        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
-    }
+    NSArray *purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setValue:[[MothershipSingleShot alloc] initWithScene:self.gameScene] forKey:@"Single Shot"];
+    [dictionary setValue:[[MothershipDoubleShot alloc] initWithScene:self.gameScene] forKey:@"Double Shot"];
+    [dictionary setValue:[[MotherShipLaser alloc] initWithScene:self.gameScene] forKey:@"Laser"];
+    [dictionary setValue:[[MothershipAtombomb alloc] initWithScene:self.gameScene] forKey:@"Atom Bomb"];
     
-    else if (sender.tag == 1) {
-        [self.gameScene.weaponController chooseWeapon:[[MotherShipLaser alloc] initWithScene:self.gameScene]];
-        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
-        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
-    }
+    MothershipWeapon *currentWeapon = [dictionary objectForKey:[purchasedWeapons objectAtIndex:sender.tag]];
+    
+    // tell the weaponController to select the single shot
+    [self.gameScene.weaponController chooseWeapon:currentWeapon];
+    // set the current weapon of the game scene.
+    self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+    // assign the mothership to the weapon.
+    [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+
+    
+    
+//    if (sender.tag == 0) {
+//        // tell the weaponController to select the single shot
+//        [self.gameScene.weaponController chooseWeapon:[[MothershipSingleShot alloc] initWithScene:self.gameScene]];
+//        // set the current weapon of the game scene.
+//        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+//        // assign the mothership to the weapon.
+//        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+//    }
+//    
+//    else if (sender.tag == 1) {
+//        [self.gameScene.weaponController chooseWeapon:[[MotherShipLaser alloc] initWithScene:self.gameScene]];
+//        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+//        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+//    }
+//    
+//    else if (sender.tag == 2) {
+//        
+//    }
 }
 
 
