@@ -14,6 +14,7 @@
 
 @property (nonatomic) SKScene *scene;
 @property (nonatomic) Mothership *currentMothership;
+@property (nonatomic) NSString *name;
 
 - (id) initWithScene:(SKScene*)scene;
 - (void) fireFromPosition:(CGPoint)pos;

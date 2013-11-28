@@ -39,9 +39,15 @@
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
     
-    //Equip the mothership with the single shot
-    _currentMothershipWeapon = [[MotherShipLaser alloc] initWithScene:self];
+    // Init the Weapon Controller
+    _weaponController = [[WeaponController alloc] init];
+    [self.weaponController setCurrentWeapon:[[MothershipSingleShot alloc] initWithScene:self]];
+    _currentMothershipWeapon = self.weaponController.currentWeapon;
     [_currentMothershipWeapon setCurrentMothership:_mothership];
+    
+    //Equip the mothership with the single shot
+//    _currentMothershipWeapon = [[MotherShipLaser alloc] initWithScene:self];
+//    [_currentMothershipWeapon setCurrentMothership:_mothership];
     
     //Add the life indicator to the scene
     _lifeIndicator = [[LifeIndicator alloc] init];
