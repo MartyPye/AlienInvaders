@@ -16,6 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 
+@property (weak, nonatomic) IBOutlet UIButton *resumeButton;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+
 @end
 
 @implementation GameSceneViewController
@@ -65,6 +69,19 @@
     
     // add pause button
     [self.skView addSubview:self.pauseButton];
+    [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    [self.menuButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    
+    [self.resumeButton.titleLabel setTextColor:[UIColor whiteColor]];
+    [self.restartButton.titleLabel setTextColor:[UIColor whiteColor]];
+    [self.menuButton.titleLabel setTextColor:[UIColor whiteColor]];
+    
+//    // setup pause view
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pauseMenu"]];
+//    imageView.center = self.skView.center;
+//    [self.pauseView addSubview:imageView];
+//    [self.pauseView sendSubviewToBack:imageView];
     [self.skView addSubview:self.pauseView];
     
 }
@@ -86,7 +103,8 @@
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Replace the old scene with the new one.
-    [self.skView presentScene:self.gameScene];
+    SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:0.5];
+    [self.skView presentScene:self.gameScene transition:reveal];
 }
 
 

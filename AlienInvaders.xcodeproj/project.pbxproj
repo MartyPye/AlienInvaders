@@ -19,6 +19,7 @@
 		40D25B931845062B009D24F8 /* Bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B921845062B009D24F8 /* Bullet@2x.png */; };
 		40DB3C8A183F82FB009FD3FA /* LevelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C89183F82FB009FD3FA /* LevelManager.m */; };
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
+		40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC7160184748E700E271C1 /* pauseMenu@2x.png */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
 		40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */; };
 		40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */; };
@@ -112,6 +113,7 @@
 		40DB3C89183F82FB009FD3FA /* LevelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelManager.m; sourceTree = "<group>"; };
 		40DB3C8B183F8319009FD3FA /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		40DB3C8C183F8319009FD3FA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		40DC7160184748E700E271C1 /* pauseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseMenu@2x.png"; sourceTree = "<group>"; };
 		40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectionMenuItem.png; sourceTree = "<group>"; };
 		40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelSelectionMenuItem@2x.png"; sourceTree = "<group>"; };
 		40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HighscoresMenuItem.png; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */,
 				40F262EF183E6146007E35CD /* MainMenuBackground.jpg */,
 				40F262F0183E6146007E35CD /* MainMenuBackground@2x.jpg */,
+				40DC7160184748E700E271C1 /* pauseMenu@2x.png */,
 			);
 			name = Backgrounds;
 			sourceTree = "<group>";
@@ -648,6 +651,7 @@
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
 				95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
+				40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,

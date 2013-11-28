@@ -364,19 +364,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvo-oX-NvF">
-                                        <rect key="frame" x="20" y="65" width="65" height="30"/>
+                                        <rect key="frame" x="20" y="110" width="65" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="Resume">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="pauseButtonPressed:" destination="Bkl-YS-fUK" eventType="touchUpInside" id="2DS-76-BqB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tV8-xl-APR">
-                                        <rect key="frame" x="126" y="65" width="51" height="30"/>
+                                        <rect key="frame" x="117" y="110" width="51" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Restart">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -384,9 +386,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQv-Fa-fg6">
-                                        <rect key="frame" x="218" y="65" width="46" height="30"/>
+                                        <rect key="frame" x="211" y="110" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Menu">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -394,8 +397,11 @@
                                             <segue destination="UJf-fB-bwI" kind="push" id="4sn-wq-3Sd"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pauseMenu.png" translatesAutoresizingMaskIntoConstraints="NO" id="dss-eI-fFV">
+                                        <rect key="frame" x="53" y="2" width="178" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -404,8 +410,11 @@
                     <navigationItem key="navigationItem" id="O8S-ee-Wkm"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="menuButton" destination="XQv-Fa-fg6" id="41G-Op-S60"/>
                         <outlet property="pauseButton" destination="V6s-0W-ahE" id="ut5-os-5Gw"/>
                         <outlet property="pauseView" destination="Hye-6P-o2f" id="Vzx-vt-dYJ"/>
+                        <outlet property="restartButton" destination="tV8-xl-APR" id="n1k-3p-HSC"/>
+                        <outlet property="resumeButton" destination="xvo-oX-NvF" id="jly-4a-fqZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdy-ks-oZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,6 +448,7 @@
         <image name="Level3MenuItem.png" width="115" height="27"/>
         <image name="LevelSelectionMenuItem.png" width="237" height="27"/>
         <image name="UpgradeStoreMenuItem.png" width="225" height="33"/>
+        <image name="pauseMenu.png" width="152" height="77"/>
         <image name="tempShield.png" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -448,6 +458,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="4sn-wq-3Sd"/>
-        <segue reference="bzg-O5-h51"/>
+        <segue reference="XD6-4x-lDh"/>
     </inferredMetricsTieBreakers>
 </document>
