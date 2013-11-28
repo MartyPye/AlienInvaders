@@ -21,6 +21,7 @@
 		40DB3C8D183F8319009FD3FA /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB3C8C183F8319009FD3FA /* Level.m */; };
 		40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC7160184748E700E271C1 /* pauseMenu@2x.png */; };
 		40DC716318474F1500E271C1 /* pauseButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40DC716218474F1500E271C1 /* pauseButton@2x.png */; };
+		40DC7166184752BD00E271C1 /* WeaponController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC7165184752BD00E271C1 /* WeaponController.m */; };
 		40F262E1183E599E007E35CD /* LevelSelectionMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */; };
 		40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */; };
 		40F262E5183E5B9A007E35CD /* HighscoresMenuItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */; };
@@ -116,6 +117,8 @@
 		40DB3C8C183F8319009FD3FA /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		40DC7160184748E700E271C1 /* pauseMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseMenu@2x.png"; sourceTree = "<group>"; };
 		40DC716218474F1500E271C1 /* pauseButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseButton@2x.png"; sourceTree = "<group>"; };
+		40DC7164184752BD00E271C1 /* WeaponController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponController.h; sourceTree = "<group>"; };
+		40DC7165184752BD00E271C1 /* WeaponController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponController.m; sourceTree = "<group>"; };
 		40F262DF183E599E007E35CD /* LevelSelectionMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LevelSelectionMenuItem.png; sourceTree = "<group>"; };
 		40F262E0183E599E007E35CD /* LevelSelectionMenuItem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LevelSelectionMenuItem@2x.png"; sourceTree = "<group>"; };
 		40F262E3183E5B9A007E35CD /* HighscoresMenuItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HighscoresMenuItem.png; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 				781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */,
 				957B37211844B4780086EC8B /* GameSceneViewController.h */,
 				957B37221844B4780086EC8B /* GameSceneViewController.m */,
+				40DC7164184752BD00E271C1 /* WeaponController.h */,
+				40DC7165184752BD00E271C1 /* WeaponController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -698,6 +703,7 @@
 				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
 				9573ACC7184568810030F8F3 /* LifeIndicator.m in Sources */,
+				40DC7166184752BD00E271C1 /* WeaponController.m in Sources */,
 				95950EDD18462CE700CBF5E0 /* Laser.m in Sources */,
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
 				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,

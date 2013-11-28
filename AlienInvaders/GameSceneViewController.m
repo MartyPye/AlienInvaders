@@ -11,7 +11,7 @@
 
 @interface GameSceneViewController ()
 
-@property (nonatomic) SKScene* gameScene;
+@property (nonatomic) GameScene* gameScene;
 @property (nonatomic) SKView *skView;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UIButton *singleShotButton;
+@property (weak, nonatomic) IBOutlet UIButton *laserButton;
 
 @end
 
@@ -71,6 +73,9 @@
     
     // add pause button
     [self.skView addSubview:self.pauseButton];
+    // add weapon selection view
+    [self.skView addSubview:self.weaponSelectionView];
+    
     [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
     [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
     [self.menuButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
@@ -120,6 +125,26 @@
     // Hide blood View if not already hidden.
     self.bloodView.hidden = YES;
 }
+
+
+- (IBAction)weaponSelected:(UIButton*)sender {
+    // send something to weaponController
+    if (sender.tag == 0) {
+        // tell the weaponController to select the single shot
+        [self.gameScene.weaponController chooseWeapon:[[MothershipSingleShot alloc] initWithScene:self.gameScene]];
+        // set the current weapon of the game scene.
+        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+        // assign the mothership to the weapon.
+        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+    }
+    
+    else if (sender.tag == 1) {
+        [self.gameScene.weaponController chooseWeapon:[[MotherShipLaser alloc] initWithScene:self.gameScene]];
+        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+    }
+}
+
 
 - (BOOL)shouldAutorotate {
     return NO;

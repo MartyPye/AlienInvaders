@@ -14,6 +14,7 @@
 {
     self = [super init];
     self.scene = scene;
+    self.name = @"Single Shot"; 
     
     return self;
 }
