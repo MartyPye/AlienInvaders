@@ -7,7 +7,7 @@
 //
 
 #import "GameSceneViewController.h"
-#import "LifeIndicator.h"
+#import "LevelManager.h"
 
 @interface GameSceneViewController ()
 
@@ -39,6 +39,7 @@
             }];
         }];
     }
+
     
 }
 
@@ -69,9 +70,21 @@
     [self.skView presentScene:self.gameScene];
     
     // add pause button
-    [skView addSubview:self.pauseButton];
-    [skView addSubview:self.pauseView];
-    [skView addSubview:self.bloodView];
+    [self.skView addSubview:self.pauseButton];
+    [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    [self.menuButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
+    
+    [self.resumeButton.titleLabel setTextColor:[UIColor whiteColor]];
+    [self.restartButton.titleLabel setTextColor:[UIColor whiteColor]];
+    [self.menuButton.titleLabel setTextColor:[UIColor whiteColor]];
+    
+    // setup pause view
+    [self.skView addSubview:self.pauseView];
+    
+    //setup blood view
+    [self.skView addSubview:self.bloodView];
+    
 }
 
 
@@ -93,6 +106,9 @@
     // Replace the old scene with the new one.
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:0.5];
     [self.skView presentScene:self.gameScene transition:reveal];
+    
+    // Hide blood View if not already hidden.
+    self.bloodView.hidden = YES;
 }
 
 
@@ -100,6 +116,9 @@
     // hide the pause view and remove everything in the gameScene.
     self.pauseView.hidden = YES;
     [self.gameScene removeAllChildren];
+    
+    // Hide blood View if not already hidden.
+    self.bloodView.hidden = YES;
 }
 
 - (BOOL)shouldAutorotate {
