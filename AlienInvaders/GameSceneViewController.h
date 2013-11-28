@@ -11,6 +11,6 @@
 
 #import "GameScene.h"
 
-@interface GameSceneViewController : UIViewController
+@interface GameSceneViewController : UIViewController<GameSceneDelegate>
 
 @end

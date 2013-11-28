@@ -79,7 +79,7 @@
     _lifeLeft = _lifeLeft - damage;
     [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
     if (_lifeLeft <= 0) {
-        [(GameScene*)self.parent goToLevelFinishedScene];
+        [(GameScene*)self.parent goToLevelFinished];
     }
 }
 

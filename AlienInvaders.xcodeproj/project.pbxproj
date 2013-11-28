@@ -87,6 +87,7 @@
 		95950EE718463B8D00CBF5E0 /* Atombomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 95950EE618463B8D00CBF5E0 /* Atombomb.m */; };
 		95950EE918463F0600CBF5E0 /* atomExplosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95950EE818463F0600CBF5E0 /* atomExplosion.sks */; };
 		95972B4818478D7100644CB3 /* LevelFinishedScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 95972B4718478D7100644CB3 /* LevelFinishedScene.m */; };
+		95972B4B1847925200644CB3 /* LevelFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95972B4A1847925200644CB3 /* LevelFinishedViewController.m */; };
 		95D589DA1844CC9C0069BCC6 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589D91844CC9C0069BCC6 /* Enemy.m */; };
 		95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589DC1844D0080069BCC6 /* StandardEnemy.m */; };
 		95D589E11844D0D60069BCC6 /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D589E01844D0D60069BCC6 /* Categories.m */; };
@@ -221,6 +222,8 @@
 		95950EE818463F0600CBF5E0 /* atomExplosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = atomExplosion.sks; sourceTree = "<group>"; };
 		95972B4618478D7100644CB3 /* LevelFinishedScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFinishedScene.h; sourceTree = "<group>"; };
 		95972B4718478D7100644CB3 /* LevelFinishedScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFinishedScene.m; sourceTree = "<group>"; };
+		95972B491847925200644CB3 /* LevelFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelFinishedViewController.h; sourceTree = "<group>"; };
+		95972B4A1847925200644CB3 /* LevelFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelFinishedViewController.m; sourceTree = "<group>"; };
 		95D589D81844CC9C0069BCC6 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		95D589D91844CC9C0069BCC6 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		95D589DB1844D0080069BCC6 /* StandardEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardEnemy.h; sourceTree = "<group>"; };
@@ -416,6 +419,8 @@
 				781154DC183D2AF200A61AD2 /* UpgradeStoreViewController.m */,
 				957B37211844B4780086EC8B /* GameSceneViewController.h */,
 				957B37221844B4780086EC8B /* GameSceneViewController.m */,
+				95972B491847925200644CB3 /* LevelFinishedViewController.h */,
+				95972B4A1847925200644CB3 /* LevelFinishedViewController.m */,
 				40DC7164184752BD00E271C1 /* WeaponController.h */,
 				40DC7165184752BD00E271C1 /* WeaponController.m */,
 			);
@@ -758,6 +763,7 @@
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
 				9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */,
 				95208950184777A70084DFD3 /* CoinIndicator.m in Sources */,
+				95972B4B1847925200644CB3 /* LevelFinishedViewController.m in Sources */,
 				95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,

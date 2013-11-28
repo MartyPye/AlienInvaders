@@ -23,6 +23,10 @@
 #import "CoinManager.h"
 #import "LevelFinishedScene.h"
 
+@protocol GameSceneDelegate <NSObject>
+- (void) goToLevelFinishedViewController;
+@end
+
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
@@ -31,6 +35,7 @@
 @property (nonatomic) CoinIndicator *coinIndicator;
 @property (nonatomic) WeaponController* weaponController;
 
-- (void) goToLevelFinishedScene;
+@property (nonatomic, weak) id <GameSceneDelegate> delegate;
+- (void) goToLevelFinished;
 
 @end
