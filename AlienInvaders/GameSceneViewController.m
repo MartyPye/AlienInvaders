@@ -7,12 +7,14 @@
 //
 
 #import "GameSceneViewController.h"
+#import "LifeIndicator.h"
 
 @interface GameSceneViewController ()
 
 @property (nonatomic) SKScene* gameScene;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
+@property (weak, nonatomic) IBOutlet UIView *bloodView;
 
 @end
 
@@ -63,7 +65,7 @@
     // add pause button
     [skView addSubview:self.pauseButton];
     [skView addSubview:self.pauseView];
-    
+    [skView addSubview:self.bloodView];
 }
 
 
