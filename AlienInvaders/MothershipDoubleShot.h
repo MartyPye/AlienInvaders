@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Marty. All rights reserved.
 //
 
-#import "MothershipWeapons.h"
+#import "MothershipWeapon.h"
 
-@interface MothershipDoubleShot : MothershipWeapons
+@interface MothershipDoubleShot : MothershipWeapon
 
 @end

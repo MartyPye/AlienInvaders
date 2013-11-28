@@ -10,7 +10,7 @@
 #import "Bullet.h"
 #import "Mothership.h"
 
-@interface MothershipWeapons : NSObject
+@interface MothershipWeapon : NSObject
 
 @property (nonatomic) SKScene *scene;
 @property (nonatomic) Mothership *currentMothership;

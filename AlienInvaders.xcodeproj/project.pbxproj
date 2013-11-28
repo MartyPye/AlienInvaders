@@ -58,7 +58,7 @@
 		781154E4183D30D200A61AD2 /* Highscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 781154E3183D30D200A61AD2 /* Highscore.m */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
-		9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapons.m */; };
+		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
 		9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */; };
 		9573ACC118455B140030F8F3 /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACC018455B140030F8F3 /* Bullet.m */; };
 		9573ACC3184563460030F8F3 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9573ACC2184563460030F8F3 /* explosion.sks */; };
@@ -164,8 +164,8 @@
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
-		9573ACB81845587D0030F8F3 /* MothershipWeapons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapons.h; sourceTree = "<group>"; };
-		9573ACB91845587D0030F8F3 /* MothershipWeapons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipWeapons.m; sourceTree = "<group>"; };
+		9573ACB81845587D0030F8F3 /* MothershipWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapon.h; sourceTree = "<group>"; };
+		9573ACB91845587D0030F8F3 /* MothershipWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipWeapon.m; sourceTree = "<group>"; };
 		9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipSingleShot.h; sourceTree = "<group>"; };
 		9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MothershipSingleShot.m; sourceTree = "<group>"; };
 		9573ACBF18455B140030F8F3 /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
@@ -424,8 +424,8 @@
 		9573ACBB184558900030F8F3 /* Mothership */ = {
 			isa = PBXGroup;
 			children = (
-				9573ACB81845587D0030F8F3 /* MothershipWeapons.h */,
-				9573ACB91845587D0030F8F3 /* MothershipWeapons.m */,
+				9573ACB81845587D0030F8F3 /* MothershipWeapon.h */,
+				9573ACB91845587D0030F8F3 /* MothershipWeapon.m */,
 				9573ACBC184558D60030F8F3 /* MothershipSingleShot.h */,
 				9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */,
 				95950ED01845FE0000CBF5E0 /* MothershipDoubleShot.h */,
@@ -702,7 +702,7 @@
 				957B37231844B4780086EC8B /* GameSceneViewController.m in Sources */,
 				9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */,
 				781154D3183D2A6400A61AD2 /* MainMenuViewController.m in Sources */,
-				9573ACBA1845587D0030F8F3 /* MothershipWeapons.m in Sources */,
+				9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */,
 				95950EDA1846259700CBF5E0 /* MotherShipLaser.m in Sources */,
 				957B372A1844B51B0086EC8B /* GameScene.m in Sources */,
 				40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */,
