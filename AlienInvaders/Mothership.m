@@ -7,6 +7,7 @@
 //
 
 #import "Mothership.h"
+#import "GameScene.h"
 
 @implementation Mothership
 
@@ -78,7 +79,7 @@
     _lifeLeft = _lifeLeft - damage;
     [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
     if (_lifeLeft <= 0) {
-        //TODO: Present LevelLostScene/LevelLostView
+        [(GameScene*)self.parent goToLevelFinished];
     }
 }
 

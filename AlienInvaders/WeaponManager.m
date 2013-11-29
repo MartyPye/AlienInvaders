@@ -27,8 +27,8 @@ static WeaponManager *_allWeaponsSingleton = nil;
     if (self != nil){
         
         // default weapons
-        self.purchasedWeapons = @[@"Single Shot"];
-        self.lockedWeapons    = @[@"Double Shot",@"Shotgun",@"Laser",@"Atom Bomb"];
+        self.purchasedWeapons = @[@"Single Shot",@"Laser",@""];
+        self.lockedWeapons    = @[@"Double Shot",@"Shotgun",@"Atom Bomb"];
 
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"purchased"] != nil) {

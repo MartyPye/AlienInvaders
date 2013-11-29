@@ -8,6 +8,8 @@
 
 #import "GameSceneViewController.h"
 #import "LevelManager.h"
+#import "WeaponManager.h"
+
 
 @interface GameSceneViewController ()
 
@@ -21,8 +23,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
-@property (weak, nonatomic) IBOutlet UIButton *singleShotButton;
-@property (weak, nonatomic) IBOutlet UIButton *laserButton;
+@property (weak, nonatomic) IBOutlet UIButton *weapon1Button;
+@property (weak, nonatomic) IBOutlet UIButton *weapon2Button;
+@property (weak, nonatomic) IBOutlet UIButton *weapon3Button;
+
+@property (nonatomic) NSMutableDictionary* weaponButtonImages;
+
 
 @end
 
@@ -91,13 +97,14 @@
     self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
     
+    //setting the delegate
+    [self.gameScene setDelegate:self];
+    
     // Present the scene.
     [self.skView presentScene:self.gameScene];
     
     // add pause button
     [self.skView addSubview:self.pauseButton];
-    // add weapon selection view
-    [self.skView addSubview:self.weaponSelectionView];
     
     [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
     [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
@@ -153,20 +160,42 @@
 
 - (IBAction)weaponSelected:(UIButton*)sender {
     // send something to weaponController
-    if (sender.tag == 0) {
-        // tell the weaponController to select the single shot
-        [self.gameScene.weaponController chooseWeapon:[[MothershipSingleShot alloc] initWithScene:self.gameScene]];
-        // set the current weapon of the game scene.
-        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
-        // assign the mothership to the weapon.
-        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
-    }
+    NSArray *purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setValue:[[MothershipSingleShot alloc] initWithScene:self.gameScene] forKey:@"Single Shot"];
+    [dictionary setValue:[[MothershipDoubleShot alloc] initWithScene:self.gameScene] forKey:@"Double Shot"];
+    [dictionary setValue:[[MotherShipLaser alloc] initWithScene:self.gameScene] forKey:@"Laser"];
+    [dictionary setValue:[[MothershipAtombomb alloc] initWithScene:self.gameScene] forKey:@"Atom Bomb"];
     
-    else if (sender.tag == 1) {
-        [self.gameScene.weaponController chooseWeapon:[[MotherShipLaser alloc] initWithScene:self.gameScene]];
-        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
-        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
-    }
+    MothershipWeapon *currentWeapon = [dictionary objectForKey:[purchasedWeapons objectAtIndex:sender.tag]];
+    
+    // tell the weaponController to select the single shot
+    [self.gameScene.weaponController chooseWeapon:currentWeapon];
+    // set the current weapon of the game scene.
+    self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+    // assign the mothership to the weapon.
+    [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+
+    
+    
+//    if (sender.tag == 0) {
+//        // tell the weaponController to select the single shot
+//        [self.gameScene.weaponController chooseWeapon:[[MothershipSingleShot alloc] initWithScene:self.gameScene]];
+//        // set the current weapon of the game scene.
+//        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+//        // assign the mothership to the weapon.
+//        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+//    }
+//    
+//    else if (sender.tag == 1) {
+//        [self.gameScene.weaponController chooseWeapon:[[MotherShipLaser alloc] initWithScene:self.gameScene]];
+//        self.gameScene.currentMothershipWeapon = self.gameScene.weaponController.currentWeapon;
+//        [self.gameScene.currentMothershipWeapon setCurrentMothership:self.gameScene.mothership];
+//    }
+//    
+//    else if (sender.tag == 2) {
+//        
+//    }
 }
 
 
@@ -188,5 +217,17 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+
+- (void) goToLevelFinishedViewController
+{
+    [[LevelManager sharedLevelManager] pauseLevel];
+    [self performSegueWithIdentifier:@"LevelFinishedSegue" sender:self];
+    [self.gameScene removeAllChildren];
+}
+
+
+
+
 
 @end

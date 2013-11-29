@@ -19,12 +19,23 @@
 #import "MotherShipLaser.h"
 #import "LifeIndicator.h"
 #import "WeaponController.h"
+#import "CoinIndicator.h"
+#import "CoinManager.h"
+#import "LevelFinishedScene.h"
+
+@protocol GameSceneDelegate <NSObject>
+- (void) goToLevelFinishedViewController;
+@end
 
 @interface GameScene : SKScene<SKPhysicsContactDelegate>
 
 @property (nonatomic) Mothership *mothership;
 @property (nonatomic) MothershipWeapon *currentMothershipWeapon;
 @property (nonatomic) LifeIndicator *lifeIndicator;
+@property (nonatomic) CoinIndicator *coinIndicator;
 @property (nonatomic) WeaponController* weaponController;
+
+@property (nonatomic, weak) id <GameSceneDelegate> delegate;
+- (void) goToLevelFinished;
 
 @end
