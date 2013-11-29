@@ -98,7 +98,6 @@
     {
         [_currentMothershipWeapon fireFromPosition:_mothership.position];
     }
-    
 }
 
 /**

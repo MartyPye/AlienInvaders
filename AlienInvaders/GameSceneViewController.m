@@ -15,6 +15,7 @@
 @property (nonatomic) SKView *skView;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
+@property (weak, nonatomic) IBOutlet UIView *weaponSelectionView;
 @property (weak, nonatomic) IBOutlet UIView *bloodView;
 
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
@@ -41,8 +42,30 @@
             }];
         }];
     }
-
     
+}
+
+- (void)registerAsObserver {
+    /*
+     Register 'inspector' to receive change notifications for the "openingBalance" property of
+     the 'account' object and specify that both the old and new values of "openingBalance"
+     should be provided in the observe… method.
+     */
+//    [account addObserver:GameSceneViewController
+//              forKeyPath:@"openingBalance"
+//                 options:(NSKeyValueObservingOptionNew |
+//                          NSKeyValueObservingOptionOld)
+//                 context:NULL];
+}
+
+#pragma mark - Loop Update
+- (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast {
+    if (self.gameScene.lifeIndicator.LifeIsCritical == YES) {
+        self.bloodView.hidden = NO;
+    }
+    else{
+        self.bloodView.hidden = YES;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -89,6 +112,7 @@
     
     //setup blood view
     [self.skView addSubview:self.bloodView];
+    self.bloodView.hidden = YES;
     
 }
 
