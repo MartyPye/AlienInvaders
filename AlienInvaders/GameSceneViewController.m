@@ -10,6 +10,7 @@
 #import "LevelManager.h"
 #import "WeaponManager.h"
 
+
 @interface GameSceneViewController ()
 
 @property (nonatomic) GameScene* gameScene;
@@ -71,6 +72,9 @@
     // Create and configure the scene.
     self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    //setting the delegate
+    [self.gameScene setDelegate:self];
     
     // Present the scene.
     [self.skView presentScene:self.gameScene];
@@ -203,5 +207,17 @@
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
+
+
+- (void) goToLevelFinishedViewController
+{
+    [[LevelManager sharedLevelManager] pauseLevel];
+    [self performSegueWithIdentifier:@"LevelFinishedSegue" sender:self];
+    [self.gameScene removeAllChildren];
+}
+
+
+
+
 
 @end
