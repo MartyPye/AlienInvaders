@@ -117,10 +117,34 @@
     // setup pause view
     [self.skView addSubview:self.pauseView];
     
+    self.weaponButtonImages = [[NSMutableDictionary alloc] init];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"SingleShotButton.png"] forKey:@"Single Shot"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"DoubleShotButton.png"] forKey:@"Double Shot"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"LaserButton.png"] forKey:@"Laser"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"AtomBombButton.png"] forKey:@"Atom Bomb"];
+    
     //setup blood view
     [self.skView addSubview:self.bloodView];
     self.bloodView.hidden = YES;
     
+    // assign the weapon buttons with the correct names (TODO: images)
+    NSArray* purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
+    if (![[purchasedWeapons objectAtIndex:0] isEqualToString:@""]) {
+        [self.weapon1Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:0]] forState:UIControlStateNormal];
+    }
+    else
+        [self.weapon1Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    if (![[purchasedWeapons objectAtIndex:1] isEqualToString:@""])
+        [self.weapon2Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:1]] forState:UIControlStateNormal];
+    else
+        [self.weapon2Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    if (![[purchasedWeapons objectAtIndex:2] isEqualToString:@""])
+        [self.weapon3Button setBackgroundImage:[self.weaponButtonImages objectForKey:[purchasedWeapons objectAtIndex:2]] forState:UIControlStateNormal];
+    else
+        [self.weapon3Button setBackgroundImage:[UIImage imageNamed:@"LockedButton.png"] forState:UIControlStateNormal];
+    
+    // setup weapon view
+    [self.skView addSubview:self.weaponSelectionView];
 }
 
 
