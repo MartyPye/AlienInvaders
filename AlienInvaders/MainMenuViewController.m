@@ -61,6 +61,7 @@
     UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-250, -250, 900, 900)];
     iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
     
+    // add parallax
     UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     interpolationHorizontal.minimumRelativeValue = @-10.0;
     interpolationHorizontal.maximumRelativeValue = @10.0;
