@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 @property (weak, nonatomic) IBOutlet UIView *weaponSelectionView;
-@property (weak, nonatomic) IBOutlet UIView *bloodView;
 
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
@@ -49,29 +48,6 @@
         }];
     }
     
-}
-
-- (void)registerAsObserver {
-    /*
-     Register 'inspector' to receive change notifications for the "openingBalance" property of
-     the 'account' object and specify that both the old and new values of "openingBalance"
-     should be provided in the observe… method.
-     */
-//    [account addObserver:GameSceneViewController
-//              forKeyPath:@"openingBalance"
-//                 options:(NSKeyValueObservingOptionNew |
-//                          NSKeyValueObservingOptionOld)
-//                 context:NULL];
-}
-
-#pragma mark - Loop Update
-- (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast {
-    if (self.gameScene.lifeIndicator.LifeIsCritical == YES) {
-        self.bloodView.hidden = NO;
-    }
-    else{
-        self.bloodView.hidden = YES;
-    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -123,10 +99,6 @@
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"LaserButton.png"] forKey:@"Laser"];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"AtomBombButton.png"] forKey:@"Atom Bomb"];
     
-    //setup blood view
-    [self.skView addSubview:self.bloodView];
-    self.bloodView.hidden = YES;
-    
     // assign the weapon buttons with the correct names (TODO: images)
     NSArray* purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
     if (![[purchasedWeapons objectAtIndex:0] isEqualToString:@""]) {
@@ -166,9 +138,6 @@
     // Replace the old scene with the new one.
     SKTransition *reveal = [SKTransition revealWithDirection:SKTransitionDirectionDown duration:0.5];
     [self.skView presentScene:self.gameScene transition:reveal];
-    
-    // Hide blood View if not already hidden.
-    self.bloodView.hidden = YES;
 }
 
 
@@ -176,9 +145,6 @@
     // hide the pause view and remove everything in the gameScene.
     self.pauseView.hidden = YES;
     [self.gameScene removeAllChildren];
-    
-    // Hide blood View if not already hidden.
-    self.bloodView.hidden = YES;
 }
 
 

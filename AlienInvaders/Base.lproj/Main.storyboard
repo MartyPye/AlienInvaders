@@ -213,14 +213,14 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time: 4s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-gt-TxZ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 4s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IF-gt-TxZ">
                                         <rect key="frame" x="210" y="59" width="74" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Regenertation: 30s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f20-ne-Thl">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regenertation: 30s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f20-ne-Thl">
                                         <rect key="frame" x="120" y="84" width="176" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
@@ -353,11 +353,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NMX-SD-PHL"/>
-                    <connections>
-                        <outlet property="level1" destination="kNJ-jP-z68" id="wPG-RV-Qko"/>
-                        <outlet property="level2" destination="1ot-Rr-PTG" id="yAd-Tf-3TH"/>
-                        <outlet property="level3" destination="KEI-za-q2j" id="bYH-cK-q1e"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lC1-M3-cWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -465,14 +460,6 @@
                                     </imageView>
                                 </subviews>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bloody frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-VI-b6l">
-                                <rect key="frame" x="-2" y="0.0" width="573" height="258"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Jr0-Cq-gfO"/>
-                                    <constraint firstAttribute="height" constant="128" id="mpL-LC-CAK"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -480,8 +467,6 @@
                     <navigationItem key="navigationItem" id="O8S-ee-Wkm"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="bloodView" destination="inJ-VI-b6l" id="YbR-6b-KjF"/>
-                        <outlet property="laserButton" destination="A7b-oG-fRc" id="ak9-o5-5SF"/>
                         <outlet property="menuButton" destination="XQv-Fa-fg6" id="41G-Op-S60"/>
                         <outlet property="pauseButton" destination="V6s-0W-ahE" id="ut5-os-5Gw"/>
                         <outlet property="pauseView" destination="Hye-6P-o2f" id="Vzx-vt-dYJ"/>
@@ -525,7 +510,6 @@
         <image name="Level3MenuItem.png" width="115" height="27"/>
         <image name="LevelSelectionMenuItem.png" width="237" height="27"/>
         <image name="UpgradeStoreMenuItem.png" width="225" height="33"/>
-        <image name="bloody frame.png" width="241" height="125"/>
         <image name="pauseButton.png" width="12" height="18"/>
         <image name="tempShield.png" width="256" height="256"/>
     </resources>
@@ -535,7 +519,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bzg-O5-h51"/>
         <segue reference="4sn-wq-3Sd"/>
+        <segue reference="XD6-4x-lDh"/>
     </inferredMetricsTieBreakers>
 </document>

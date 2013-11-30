@@ -61,7 +61,6 @@
     UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-250, -250, 900, 900)];
     iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
     
-    // add parallax
     UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
     interpolationHorizontal.minimumRelativeValue = @-10.0;
     interpolationHorizontal.maximumRelativeValue = @10.0;
@@ -74,7 +73,7 @@
     [iV addMotionEffect:interpolationVertical];
     [self.view addSubview:iV];
     [self.view sendSubviewToBack:iV];
-    //[self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
+//    [self runSpinAnimationOnView:iV duration:200 rotations:1 repeat:100];
 }
 
 - (void) runSpinAnimationOnView:(UIView*)view duration:(CGFloat)duration rotations:(CGFloat)rotations repeat:(float)repeat;
