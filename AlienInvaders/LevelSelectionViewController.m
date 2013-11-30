@@ -11,6 +11,10 @@
 
 @interface LevelSelectionViewController ()
 
+@property (strong, nonatomic) IBOutlet UIButton *level1;
+@property (strong, nonatomic) IBOutlet UIButton *level2;
+@property (strong, nonatomic) IBOutlet UIButton *level3;
+
 @end
 
 @implementation LevelSelectionViewController
