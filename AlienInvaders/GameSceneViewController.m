@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 @property (weak, nonatomic) IBOutlet UIView *weaponSelectionView;
+//@property (weak, nonatomic) IBOutlet UIView *bloodView;
 
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
@@ -47,7 +48,6 @@
             }];
         }];
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -93,6 +93,9 @@
     // setup pause view
     [self.skView addSubview:self.pauseView];
     
+    //setup blood vies
+    //[self.skView addSubview:self.bloodView];
+    
     self.weaponButtonImages = [[NSMutableDictionary alloc] init];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"SingleShotButton.png"] forKey:@"Single Shot"];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"DoubleShotButton.png"] forKey:@"Double Shot"];
@@ -131,6 +134,10 @@
     self.pauseView.hidden = YES;
     [self.gameScene removeAllChildren];
     
+    // hide the blood view
+    //self.bloodView.hidden = YES;
+    self.gameScene.mothership.dying = NO;
+    
     // Create and configure the new scene.
     self.gameScene = [GameScene sceneWithSize:self.skView.bounds.size];
     self.gameScene.scaleMode = SKSceneScaleModeAspectFill;
@@ -145,6 +152,10 @@
     // hide the pause view and remove everything in the gameScene.
     self.pauseView.hidden = YES;
     [self.gameScene removeAllChildren];
+    
+    // hide the blood view
+    //self.bloodView.hidden = YES;
+    self.gameScene.mothership.dying = NO;
 }
 
 
