@@ -17,7 +17,8 @@
     self.text = @"0";
     self.position = CGPointMake(150, 295);
     
-    SKSpriteNode *coinSymbol = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
+//    SKSpriteNode *coinSymbol = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
+    SKSpriteNode *coinSymbol = [[SKSpriteNode alloc] initWithImageNamed:@"Coin.png"];
     coinSymbol.position = CGPointMake(20, 5);
     [self addChild:coinSymbol];
     

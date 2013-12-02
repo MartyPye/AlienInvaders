@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03A8B64F1844EBA4008BF4D2 /* bloody frame@2x.png */; };
 		40218C73183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */; };
+		40C9D72E184B8424005CD196 /* Coin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40C9D72D184B8424005CD196 /* Coin@2x.png */; };
 		40D25B7918438E0E009D24F8 /* AlienInvaderLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */; };
 		40D25B8518439865009D24F8 /* Atom Bomb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8418439865009D24F8 /* Atom Bomb@2x.png */; };
 		40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40D25B8618439C72009D24F8 /* Laser@2x.png */; };
@@ -113,6 +114,7 @@
 		03A8B64F1844EBA4008BF4D2 /* bloody frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bloody frame@2x.png"; sourceTree = "<group>"; };
 		40218C71183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighscoreLevelSelectionViewController.h; sourceTree = "<group>"; };
 		40218C72183E2CE100ABBF8A /* HighscoreLevelSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighscoreLevelSelectionViewController.m; sourceTree = "<group>"; };
+		40C9D72D184B8424005CD196 /* Coin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Coin@2x.png"; sourceTree = "<group>"; };
 		40D25B7818438E0E009D24F8 /* AlienInvaderLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlienInvaderLogo@2x.png"; sourceTree = "<group>"; };
 		40D25B8418439865009D24F8 /* Atom Bomb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Atom Bomb@2x.png"; sourceTree = "<group>"; };
 		40D25B8618439C72009D24F8 /* Laser@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Laser@2x.png"; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 				40DC716B18478A2400E271C1 /* AtomBombButton@2x.png */,
 				40DC716D18478A4400E271C1 /* DoubleShotButton@2x.png */,
 				40DC716F18478F0400E271C1 /* LaserButton@2x.png */,
+				40C9D72D184B8424005CD196 /* Coin@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				40F262E6183E5B9A007E35CD /* HighscoresMenuItem@2x.png in Resources */,
 				40D25B8F18450159009D24F8 /* standardEnemy@2x.png in Resources */,
 				40D25B8C18439E57009D24F8 /* Shotgun@2x.png in Resources */,
+				40C9D72E184B8424005CD196 /* Coin@2x.png in Resources */,
 				40D25B8718439C72009D24F8 /* Laser@2x.png in Resources */,
 				9573ACC9184569BF0030F8F3 /* white.png in Resources */,
 				40DC716C18478A2400E271C1 /* AtomBombButton@2x.png in Resources */,

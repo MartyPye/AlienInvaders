@@ -15,7 +15,8 @@
 // ----------------------------------------------------------------------------------------------------
 - (id)initWithPos:(CGPoint)pos
 {
-    self = [super initWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
+//    self = [super initWithColor:[SKColor yellowColor] size:CGSizeMake(10, 10)];
+    self = [super initWithImageNamed:@"Coin.png"];
     self.position = pos;
     
     [self addBodyToCoin];
