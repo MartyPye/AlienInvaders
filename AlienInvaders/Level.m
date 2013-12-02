@@ -61,6 +61,12 @@
     }
 }
 
+- (void) finish;
+{
+    [self stopRepeatingTimer];
+    self.repeatingTimer = nil;
+}
+
 - (void) startRepeatingTimer;
 {
     // Cancel a preexisting timer.

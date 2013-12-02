@@ -19,5 +19,6 @@
 - (NSUInteger) totalAmountOfLevels;
 - (void) setupCurrentLevel;
 - (void) pauseLevel;
+- (void) finishLevel;
 
 @end

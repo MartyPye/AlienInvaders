@@ -7,6 +7,7 @@
 //
 
 #import "LevelFinishedScene.h"
+#import "CoinManager.h"
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
@@ -134,7 +135,7 @@
 - (void) addAllAnimations {
     
     SKLabelNode *coinsCollectedNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
-    coinsCollectedNumberNode.text = @"89";
+    coinsCollectedNumberNode.text = [NSString stringWithFormat:@"%d",[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
     coinsCollectedNumberNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
     coinsCollectedNumberNode.fontSize = 20.0;
     coinsCollectedNumberNode. position = CGPointMake(200, 220);
@@ -142,7 +143,7 @@
     [self addChild:coinsCollectedNumberNode];
     
     SKLabelNode *lifeLeftNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
-    lifeLeftNumberNode.text = @"52";
+    lifeLeftNumberNode.text = [NSString stringWithFormat:@"%d",0];
     lifeLeftNumberNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
     lifeLeftNumberNode.fontSize = 20.0;
     lifeLeftNumberNode. position = CGPointMake(200, 180);
@@ -167,7 +168,7 @@
     [self addChild:line];
     
     SKLabelNode *resultNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
-    resultNumberNode.text = @"141";
+    resultNumberNode.text = [NSString stringWithFormat:@"%d",[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
     resultNumberNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
     resultNumberNode.fontSize = 32.0;
     resultNumberNode. position = CGPointMake(200, 85);
@@ -228,17 +229,19 @@
     
     SKAction *starFade = [SKAction fadeInWithDuration:.25];
     SKAction *starScale = [SKAction scaleTo:1 duration:.25];
-    SKAction *starAction = [SKAction group:@[starScale,starFade]];
-    
+    SKAction *starSound = [SKAction playSoundFileNamed:@"star.wav" waitForCompletion:YES];
+    SKAction *starAction = [SKAction group:@[starScale,starFade,starSound]];
     
     
     [leftStar runAction:starAction completion:^{
         [middleStar runAction:starAction completion:^{
             //[rightStar runAction:starAction completion:^{
-            
             //}];
         }];
     }];
+    
+    NSLog(@"Going to LFSCENE");
+
 }
 
 @end

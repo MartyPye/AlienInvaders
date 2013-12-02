@@ -222,9 +222,11 @@
 
 - (void) goToLevelFinishedViewController
 {
-    [[LevelManager sharedLevelManager] pauseLevel];
+    [[LevelManager sharedLevelManager] finishLevel];
     [self performSegueWithIdentifier:@"LevelFinishedSegue" sender:self];
     [self.gameScene removeAllChildren];
+    [self.gameScene removeAllActions];
+    [self.gameScene removeFromParent];
 }
 
 

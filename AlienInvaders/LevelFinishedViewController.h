@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "LevelFinishedScene.h"
+#import "LevelManager.h"
 
 @interface LevelFinishedViewController : UIViewController
+- (IBAction)menuButtonPressed:(id)sender;
+- (IBAction)restartButtonPressed:(id)sender;
+- (IBAction)nextButtonPressed:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIView *buttonView;
 
 @end
