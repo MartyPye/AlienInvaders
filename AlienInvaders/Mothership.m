@@ -11,12 +11,16 @@
 
 @implementation Mothership
 
+
+
 - (id) initWithLife:(float)life
 {
     self = [super initWithImageNamed:@"MotherShip"];
 
     _wholeLife = life;
     _lifeLeft = life;
+    
+    _dying = NO;
     
     _lifePercentage = [NSNumber numberWithFloat:100];
     
@@ -68,7 +72,6 @@
 }
 
 
-
 - (void) mothershipGotHitWithDamage:(float)damage
 {
     //TODO: Verena add the blood!!! something like: [self.parent addChild:[SKSpriteNode spriteNodeWithImage@"blood"]]
@@ -80,6 +83,16 @@
     [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
     if (_lifeLeft <= 0) {
         [(GameScene*)self.parent goToLevelFinished];
+    }
+    else if (_lifeLeft <= 20 && _dying == NO){
+//        CGSize screenSize = CGSizeMake(480, 320);
+//        SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
+//        blood.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+//        blood.size = screenSize;
+//        blood.zPosition = 0;
+//        [self.parent addChild:blood];
+        [self.parent addChild:[SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"]];
+        _dying = YES;
     }
 }
 
