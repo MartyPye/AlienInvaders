@@ -86,13 +86,12 @@
     }
     //show bloody frame
     else if (_lifeLeft <= 20 && _dying == NO){
-//        CGSize screenSize = CGSizeMake(568, 320);
-//        SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
-//        //blood.position = CGPointMake((CGRectGetMidX(self.frame)+90), (CGRectGetMidY(self.frame)+100));
-//        blood.position = CGPointMake((568-CGRectGetWidth(self.frame)), (320-CGRectGetHeight(self.frame)));
-//        blood.size = screenSize;
-//        blood.zPosition = 0;
-//        [self.parent addChild:blood];
+        CGSize screenSize = CGSizeMake(568, 320);
+        SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
+        blood.position = CGPointMake((CGRectGetMidX(self.frame)+90), (CGRectGetMidY(self.frame)+90));
+        blood.size = screenSize;
+        blood.zPosition = 0;
+        [self.parent addChild:blood];
         _dying = YES;
     }
 }
