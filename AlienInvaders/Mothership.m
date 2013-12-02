@@ -86,7 +86,6 @@
     else if (_lifeLeft <= 20 && _dying == NO){
         CGSize screenSize = CGSizeMake(568, 320);
         SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
-        //blood.position = CGPointMake((CGRectGetMidX(self.frame)+90), (CGRectGetMidY(self.frame)+90));
         blood.position = CGPointMake(CGRectGetMidX(self.parent.frame), CGRectGetMidY(self.parent.frame));
         blood.size = screenSize;
         blood.alpha = 0.8;
