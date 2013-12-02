@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
 @property (weak, nonatomic) IBOutlet UIView *pauseView;
 @property (weak, nonatomic) IBOutlet UIView *weaponSelectionView;
-@property (weak, nonatomic) IBOutlet UIView *bloodView;
+//@property (weak, nonatomic) IBOutlet UIView *bloodView;
 
 @property (weak, nonatomic) IBOutlet UIButton *resumeButton;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
@@ -94,7 +94,7 @@
     [self.skView addSubview:self.pauseView];
     
     //setup blood vies
-    [self.skView addSubview:self.bloodView];
+    //[self.skView addSubview:self.bloodView];
     
     self.weaponButtonImages = [[NSMutableDictionary alloc] init];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"SingleShotButton.png"] forKey:@"Single Shot"];
@@ -135,7 +135,7 @@
     [self.gameScene removeAllChildren];
     
     // hide the blood view
-    self.bloodView.hidden = YES;
+    //self.bloodView.hidden = YES;
     self.gameScene.mothership.dying = NO;
     
     // Create and configure the new scene.
@@ -154,7 +154,7 @@
     [self.gameScene removeAllChildren];
     
     // hide the blood view
-    self.bloodView.hidden = YES;
+    //self.bloodView.hidden = YES;
     self.gameScene.mothership.dying = NO;
 }
 

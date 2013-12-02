@@ -18,7 +18,7 @@
     self.color = [UIColor greenColor];
     self.colorBlendFactor = 0.8;
     
-    self.LifeIsCritical = NO;
+    //self.LifeIsCritical = NO;
     
     _redCross = [[SKSpriteNode alloc] initWithImageNamed:@"redCross"];
     _redCross.position = CGPointMake(-(self.size.width/2)-8, 0);
@@ -36,12 +36,12 @@
     _redCross.position = CGPointMake(-(self.size.width/2)-8, 0);
     
     // will add the bloddy frame
-    if (percentage <=20) {
-        self.LifeIsCritical = YES;
-    }
-    else{
-        self.LifeIsCritical = NO;
-    }
+//    if (percentage <=20) {
+//        self.LifeIsCritical = YES;
+//    }
+//    else{
+//        self.LifeIsCritical = NO;
+//    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

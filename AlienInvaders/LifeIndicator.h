@@ -11,6 +11,6 @@
 @interface LifeIndicator : SKSpriteNode
 
 @property (nonatomic) SKSpriteNode *redCross;
-@property (nonatomic) BOOL LifeIsCritical;
+//@property (nonatomic) BOOL LifeIsCritical;
 
 @end

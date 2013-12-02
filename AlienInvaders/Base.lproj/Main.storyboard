@@ -370,10 +370,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bloody frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="jpt-cU-Vae">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYJ-TG-bnV">
                                 <rect key="frame" x="136" y="259" width="296" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -471,7 +467,6 @@
                     <navigationItem key="navigationItem" id="O8S-ee-Wkm"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="bloodView" destination="jpt-cU-Vae" id="8j7-SC-Jnh"/>
                         <outlet property="menuButton" destination="XQv-Fa-fg6" id="41G-Op-S60"/>
                         <outlet property="pauseButton" destination="V6s-0W-ahE" id="ut5-os-5Gw"/>
                         <outlet property="pauseView" destination="Hye-6P-o2f" id="Vzx-vt-dYJ"/>
@@ -515,7 +510,6 @@
         <image name="Level3MenuItem.png" width="115" height="27"/>
         <image name="LevelSelectionMenuItem.png" width="237" height="27"/>
         <image name="UpgradeStoreMenuItem.png" width="225" height="33"/>
-        <image name="bloody frame.png" width="241" height="125"/>
         <image name="pauseButton.png" width="12" height="18"/>
         <image name="tempShield.png" width="256" height="256"/>
     </resources>
