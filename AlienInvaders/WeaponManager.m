@@ -107,7 +107,14 @@ static WeaponManager *_allWeaponsSingleton = nil;
 
 - (void) unlockWeapon:(NSString*)weaponName;
 {
-    [self.lockedWeapons removeObjectIdenticalTo:weaponName];
+    // remove weapon from locked weapons
+    for (int i = 0; i < self.lockedWeapons.count; i++) {
+        if ([[self.lockedWeapons objectAtIndex:i] isEqualToString:weaponName]) {
+            [self.lockedWeapons removeObjectAtIndex:i];
+        }
+    }
+    
+    // add to purchased weapons
     BOOL foundEmptySpot = NO;
     for (int i = 0; i < self.purchasedWeapons.count; i++) {
         if ([[self.purchasedWeapons objectAtIndex:i] isEqualToString:@""]) {
