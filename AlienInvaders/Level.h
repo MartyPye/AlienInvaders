@@ -18,5 +18,6 @@
 
 - (id) initWithIndex:(NSUInteger)theIndex andScene:(SKScene*)theScene;
 - (void) pause;
+- (void) finish;
 
 @end

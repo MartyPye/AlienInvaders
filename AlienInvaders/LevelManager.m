@@ -83,4 +83,9 @@
     [currentLevel pause];
 }
 
+- (void) finishLevel;
+{
+    [currentLevel finish];
+}
+
 @end

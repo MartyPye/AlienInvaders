@@ -99,6 +99,7 @@
 		95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FE184514C00069BCC6 /* mothershipBurst.sks */; };
 		95D58A01184514C00069BCC6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FF184514C00069BCC6 /* spark.png */; };
 		95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A04184517370069BCC6 /* enemyBurst.sks */; };
+		95F6F0B1184C914D005C38F5 /* star.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95F6F0B0184C914D005C38F5 /* star.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,7 @@
 		95D589FE184514C00069BCC6 /* mothershipBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mothershipBurst.sks; sourceTree = "<group>"; };
 		95D589FF184514C00069BCC6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		95D58A04184517370069BCC6 /* enemyBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = enemyBurst.sks; sourceTree = "<group>"; };
+		95F6F0B0184C914D005C38F5 /* star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = star.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,6 +381,7 @@
 		7811549E183D1AD300A61AD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95F6F0AB184C8FC7005C38F5 /* Sounds */,
 				9573ACCA184570E00030F8F3 /* Icons */,
 				40F26302183E7BB8007E35CD /* Fonts */,
 				40218C74183E3FA200ABBF8A /* Custom Text */,
@@ -613,6 +616,14 @@
 			name = Mothership;
 			sourceTree = "<group>";
 		};
+		95F6F0AB184C8FC7005C38F5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				95F6F0B0184C914D005C38F5 /* star.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -719,6 +730,7 @@
 				95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */,
+				95F6F0B1184C914D005C38F5 /* star.wav in Resources */,
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				40DC717018478F0400E271C1 /* LaserButton@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,

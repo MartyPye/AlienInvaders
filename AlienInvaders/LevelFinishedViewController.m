@@ -31,7 +31,6 @@
             }];
         }];
     }
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -59,6 +58,9 @@
     
     // Present the scene.
     [self.skView presentScene:self.lfScene];
+    
+    [self.skView addSubview:_buttonView];
+    [_buttonView setHidden:NO];
 }
 
 - (BOOL)shouldAutorotate {
@@ -79,4 +81,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+- (IBAction)menuButtonPressed:(id)sender
+{
+    [self.lfScene removeFromParent];
+}
+
+- (IBAction)restartButtonPressed:(id)sender
+{
+    [self.lfScene removeFromParent];
+
+}
+
+- (IBAction)nextButtonPressed:(id)sender
+{
+    [self.lfScene removeFromParent];
+    [[LevelManager sharedLevelManager] setCurrentLevelIndex:[LevelManager sharedLevelManager].currentLevelIndex+1];
+}
 @end
