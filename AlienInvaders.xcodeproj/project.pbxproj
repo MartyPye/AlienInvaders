@@ -65,6 +65,8 @@
 		95208950184777A70084DFD3 /* CoinIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520894F184777A70084DFD3 /* CoinIndicator.m */; };
 		9520895418477D900084DFD3 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520895318477D900084DFD3 /* Coin.m */; };
 		9520895718477DA30084DFD3 /* CoinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520895618477DA30084DFD3 /* CoinManager.m */; };
+		9524D9F3184B6152006A398A /* star_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9524D9F1184B6152006A398A /* star_white@2x.png */; };
+		9524D9F4184B6152006A398A /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9524D9F2184B6152006A398A /* star@2x.png */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
 		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
@@ -185,6 +187,8 @@
 		9520895318477D900084DFD3 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		9520895518477DA30084DFD3 /* CoinManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinManager.h; sourceTree = "<group>"; };
 		9520895618477DA30084DFD3 /* CoinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinManager.m; sourceTree = "<group>"; };
+		9524D9F1184B6152006A398A /* star_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_white@2x.png"; sourceTree = "<group>"; };
+		9524D9F2184B6152006A398A /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
@@ -505,6 +509,8 @@
 		9573ACCA184570E00030F8F3 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				9524D9F1184B6152006A398A /* star_white@2x.png */,
+				9524D9F2184B6152006A398A /* star@2x.png */,
 				9573ACC8184569BF0030F8F3 /* white.png */,
 				9573ACCB184570F30030F8F3 /* redCross@2x.png */,
 				40DC716218474F1500E271C1 /* pauseButton@2x.png */,
@@ -708,6 +714,8 @@
 				781154B5183D1AD300A61AD2 /* Images.xcassets in Resources */,
 				95950EE918463F0600CBF5E0 /* atomExplosion.sks in Resources */,
 				40F262E2183E599E007E35CD /* LevelSelectionMenuItem@2x.png in Resources */,
+				9524D9F3184B6152006A398A /* star_white@2x.png in Resources */,
+				9524D9F4184B6152006A398A /* star@2x.png in Resources */,
 				95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */,
 				40F26305183E7BE2007E35CD /* Apple-casual.ttf in Resources */,
 				40DC7161184748E700E271C1 /* pauseMenu@2x.png in Resources */,
