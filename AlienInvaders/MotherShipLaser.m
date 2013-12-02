@@ -24,7 +24,7 @@
     Laser *laser = [[Laser alloc] init];
     [laser setPosition:CGPointMake(320, 0)];
     [laser addBodyToLaser];
-    [laser addLaserToShip:self.currentMothership withDuration:4.0];
+    [laser addLaserToShip:self.currentMothership withDuration:1.0];
 }
 
 @end

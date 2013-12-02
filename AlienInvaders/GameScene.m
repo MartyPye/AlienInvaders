@@ -23,7 +23,7 @@
         bg.zPosition = 0;
         [self addChild:bg];
         
-        UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-250, -250, 900, 900)];
+        UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 900, 900)];
         iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
         
         // add parallax
@@ -100,6 +100,7 @@
     self.physicsWorld.contactDelegate = self;
     
 }
+
 
 
 //---------------------------------------------------------------------------------------------------------

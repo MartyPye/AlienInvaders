@@ -22,6 +22,23 @@
         bg.zPosition = 0;
         [self addChild:bg];
         
+        UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 900, 900)];
+        iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
+        
+        // add parallax
+        UIInterpolatingMotionEffect *interpolationHorizontal = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+        interpolationHorizontal.minimumRelativeValue = @-10.0;
+        interpolationHorizontal.maximumRelativeValue = @10.0;
+        
+        UIInterpolatingMotionEffect *interpolationVertical = [[UIInterpolatingMotionEffect alloc]initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+        interpolationVertical.minimumRelativeValue = @-10.0;
+        interpolationVertical.maximumRelativeValue = @10.0;
+        
+        [iV addMotionEffect:interpolationHorizontal];
+        [iV addMotionEffect:interpolationVertical];
+        [self.view addSubview:iV];
+        [self.view sendSubviewToBack:iV];
+        
         SKLabelNode *levelNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
         levelNode.text = @"Level 1";
         levelNode.fontSize = 50.0;

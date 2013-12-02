@@ -44,7 +44,7 @@
 
 - (void) addBackground
 {
-    UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 900, 900)];
+    UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 900, 900)];
     iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
     
     // add parallax
