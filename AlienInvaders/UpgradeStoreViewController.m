@@ -33,6 +33,7 @@
     
     //WeaponView
     [_weaponTableView setEditing:YES];
+    [_weaponTableView setAllowsSelection:YES];
     
     //Shieldview
     [self updateShieldView];
@@ -129,7 +130,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return [[WeaponManager sharedWeaponManager] allPurchasedWeapons].count;
+        return [[WeaponManager sharedWeaponManager] amountOfPurchasedWeapons];
     } else {
         return [[WeaponManager sharedWeaponManager] allLockedWeapons].count;
     }
@@ -175,10 +176,12 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-   
-    //TODO: CHANGE IN ALLWEAPONS
-    
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    NSString *temp = [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] objectAtIndex:sourceIndexPath.item];
+    [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] removeObjectAtIndex:sourceIndexPath.item];
+    [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] insertObject:temp atIndex:destinationIndexPath.item];
     [_weaponTableView reloadData];
 }
 
@@ -192,6 +195,15 @@
     }
     
     return proposedDestinationIndexPath;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (indexPath.section == 1) {
+        UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+        [[WeaponManager sharedWeaponManager] unlockWeapon:selectedCell.textLabel.text];
+        [_weaponTableView reloadData];
+    }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{

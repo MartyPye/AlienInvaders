@@ -10,9 +10,11 @@
 
 @interface WeaponManager : NSObject
 
-- (NSArray*) allPurchasedWeapons;
-- (NSArray*) allLockedWeapons;
+- (NSMutableArray*) allPurchasedWeapons;
+- (NSMutableArray*) allLockedWeapons;
 
 +(WeaponManager *)sharedWeaponManager;
+- (NSUInteger) amountOfPurchasedWeapons;
+- (void) unlockWeapon:(NSString*)weaponName;
 
 @end

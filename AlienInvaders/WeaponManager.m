@@ -12,8 +12,8 @@
 
 @interface WeaponManager ()
 
-@property (nonatomic) NSArray *purchasedWeapons;
-@property (nonatomic) NSArray *lockedWeapons;
+@property (nonatomic) NSMutableArray *purchasedWeapons;
+@property (nonatomic) NSMutableArray *lockedWeapons;
 
 @end
 
@@ -27,8 +27,8 @@ static WeaponManager *_allWeaponsSingleton = nil;
     if (self != nil){
         
         // default weapons
-        self.purchasedWeapons = @[@"Single Shot",@"Laser",@""];
-        self.lockedWeapons    = @[@"Double Shot",@"Shotgun",@"Atom Bomb"];
+        self.purchasedWeapons = [NSMutableArray arrayWithArray:@[@"Single Shot",@"Laser",@""]];
+        self.lockedWeapons    = [NSMutableArray arrayWithArray:@[@"Double Shot",@"Shotgun",@"Atom Bomb"]];
 
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"purchased"] != nil) {
@@ -56,7 +56,7 @@ static WeaponManager *_allWeaponsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 // Returns the purchased weapon array
 // ----------------------------------------------------------------------------------------------------
-- (NSArray*) allPurchasedWeapons
+- (NSMutableArray*) allPurchasedWeapons
 {
     return self.purchasedWeapons;
 }
@@ -65,7 +65,7 @@ static WeaponManager *_allWeaponsSingleton = nil;
 // ----------------------------------------------------------------------------------------------------
 // Returns the locked weapons array
 // ----------------------------------------------------------------------------------------------------
-- (NSArray*) allLockedWeapons
+- (NSMutableArray*) allLockedWeapons
 {
     return self.lockedWeapons;
 }
@@ -74,11 +74,11 @@ static WeaponManager *_allWeaponsSingleton = nil;
 //----------------------------------------------------------
 // Restoring all the weapons from NSUserdefaults
 //----------------------------------------------------------
-- (NSArray*)getWeaponArrayForKey:(NSString*)key
+- (NSMutableArray*)getWeaponArrayForKey:(NSString*)key
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [defaults objectForKey:key];
-    NSArray *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    NSMutableArray *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     return object;
 }
 
@@ -93,6 +93,34 @@ static WeaponManager *_allWeaponsSingleton = nil;
     [defaults setObject:purchasedWeaponsArchived forKey:@"purchased"];
     [defaults setObject:lockedWeaponsArchived forKey:@"locked"];
     [defaults synchronize];
+}
+
+- (NSUInteger) amountOfPurchasedWeapons;
+{
+    NSUInteger count = 0;
+    for (id obj in self.purchasedWeapons) {
+        if (![obj isEqualToString:@""])
+            count++;
+    }
+    return count;
+}
+
+- (void) unlockWeapon:(NSString*)weaponName;
+{
+    [self.lockedWeapons removeObjectIdenticalTo:weaponName];
+    BOOL foundEmptySpot = NO;
+    for (int i = 0; i < self.purchasedWeapons.count; i++) {
+        if ([[self.purchasedWeapons objectAtIndex:i] isEqualToString:@""]) {
+            [self.purchasedWeapons removeObjectAtIndex:i];
+            [self.purchasedWeapons insertObject:weaponName atIndex:i];
+            foundEmptySpot = YES;
+            break;
+        }
+    }
+    
+    if (!foundEmptySpot) {
+        [self.purchasedWeapons addObject:weaponName]; 
+    }
 }
 
 @end
