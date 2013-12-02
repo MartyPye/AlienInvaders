@@ -73,10 +73,7 @@
 
 
 - (void) mothershipGotHitWithDamage:(float)damage
-{
-    //TODO: Verena add the blood!!! something like: [self.parent addChild:[SKSpriteNode spriteNodeWithImage@"blood"]]
-    // BUT: Do this with SKAction so we have a nice animation :)
-    
+{    
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
     
     _lifeLeft = _lifeLeft - damage;
@@ -84,12 +81,15 @@
     if (_lifeLeft <= 0) {
         [(GameScene*)self.parent goToLevelFinished];
     }
+    
     //show bloody frame
     else if (_lifeLeft <= 20 && _dying == NO){
         CGSize screenSize = CGSizeMake(568, 320);
         SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
-        blood.position = CGPointMake((CGRectGetMidX(self.frame)+90), (CGRectGetMidY(self.frame)+90));
+        //blood.position = CGPointMake((CGRectGetMidX(self.frame)+90), (CGRectGetMidY(self.frame)+90));
+        blood.position = CGPointMake(CGRectGetMidX(self.parent.frame), CGRectGetMidY(self.parent.frame));
         blood.size = screenSize;
+        blood.alpha = 0.8;
         blood.zPosition = 0;
         [self.parent addChild:blood];
         _dying = YES;
