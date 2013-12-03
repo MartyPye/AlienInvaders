@@ -66,18 +66,9 @@
         bonusNode. position = CGPointMake(30, 140);
         [self addChild:bonusNode];
         
-        SKShapeNode *line = [SKShapeNode node];
-        CGMutablePathRef pathToDraw = CGPathCreateMutable();
-        CGPathMoveToPoint(pathToDraw, NULL, 120.0, 120.0);
-        CGPathAddLineToPoint(pathToDraw, NULL, 220.0, 120.0);
-        line.path = pathToDraw;
-        line.alpha = 0;
-        [line setStrokeColor:[UIColor whiteColor]];
-        [self addChild:line];
-        
         SKSpriteNode *leftStarWhite = [[SKSpriteNode alloc] initWithImageNamed:@"star_white.png"];
         leftStarWhite.size = CGSizeMake(75, 75);
-        leftStarWhite.position = CGPointMake(320, 180);
+        leftStarWhite.position = CGPointMake([self getScreenSize].width-170, 180);
         leftStarWhite.zRotation = 0.3;
         SKLabelNode *leftStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
         leftStarText.text = @"50";
@@ -90,7 +81,7 @@
         
         SKSpriteNode *middleStarWhite = [[SKSpriteNode alloc] initWithImageNamed:@"star_white.png"];
         middleStarWhite.size = CGSizeMake(75, 75);
-        middleStarWhite.position = CGPointMake(400, 200);
+        middleStarWhite.position = CGPointMake([self getScreenSize].width-100, 200);
         SKLabelNode *middleStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
         middleStarText.text = @"100";
         middleStarText.position = CGPointMake(0, -10);
@@ -101,7 +92,7 @@
         
         SKSpriteNode *rightStarWhite = [[SKSpriteNode alloc] initWithImageNamed:@"star_white.png"];
         rightStarWhite.size = CGSizeMake(75, 75);
-        rightStarWhite.position = CGPointMake(480, 180);
+        rightStarWhite.position = CGPointMake([self getScreenSize].width-30, 180);
         rightStarWhite.zRotation = -0.3;
         SKLabelNode *rightStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
         rightStarText.text = @"150";
@@ -198,7 +189,7 @@
 {
     SKSpriteNode *leftStar = [[SKSpriteNode alloc] initWithImageNamed:@"star.png"];
     leftStar.size = CGSizeMake(100, 100);
-    leftStar.position = CGPointMake(320, 180);
+    leftStar.position = CGPointMake([self getScreenSize].width-170, 180);
     leftStar.zRotation = 0.3;
     [leftStar setScale:20];
     leftStar.alpha = 0;
@@ -209,7 +200,7 @@
     
     SKSpriteNode *middleStar = [[SKSpriteNode alloc] initWithImageNamed:@"star.png"];
     middleStar.size = CGSizeMake(100, 100);
-    middleStar.position = CGPointMake(400, 200);
+    middleStar.position = CGPointMake([self getScreenSize].width-100, 200);
     [middleStar setScale:20];
     middleStar.alpha = 0;
     middleStar.color = [UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1];
@@ -218,7 +209,7 @@
     
     SKSpriteNode *rightStar = [[SKSpriteNode alloc] initWithImageNamed:@"star.png"];
     rightStar.size = CGSizeMake(100, 100);
-    rightStar.position = CGPointMake(480, 180);
+    rightStar.position = CGPointMake([self getScreenSize].width-30, 180);
     rightStar.zRotation = -0.3;
     [rightStar setScale:20];
     rightStar.alpha = 0;
@@ -235,13 +226,10 @@
     
     [leftStar runAction:starAction completion:^{
         [middleStar runAction:starAction completion:^{
-            //[rightStar runAction:starAction completion:^{
-            //}];
+            [rightStar runAction:starAction completion:^{
+            }];
         }];
     }];
-    
-    NSLog(@"Going to LFSCENE");
-
 }
 
 @end

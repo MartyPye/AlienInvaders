@@ -100,6 +100,7 @@
 		95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FE184514C00069BCC6 /* mothershipBurst.sks */; };
 		95D58A01184514C00069BCC6 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D589FF184514C00069BCC6 /* spark.png */; };
 		95D58A05184517370069BCC6 /* enemyBurst.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D58A04184517370069BCC6 /* enemyBurst.sks */; };
+		95D5DE53184DD88800D5E993 /* laser.sks in Resources */ = {isa = PBXBuildFile; fileRef = 95D5DE52184DD88800D5E993 /* laser.sks */; };
 		95F6F0B1184C914D005C38F5 /* star.wav in Resources */ = {isa = PBXBuildFile; fileRef = 95F6F0B0184C914D005C38F5 /* star.wav */; };
 /* End PBXBuildFile section */
 
@@ -245,6 +246,7 @@
 		95D589FE184514C00069BCC6 /* mothershipBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = mothershipBurst.sks; sourceTree = "<group>"; };
 		95D589FF184514C00069BCC6 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		95D58A04184517370069BCC6 /* enemyBurst.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = enemyBurst.sks; sourceTree = "<group>"; };
+		95D5DE52184DD88800D5E993 /* laser.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = laser.sks; sourceTree = "<group>"; };
 		95F6F0B0184C914D005C38F5 /* star.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = star.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -496,6 +498,7 @@
 				95950EE518463B8D00CBF5E0 /* Atombomb.h */,
 				95950EE618463B8D00CBF5E0 /* Atombomb.m */,
 				95950EE818463F0600CBF5E0 /* atomExplosion.sks */,
+				95D5DE52184DD88800D5E993 /* laser.sks */,
 			);
 			name = Mothership;
 			sourceTree = "<group>";
@@ -674,6 +677,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Marty;
 				TargetAttributes = {
+					78115491183D1AD300A61AD2 = {
+						DevelopmentTeam = W88773838E;
+					};
 					781154B9183D1AD300A61AD2 = {
 						TestTargetID = 78115491183D1AD300A61AD2;
 					};
@@ -746,6 +752,7 @@
 				40F262F1183E6146007E35CD /* MainMenuBackground.jpg in Resources */,
 				40D25B8D18439E57009D24F8 /* Single Shot@2x.png in Resources */,
 				40DC716E18478A4400E271C1 /* DoubleShotButton@2x.png in Resources */,
+				95D5DE53184DD88800D5E993 /* laser.sks in Resources */,
 				40DC716A184787B700E271C1 /* LockedButton@2x.png in Resources */,
 				40F262FF183E6658007E35CD /* Level2MenuItem@2x.png in Resources */,
 				95D58A00184514C00069BCC6 /* mothershipBurst.sks in Resources */,

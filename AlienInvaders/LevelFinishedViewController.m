@@ -8,6 +8,8 @@
 
 #import "LevelFinishedViewController.h"
 
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 @interface LevelFinishedViewController ()
 
 @property (nonatomic) LevelFinishedScene* lfScene;
@@ -31,6 +33,18 @@
             }];
         }];
     }
+}
+
+-(CGSize)getScreenSize
+{
+    CGSize screenSize;
+    if(IS_WIDESCREEN) {
+        screenSize = CGSizeMake(568, 320);
+    } else {
+        screenSize = CGSizeMake(480, 320);
+    }
+    
+    return screenSize;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -59,8 +73,11 @@
     // Present the scene.
     [self.skView presentScene:self.lfScene];
     
+    // Add the buttons
+    [_buttonView setFrame:CGRectMake([self getScreenSize].width-300, _buttonView.frame.origin.y, _buttonView.frame.size.width, _buttonView.frame.size.height)];
     [self.skView addSubview:_buttonView];
     [_buttonView setHidden:NO];
+    
 }
 
 - (BOOL)shouldAutorotate {
