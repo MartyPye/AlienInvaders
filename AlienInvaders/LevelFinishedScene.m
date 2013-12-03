@@ -22,6 +22,10 @@
         bg.zPosition = 0;
         [self addChild:bg];
         
+        // Saving the points we achieved
+        //TODO: Life left has to be added to our points
+        [[LevelManager sharedLevelManager] realizedNumberOfPoints:[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
+        
         UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 900, 900)];
         iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
         
@@ -40,7 +44,7 @@
         [self.view sendSubviewToBack:iV];
         
         SKLabelNode *levelNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
-        levelNode.text = @"Level 1";
+        levelNode.text = [NSString stringWithFormat:@"Level %d",[[LevelManager sharedLevelManager] currentLevelIndex]+1];
         levelNode.fontSize = 50.0;
         levelNode. position = CGPointMake(size.width/2, 270);
         [self addChild:levelNode];
@@ -166,6 +170,15 @@
     resultNumberNode.alpha = 0;
     [self addChild:resultNumberNode];
     
+    SKLabelNode *bestSoFarNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
+    int bestSoFar = [[[[LevelManager sharedLevelManager] pointsCollectedInLevel] valueForKey:[NSString stringWithFormat:@"%d",[[LevelManager sharedLevelManager] currentLevelIndex]]] integerValue];
+    bestSoFarNumberNode.text = [NSString stringWithFormat:@"(Best result so far: %d)",bestSoFar];
+    bestSoFarNumberNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    bestSoFarNumberNode.fontSize = 14.0;
+    bestSoFarNumberNode. position = CGPointMake(100, 65);
+    bestSoFarNumberNode.alpha = 0;
+    [self addChild:bestSoFarNumberNode];
+    
     
     SKAction *fadeIn = [SKAction fadeInWithDuration:.5];
     
@@ -175,7 +188,9 @@
                 [bonusNumberNode runAction:fadeIn completion:^{
                     [line runAction:fadeIn completion:^{
                         [resultNumberNode runAction:fadeIn completion:^{
-                            [self addStarAnimations];
+                            [bestSoFarNumberNode runAction:fadeIn completion:^{
+                                [self addStarAnimations];
+                            }];
                         }];
                     }];
                 }];

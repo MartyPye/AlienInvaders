@@ -27,13 +27,15 @@
     self = [super init];
     if (self != nil) {
         levels = [[NSMutableArray alloc] init];
-//        Level* level1 = [[Level alloc] initWithIndex:0 andName:@"Level 1"];
-//        Level* level2 = [[Level alloc] initWithIndex:1 andName:@"Level 2"];
-//        Level* level3 = [[Level alloc] initWithIndex:2 andName:@"Level 3"];
-//        
-//        [levels addObject:level1];
-//        [levels addObject:level2];
-//        [levels addObject:level3];
+        
+        //init the dictionary that holds the points we collected in the different levels
+        _pointsCollectedInLevel = [[NSMutableDictionary alloc] init];
+        for (int i = 0; i < [self totalAmountOfLevels]; i++) {
+            NSLog(@"level");
+            [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:i] integerValue]]];
+        }
+        
+        [self restorePointsCollectedInLevel];
     }
     
     return self;
@@ -86,6 +88,38 @@
 - (void) finishLevel;
 {
     [currentLevel finish];
+}
+
+
+- (void) realizedNumberOfPoints:(int)points
+{
+    if ([[_pointsCollectedInLevel valueForKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:_currentLevelIndex] integerValue]]] integerValue] < points) {
+        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:points] forKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:_currentLevelIndex] integerValue]]];
+        [self savePointsCollected];
+    }
+}
+
+
+//----------------------------------------------------------
+// Restoring the _pointsCollectedInLevel from NSUserdefaults
+//----------------------------------------------------------
+- (void)restorePointsCollectedInLevel
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *tempDict = [defaults objectForKey:@"pointsCollectedInLevel"];
+    if (tempDict != nil) {
+        _pointsCollectedInLevel = [NSMutableDictionary dictionaryWithDictionary:tempDict];
+    }
+}
+
+//----------------------------------------------------------
+// Saving the _pointsCollectedInLevel to NSUserdefaults
+//----------------------------------------------------------
+- (void)savePointsCollected
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:_pointsCollectedInLevel forKey:@"pointsCollectedInLevel"];
+    [defaults synchronize];
 }
 
 @end

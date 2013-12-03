@@ -14,9 +14,11 @@
 // this is set when the user select a level in the Level Selection View
 @property (nonatomic) NSUInteger currentLevelIndex;
 @property (nonatomic) SKScene *scene;
+@property (nonatomic) NSMutableDictionary *pointsCollectedInLevel;
 
 + (LevelManager*) sharedLevelManager;
 - (NSUInteger) totalAmountOfLevels;
+- (void) realizedNumberOfPoints:(int)points;
 - (void) setupCurrentLevel;
 - (void) pauseLevel;
 - (void) finishLevel;
