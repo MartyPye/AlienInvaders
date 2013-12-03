@@ -20,6 +20,7 @@
 
 - (id) initWithLife:(float)life;
 - (void) moveToY:(int)yCoord;
+- (void) addBurst;
 - (void) mothershipGotHitWithDamage:(float)damage;
 
 @end
