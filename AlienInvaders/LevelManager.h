@@ -15,6 +15,7 @@
 @property (nonatomic) NSUInteger currentLevelIndex;
 @property (nonatomic) SKScene *scene;
 @property (nonatomic) NSMutableDictionary *pointsCollectedInLevel;
+@property (nonatomic) NSMutableDictionary *pointsToStarsDict;
 
 + (LevelManager*) sharedLevelManager;
 - (NSUInteger) totalAmountOfLevels;

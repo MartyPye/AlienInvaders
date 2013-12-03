@@ -74,10 +74,11 @@
     [self.skView presentScene:self.lfScene];
     
     // Add the buttons
-    [_buttonView setFrame:CGRectMake([self getScreenSize].width-300, _buttonView.frame.origin.y, _buttonView.frame.size.width, _buttonView.frame.size.height)];
-    [self.skView addSubview:_buttonView];
+    CGRect tempRect = CGRectMake([self getScreenSize].width-300, _buttonView.frame.origin.y, _buttonView.frame.size.width, _buttonView.frame.size.height);
+    [_buttonView setFrame:tempRect];
+    //[self.skView addSubview:_buttonView];
     [_buttonView setHidden:NO];
-    
+    [self.view bringSubviewToFront:_buttonView];
 }
 
 - (BOOL)shouldAutorotate {

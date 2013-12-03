@@ -35,6 +35,9 @@
             [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:i] integerValue]]];
         }
         
+        //init the array that says how many coins you need to receive the different stars
+        [self initPointsToStars];
+        
         [self restorePointsCollectedInLevel];
     }
     
@@ -91,11 +94,42 @@
 }
 
 
+- (void) initPointsToStars
+{
+    _pointsToStarsDict = [[NSMutableDictionary alloc] init];
+    [_pointsToStarsDict setValue:@[@10,@20,@30] forKey:@"0"];
+    [_pointsToStarsDict setValue:@[@50,@100,@150] forKey:@"1"];
+    [_pointsToStarsDict setValue:@[@50,@100,@150] forKey:@"2"];
+}
+
+//----------------------------------------------------------
+// Updating a level with the points collected
+//----------------------------------------------------------
 - (void) realizedNumberOfPoints:(int)points
 {
+    //Adding the level to the dictionary if it does not exist already
+    if ([self getPointsForLevelIndex:_currentLevelIndex] == 0) {
+        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"%d",_currentLevelIndex]];
+    }
+    
+    //updating the dictionary if the points collected > points so far
     if ([[_pointsCollectedInLevel valueForKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:_currentLevelIndex] integerValue]]] integerValue] < points) {
-        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:points] forKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:_currentLevelIndex] integerValue]]];
+        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:points] forKey:[NSString stringWithFormat:@"%d",_currentLevelIndex]];
         [self savePointsCollected];
+    }
+}
+
+
+//----------------------------------------------------------
+// Returns the number of points collected in a level
+//----------------------------------------------------------
+- (int) getPointsForLevelIndex:(int)levelIndex
+{
+    NSNumber *tempNumber = [_pointsCollectedInLevel objectForKey:[NSString stringWithFormat:@"%d",levelIndex]];
+    if (tempNumber == nil) {
+        return 0;
+    } else {
+        return [tempNumber intValue];
     }
 }
 

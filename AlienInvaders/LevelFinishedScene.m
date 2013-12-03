@@ -26,6 +26,10 @@
         //TODO: Life left has to be added to our points
         [[LevelManager sharedLevelManager] realizedNumberOfPoints:[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
         
+        //the needed points to get stars
+        NSString *curLevelString = [NSString stringWithFormat:@"%d",[[LevelManager sharedLevelManager] currentLevelIndex]];
+        NSArray *starsArray = [[[LevelManager sharedLevelManager] pointsToStarsDict] valueForKey:curLevelString];
+        
         UIImageView *iV = [[UIImageView alloc] initWithFrame:CGRectMake(-10, -10, 900, 900)];
         iV.image = [UIImage imageNamed:@"MainMenuBackground.jpg"];
         
@@ -75,7 +79,7 @@
         leftStarWhite.position = CGPointMake([self getScreenSize].width-170, 180);
         leftStarWhite.zRotation = 0.3;
         SKLabelNode *leftStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
-        leftStarText.text = @"50";
+        leftStarText.text = [NSString stringWithFormat:@"%d",[starsArray[0] integerValue]];
         leftStarText.position = CGPointMake(0, -10);
         leftStarText.zRotation = leftStarWhite.zRotation;
         leftStarText.fontColor = [SKColor lightGrayColor];
@@ -87,7 +91,7 @@
         middleStarWhite.size = CGSizeMake(75, 75);
         middleStarWhite.position = CGPointMake([self getScreenSize].width-100, 200);
         SKLabelNode *middleStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
-        middleStarText.text = @"100";
+        middleStarText.text = [NSString stringWithFormat:@"%d",[starsArray[1] integerValue]];
         middleStarText.position = CGPointMake(0, -10);
         middleStarText.fontColor = [SKColor lightGrayColor];
         middleStarText.fontSize = 14;
@@ -99,7 +103,7 @@
         rightStarWhite.position = CGPointMake([self getScreenSize].width-30, 180);
         rightStarWhite.zRotation = -0.3;
         SKLabelNode *rightStarText = [SKLabelNode labelNodeWithFontNamed:@"Neonv8.1NKbyihint"];
-        rightStarText.text = @"150";
+        rightStarText.text = [NSString stringWithFormat:@"%d",[starsArray[2] integerValue]];
         rightStarText.position = CGPointMake(0, -10);
         rightStarText.zRotation = rightStarWhite.zRotation;
         rightStarText.fontColor = [SKColor lightGrayColor];
@@ -128,6 +132,8 @@
 
 
 - (void) addAllAnimations {
+    
+    int totalPoints = [CoinManager sharedCoinManager].coinsCollectedInCurrentLevel;
     
     SKLabelNode *coinsCollectedNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
     coinsCollectedNumberNode.text = [NSString stringWithFormat:@"%d",[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
@@ -163,7 +169,7 @@
     [self addChild:line];
     
     SKLabelNode *resultNumberNode = [[SKLabelNode alloc] initWithFontNamed:@"Neonv8.1NKbyihint"];
-    resultNumberNode.text = [NSString stringWithFormat:@"%d",[CoinManager sharedCoinManager].coinsCollectedInCurrentLevel];
+    resultNumberNode.text = [NSString stringWithFormat:@"%d",totalPoints];
     resultNumberNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
     resultNumberNode.fontSize = 32.0;
     resultNumberNode. position = CGPointMake(200, 85);
@@ -189,7 +195,7 @@
                     [line runAction:fadeIn completion:^{
                         [resultNumberNode runAction:fadeIn completion:^{
                             [bestSoFarNumberNode runAction:fadeIn completion:^{
-                                [self addStarAnimations];
+                                [self addStarAnimationsWithPoints:totalPoints];
                             }];
                         }];
                     }];
@@ -200,7 +206,7 @@
 
 }
 
-- (void) addStarAnimations
+- (void) addStarAnimationsWithPoints:(int)points
 {
     SKSpriteNode *leftStar = [[SKSpriteNode alloc] initWithImageNamed:@"star.png"];
     leftStar.size = CGSizeMake(100, 100);
@@ -238,13 +244,22 @@
     SKAction *starSound = [SKAction playSoundFileNamed:@"star.wav" waitForCompletion:YES];
     SKAction *starAction = [SKAction group:@[starScale,starFade,starSound]];
     
+    NSString *curLevelString = [NSString stringWithFormat:@"%d",[[LevelManager sharedLevelManager] currentLevelIndex]];
+    NSArray *starsArray = [[[LevelManager sharedLevelManager] pointsToStarsDict] valueForKey:curLevelString];
     
-    [leftStar runAction:starAction completion:^{
-        [middleStar runAction:starAction completion:^{
-            [rightStar runAction:starAction completion:^{
-            }];
+    if (points >= [starsArray[0] integerValue]) {
+        [leftStar runAction:starAction completion:^{
+            if (points >= [starsArray[1] integerValue]) {
+                [middleStar runAction:starAction completion:^{
+                    if (points >= [starsArray[2] integerValue]) {
+                        [rightStar runAction:starAction completion:^{
+                        }];
+                    }
+                }];
+            }
         }];
-    }];
+    }
+    
 }
 
 @end
