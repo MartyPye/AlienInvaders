@@ -97,6 +97,7 @@
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"DoubleShotButton.png"] forKey:@"Double Shot"];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"LaserButton.png"] forKey:@"Laser"];
     [self.weaponButtonImages setValue:[UIImage imageNamed:@"AtomBombButton.png"] forKey:@"Atom Bomb"];
+    [self.weaponButtonImages setValue:[UIImage imageNamed:@"ShotgunButton.png"] forKey:@"Shotgun"];
     
     // assign the weapon buttons with the correct names (TODO: images)
     NSArray* purchasedWeapons = [[WeaponManager sharedWeaponManager] allPurchasedWeapons];
@@ -161,6 +162,7 @@
     [dictionary setValue:[[MothershipDoubleShot alloc] initWithScene:self.gameScene] forKey:@"Double Shot"];
     [dictionary setValue:[[MotherShipLaser alloc] initWithScene:self.gameScene] forKey:@"Laser"];
     [dictionary setValue:[[MothershipAtombomb alloc] initWithScene:self.gameScene] forKey:@"Atom Bomb"];
+    [dictionary setValue:[[MothershipShotgun alloc] initWithScene:self.gameScene] forKey:@"Shotgun"];
     
     MothershipWeapon *currentWeapon = [dictionary objectForKey:[purchasedWeapons objectAtIndex:sender.tag]];
     
