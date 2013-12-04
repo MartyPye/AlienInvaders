@@ -27,8 +27,8 @@ static WeaponManager *_allWeaponsSingleton = nil;
     if (self != nil){
         
         // default weapons
-        self.purchasedWeapons = [NSMutableArray arrayWithArray:@[@"Single Shot",@"Laser",@""]];
-        self.lockedWeapons    = [NSMutableArray arrayWithArray:@[@"Double Shot",@"Shotgun",@"Atom Bomb"]];
+        self.purchasedWeapons = [NSMutableArray arrayWithArray:@[@"Single Shot",@"",@""]];
+        self.lockedWeapons    = [NSMutableArray arrayWithArray:@[@"Double Shot",@"Shotgun",@"Laser",@"Atom Bomb"]];
 
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"purchased"] != nil) {
@@ -106,7 +106,7 @@ static WeaponManager *_allWeaponsSingleton = nil;
 }
 
 - (void) unlockWeapon:(NSString*)weaponName;
-{
+{    
     // remove weapon from locked weapons
     for (int i = 0; i < self.lockedWeapons.count; i++) {
         if ([[self.lockedWeapons objectAtIndex:i] isEqualToString:weaponName]) {
@@ -128,6 +128,8 @@ static WeaponManager *_allWeaponsSingleton = nil;
     if (!foundEmptySpot) {
         [self.purchasedWeapons addObject:weaponName]; 
     }
+    
+    [self saveWeaponArrays];
 }
 
 @end

@@ -109,12 +109,18 @@
 {
     //Adding the level to the dictionary if it does not exist already
     if ([self getPointsForLevelIndex:_currentLevelIndex] == 0) {
-        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"%d",_currentLevelIndex]];
+        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:0] forKey:[NSString stringWithFormat:@"%d",(int)_currentLevelIndex]];
     }
     
     //updating the dictionary if the points collected > points so far
-    if ([[_pointsCollectedInLevel valueForKey:[NSString stringWithFormat:@"%d",[[NSNumber numberWithInt:_currentLevelIndex] integerValue]]] integerValue] < points) {
-        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:points] forKey:[NSString stringWithFormat:@"%d",_currentLevelIndex]];
+    int pointsSoFar = [[_pointsCollectedInLevel valueForKey:[NSString stringWithFormat:@"%d",(int)_currentLevelIndex]] intValue];
+    if ( pointsSoFar <= points)
+    {
+        //When we get a new highscore, we add the difference of the coins to the coins we can spend
+        [[CoinManager sharedCoinManager] addCoinsThatCanBeSpent:points-pointsSoFar];
+        
+        //Set the new highscore in the dictionary
+        [_pointsCollectedInLevel setObject:[NSNumber numberWithInt:points] forKey:[NSString stringWithFormat:@"%d",(int)_currentLevelIndex]];
         [self savePointsCollected];
     }
 }
@@ -123,9 +129,9 @@
 //----------------------------------------------------------
 // Returns the number of points collected in a level
 //----------------------------------------------------------
-- (int) getPointsForLevelIndex:(int)levelIndex
+- (int) getPointsForLevelIndex:(NSInteger)levelIndex
 {
-    NSNumber *tempNumber = [_pointsCollectedInLevel objectForKey:[NSString stringWithFormat:@"%d",levelIndex]];
+    NSNumber *tempNumber = [_pointsCollectedInLevel objectForKey:[NSString stringWithFormat:@"%d",(int)levelIndex]];
     if (tempNumber == nil) {
         return 0;
     } else {

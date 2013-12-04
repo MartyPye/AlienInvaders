@@ -7,8 +7,15 @@
 //
 
 #import "UpgradeStoreViewController.h"
+#import "CoinManager.h"
+
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define COST_OF_WEAPON_UPGRADE 20
 
 @interface UpgradeStoreViewController ()
+{
+    UILabel *coinLabel;
+}
 
 @property (nonatomic) bool shieldViewIsDisplayed;
 
@@ -40,11 +47,22 @@
     [_shieldView setHidden:YES];
     _shieldViewIsDisplayed = NO;
     
+    //Adding the amount of coins that can be spent
+    coinLabel = [[UILabel alloc] initWithFrame:CGRectMake(270,6,55,32)];
+    [coinLabel setTextColor:[UIColor yellowColor]];
+    [self updateCoinLabel];
+    [self.navigationController.navigationBar addSubview:coinLabel];
+    
     UIEdgeInsets inset = UIEdgeInsetsMake(20, 0, 0, 0);
     self.weaponTableView.contentInset = inset;
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [coinLabel removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +71,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(CGSize)getScreenSize
+{
+    CGSize screenSize;
+    if(IS_WIDESCREEN) {
+        screenSize = CGSizeMake(568, 320);
+    } else {
+        screenSize = CGSizeMake(480, 320);
+    }
+    
+    return screenSize;
+}
 
 
 - (void) viewSwitched {
@@ -67,6 +96,10 @@
     }
 }
 
+- (void) updateCoinLabel
+{
+    coinLabel.text = [NSString stringWithFormat:@"%d £",[[CoinManager sharedCoinManager] coinsToSpendInTheUpgradStore]];
+}
 
 - (void) updateShieldView
 {
@@ -116,6 +149,17 @@
     [view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration
+{
+    if(orientation == UIInterfaceOrientationLandscapeLeft ||orientation == UIInterfaceOrientationLandscapeRight)
+    {
+        coinLabel.frame = CGRectMake([self getScreenSize].width-50,6,55,32);
+    } else
+    {
+        coinLabel.frame = CGRectMake(270,6,55,32);
+    }
+}
+
 
 //----------------------------------------------------------
 // TableView
@@ -157,7 +201,11 @@
     } else {
         cell.textLabel.text = [[[WeaponManager sharedWeaponManager] allLockedWeapons] objectAtIndex:indexPath.row];
         cell.textLabel.textColor = [UIColor lightGrayColor];
-        cell.detailTextLabel.text = @"40£";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d £",COST_OF_WEAPON_UPGRADE];
+        
+        if ([[CoinManager sharedCoinManager] coinsToSpendInTheUpgradStore] < COST_OF_WEAPON_UPGRADE) {
+            [cell setUserInteractionEnabled:NO];
+        }
     }
     
     [cell.imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",cell.textLabel.text]]];
@@ -182,6 +230,7 @@
     NSString *temp = [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] objectAtIndex:sourceIndexPath.item];
     [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] removeObjectAtIndex:sourceIndexPath.item];
     [[[WeaponManager sharedWeaponManager] allPurchasedWeapons] insertObject:temp atIndex:destinationIndexPath.item];
+    [[WeaponManager sharedWeaponManager] saveWeaponArrays];
     [_weaponTableView reloadData];
 }
 
@@ -200,8 +249,12 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     if (indexPath.section == 1) {
+        //Buy!
+        [[CoinManager sharedCoinManager] removeCoinsThatCanBeSpent:COST_OF_WEAPON_UPGRADE];
+
         UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
         [[WeaponManager sharedWeaponManager] unlockWeapon:selectedCell.textLabel.text];
+        [self updateCoinLabel];
         [_weaponTableView reloadData];
     }
 }

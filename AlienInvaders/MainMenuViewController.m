@@ -7,6 +7,7 @@
 //
 
 #import "MainMenuViewController.h"
+#import "CoinManager.h"
 
 @interface MainMenuViewController ()
 
@@ -32,6 +33,9 @@
     [super viewDidLoad];
 
     [self addBackground];
+    
+    // restoring the coins
+    [[CoinManager sharedCoinManager] restoreCoinsThatCanBeSpent];
     
     // make navigation bar dark
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];

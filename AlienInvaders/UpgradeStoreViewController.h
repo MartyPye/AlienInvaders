@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WeaponManager.h"
 #import "ShieldManager.h"
+#import "CoinManager.h"
 
 @interface UpgradeStoreViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 

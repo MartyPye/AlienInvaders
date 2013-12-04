@@ -48,6 +48,8 @@
     // tell the level manager to initialize the level.
     [[LevelManager sharedLevelManager] setupCurrentLevel];
     
+    NSLog(@"%@",[[LevelManager sharedLevelManager] pointsCollectedInLevel]);
+    
     // Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];

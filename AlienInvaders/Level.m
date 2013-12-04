@@ -42,7 +42,7 @@
 - (void) spawnEnemy;
 {
     if (paused == NO) {
-        Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:5];
+        Enemy *newEnemy = [EnemyFactory enemyOfType:standardEnemy withMinimumDuration:4];
         [self.scene addChild:newEnemy];
         NSLog(@"spawned Enemy");
         [newEnemy moveEnemy];
@@ -72,7 +72,7 @@
     // Cancel a preexisting timer.
     [self.repeatingTimer invalidate];
     
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3-_levelIndex
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:((3-(float)_levelIndex)/((float)_levelIndex+1))
                                                       target:self
                                                     selector:@selector(spawnEnemy)
                                                     userInfo:nil

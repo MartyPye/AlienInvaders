@@ -16,5 +16,6 @@
 +(WeaponManager *)sharedWeaponManager;
 - (NSUInteger) amountOfPurchasedWeapons;
 - (void) unlockWeapon:(NSString*)weaponName;
+- (void)saveWeaponArrays;
 
 @end
