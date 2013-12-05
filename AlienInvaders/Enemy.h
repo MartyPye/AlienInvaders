@@ -15,6 +15,7 @@
 
 @property (nonatomic, assign) CGPoint startPosition;
 @property (nonatomic, assign) int movingDuration;
+@property NSTimer *shootingTimer;
 
 - (id)initWithYPos:(int)pos AndDuration:(float)duration;
 - (void) moveEnemy;

@@ -10,6 +10,7 @@
 #import "LevelManager.h"
 #import "WeaponManager.h"
 
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 @interface GameSceneViewController ()
 
@@ -32,6 +33,19 @@
 @end
 
 @implementation GameSceneViewController
+
+
+-(CGSize)getScreenSize
+{
+    CGSize screenSize;
+    if(IS_WIDESCREEN) {
+        screenSize = CGSizeMake(568, 320);
+    } else {
+        screenSize = CGSizeMake(480, 320);
+    }
+    
+    return screenSize;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -79,7 +93,8 @@
     [self.skView presentScene:self.gameScene];
     
     // add pause button
-    [self.skView addSubview:self.pauseButton];
+    [_pauseButton setFrame:CGRectMake([self getScreenSize].width-30, _pauseButton.frame.origin.y, _pauseButton.frame.size.width, _pauseButton.frame.size.height)];
+    [self.view bringSubviewToFront:_pauseButton];
     
     [self.resumeButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];
     [self.restartButton.titleLabel setFont:[UIFont fontWithName:@"Neonv8.1NKbyihint" size:16]];

@@ -69,6 +69,7 @@
 		9520895718477DA30084DFD3 /* CoinManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9520895618477DA30084DFD3 /* CoinManager.m */; };
 		9524D9F3184B6152006A398A /* star_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9524D9F1184B6152006A398A /* star_white@2x.png */; };
 		9524D9F4184B6152006A398A /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9524D9F2184B6152006A398A /* star@2x.png */; };
+		9528261318509B2F0040D01E /* enemyBullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9528261218509B2F0040D01E /* enemyBullet@2x.png */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
 		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
@@ -195,6 +196,7 @@
 		9520895618477DA30084DFD3 /* CoinManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinManager.m; sourceTree = "<group>"; };
 		9524D9F1184B6152006A398A /* star_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star_white@2x.png"; sourceTree = "<group>"; };
 		9524D9F2184B6152006A398A /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
+		9528261218509B2F0040D01E /* enemyBullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "enemyBullet@2x.png"; path = "../../Desktop/enemyBullet@2x.png"; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 		95D589E21844D2420069BCC6 /* Enemies and Ships */ = {
 			isa = PBXGroup;
 			children = (
+				9528261218509B2F0040D01E /* enemyBullet@2x.png */,
 				40D25B921845062B009D24F8 /* Bullet@2x.png */,
 				95950EE01846313800CBF5E0 /* laserbeam@2x.png */,
 				40D25B8E18450159009D24F8 /* standardEnemy@2x.png */,
@@ -748,6 +751,7 @@
 				40D25B8B18439E57009D24F8 /* Double Shot@2x.png in Resources */,
 				40DC717018478F0400E271C1 /* LaserButton@2x.png in Resources */,
 				03A8B6501844EBA4008BF4D2 /* bloody frame@2x.png in Resources */,
+				9528261318509B2F0040D01E /* enemyBullet@2x.png in Resources */,
 				40F26301183E6658007E35CD /* Level3MenuItem@2x.png in Resources */,
 				9573ACC3184563460030F8F3 /* explosion.sks in Resources */,
 				954123AF184210900033FBD8 /* tempShield.png in Resources */,

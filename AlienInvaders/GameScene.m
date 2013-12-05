@@ -171,6 +171,13 @@
                 Coin *coin = (Coin*)contact.bodyB.node;
                 [coin collectedTheCoin];
             }
+            else if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemyProjectile])
+            {
+                SKSpriteNode *projectile = (SKSpriteNode*)contact.bodyB.node;
+                [projectile removeFromParent];
+                
+                [_mothership mothershipGotHitWithDamage:10];
+            }
         }
         else
         {
@@ -183,10 +190,18 @@
                 
                 [_mothership mothershipGotHitWithDamage:20];
             }
-            else if (contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cCoin])
+            else if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cCoin])
             {
-                Coin *coin = (Coin*)contact.bodyB.node;
-                [coin collectedTheCoin];            }
+                Coin *coin = (Coin*)contact.bodyA.node;
+                [coin collectedTheCoin];
+            }
+            else if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemyProjectile])
+            {
+                SKSpriteNode *projectile = (SKSpriteNode*)contact.bodyA.node;
+                [projectile removeFromParent];
+                
+                [_mothership mothershipGotHitWithDamage:10];
+            }
         }
     }
     

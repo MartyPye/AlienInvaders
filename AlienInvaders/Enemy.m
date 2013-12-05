@@ -13,9 +13,10 @@
 
 // initialize the position of the enemy behind the right edge and give him a certain speed
 - (id)initWithYPos:(int)pos AndDuration:(float)duration
-{
+{    
     return self;
 }
+
 
 // ----------------------------------------------------------------------------------------------------
 // Move enemy from right to left
@@ -71,6 +72,9 @@
         [self removeFromParent];
     }];
     
+    [_shootingTimer invalidate];
+    _shootingTimer = nil;
+    
 }
 
 
@@ -98,6 +102,9 @@
     [self runAction:sequence completion:^{
         [self removeFromParent];
     }];
+    
+    [_shootingTimer invalidate];
+    _shootingTimer = nil;
     
 }
 

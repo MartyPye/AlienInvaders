@@ -7,6 +7,7 @@
 //
 
 #import "Enemy.h"
+#import "Categories.h"
 
 @interface StandardEnemy : Enemy
 
