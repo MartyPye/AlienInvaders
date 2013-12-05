@@ -51,7 +51,13 @@
 
 - (void) addBodyToMothership
 {
-    self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(self.size.width, self.size.height)];
+    CGMutablePathRef diamondPath = CGPathCreateMutable();
+    CGPathMoveToPoint(diamondPath, NULL, -20, 0);
+    CGPathAddLineToPoint(diamondPath, NULL, -5, 20);
+    CGPathAddLineToPoint(diamondPath, NULL, 20, 0);
+    CGPathAddLineToPoint(diamondPath, NULL, -5, -20);
+    
+    self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:diamondPath];
     self.physicsBody.dynamic = YES;
     self.physicsBody.categoryBitMask = [Categories getCategoryBitMask:cShip];
     self.physicsBody.contactTestBitMask =   [Categories getCategoryBitMask:cEnemy] |
