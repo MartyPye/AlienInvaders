@@ -30,6 +30,8 @@
     [self addBodyToMothership];
     [self addBurst];
     
+    [self addShieldWithDuration:3.0];
+    
     return self;
 }
 
@@ -97,6 +99,32 @@
         _dying = YES;
     }
 }
+
+
+- (void) addShieldWithDuration:(float)duration
+{
+    SKSpriteNode *shieldNode = [SKSpriteNode spriteNodeWithImageNamed:@"shield"];
+    shieldNode.position = CGPointMake(-10, 0);
+    [self addChild:shieldNode];
+    
+    shieldNode.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:35];
+    shieldNode.physicsBody.dynamic = YES;
+    shieldNode.physicsBody.categoryBitMask = [Categories getCategoryBitMask:cShield];
+    shieldNode.physicsBody.contactTestBitMask =   [Categories getCategoryBitMask:cEnemy] |
+                                            [Categories getCategoryBitMask:cEnemyProjectile] |
+                                            [Categories getCategoryBitMask:cMeteor];
+    shieldNode.physicsBody.collisionBitMask = 0;
+    shieldNode.physicsBody.usesPreciseCollisionDetection = YES;
+    
+    [self performSelector:@selector(removeShield) withObject:self afterDelay:duration];
+}
+
+
+- (void) removeShield
+{
+    [self removeAllChildren];
+}
+
 
 - (void) addPulsingBloodScreen
 {

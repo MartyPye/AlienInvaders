@@ -233,6 +233,21 @@
             }
         }
     }
+    
+    else if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemyProjectile] || contact.bodyB.categoryBitMask == [Categories getCategoryBitMask:cEnemyProjectile])
+    {
+        if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cShield])
+        {
+            SKSpriteNode *projectile = (SKSpriteNode*)contact.bodyB.node;
+            [projectile removeFromParent];
+        }
+        else
+        {
+            SKSpriteNode *projectile = (SKSpriteNode*)contact.bodyA.node;
+            [projectile removeFromParent];
+        }
+    }
+
 }
 
 

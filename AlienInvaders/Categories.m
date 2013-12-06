@@ -14,6 +14,7 @@ static const uint32_t shipCollisionProjectileCat    =  0x1 << 2;
 static const uint32_t enemyCollisionProjectileCat   =  0x1 << 3;
 static const uint32_t meteorCollisionCat            =  0x1 << 4;
 static const uint32_t coinCollisionCat              =  0x1 << 5;
+static const uint32_t shieldCollisionCat            =  0x1 << 6;
 
 @implementation Categories
 
@@ -42,6 +43,10 @@ static const uint32_t coinCollisionCat              =  0x1 << 5;
             
         case cCoin:
             return coinCollisionCat;
+            break;
+            
+        case cShield:
+            return shieldCollisionCat;
             break;
             
         default:
