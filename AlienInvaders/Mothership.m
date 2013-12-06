@@ -81,10 +81,13 @@
 - (void) mothershipGotHitWithDamage:(float)damage
 {    
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    //[self vibrate];
     
     _lifeLeft = _lifeLeft - damage;
     [self setLifePercentage:[NSNumber numberWithFloat:100*_lifeLeft/_wholeLife]];
     if (_lifeLeft <= 0) {
+        [_pulseTimer invalidate];
+        _pulseTimer = nil;
         [(GameScene*)self.parent goToLevelFinished];
     }
     
@@ -105,6 +108,13 @@
     blood.zPosition = 0;
     [self.parent addChild:blood];
     
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                      target:self
+                                                    selector:@selector(vibrate)
+                                                    userInfo:nil
+                                                     repeats:YES];
+    _pulseTimer = timer;
+    
     SKAction *fadeIn = [SKAction fadeInWithDuration:1.0];
     SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0];
     SKAction *wait = [SKAction waitForDuration:0.5];
@@ -112,5 +122,26 @@
     SKAction *rep = [SKAction repeatActionForever:sequence];
     [blood runAction:rep];
 }
+
+
+// Adding vibration when life < 20
+- (void) vibrate {
+    NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+    NSMutableArray* arr = [NSMutableArray array ];
+    
+    [arr addObject:[NSNumber numberWithBool:YES]]; //vibrate for 100ms
+    [arr addObject:[NSNumber numberWithInt:100]];
+    
+    [arr addObject:[NSNumber numberWithBool:NO]];  //stop for 500ms
+    [arr addObject:[NSNumber numberWithInt:500]];
+    
+    [dict setObject:arr forKey:@"VibePattern"];
+    [dict setObject:[NSNumber numberWithInt:1] forKey:@"Intensity"];
+    
+    
+    AudioServicesPlaySystemSoundWithVibration(4095,nil,dict);
+}
+
+
 
 @end

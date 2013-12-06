@@ -17,6 +17,7 @@
 @property (nonatomic) float lifeLeft;
 @property (nonatomic) NSNumber *lifePercentage; //Used for the observer
 @property (nonatomic) BOOL dying;
+@property (nonatomic) NSTimer *pulseTimer;
 
 - (id) initWithLife:(float)life;
 - (void) moveToY:(int)yCoord;

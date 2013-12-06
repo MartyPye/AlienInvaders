@@ -181,7 +181,6 @@
         }
         else
         {
-            [_mothership mothershipGotHitWithDamage:20];
             //Detect what the mothership hit
             if (contact.bodyA.categoryBitMask == [Categories getCategoryBitMask:cEnemy])
             {
