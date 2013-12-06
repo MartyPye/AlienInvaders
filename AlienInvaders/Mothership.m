@@ -90,15 +90,27 @@
     
     //show bloody frame
     else if (_lifeLeft <= 20 && _dying == NO){
-        CGSize screenSize = CGSizeMake(568, 320);
-        SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
-        blood.position = CGPointMake(CGRectGetMidX(self.parent.frame), CGRectGetMidY(self.parent.frame));
-        blood.size = screenSize;
-        blood.alpha = 0.8;
-        blood.zPosition = 0;
-        [self.parent addChild:blood];
+        [self addPulsingBloodScreen];
         _dying = YES;
     }
+}
+
+- (void) addPulsingBloodScreen
+{
+    CGSize screenSize = CGSizeMake(568, 320);
+    SKSpriteNode *blood = [SKSpriteNode spriteNodeWithImageNamed:@"bloody frame@2x.png"];
+    blood.position = CGPointMake(CGRectGetMidX(self.parent.frame), CGRectGetMidY(self.parent.frame));
+    blood.size = screenSize;
+    blood.alpha = 0;
+    blood.zPosition = 0;
+    [self.parent addChild:blood];
+    
+    SKAction *fadeIn = [SKAction fadeInWithDuration:1.0];
+    SKAction *fadeOut = [SKAction fadeOutWithDuration:1.0];
+    SKAction *wait = [SKAction waitForDuration:0.5];
+    SKAction *sequence = [SKAction sequence:@[fadeIn,fadeOut,wait]];
+    SKAction *rep = [SKAction repeatActionForever:sequence];
+    [blood runAction:rep];
 }
 
 @end
