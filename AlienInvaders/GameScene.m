@@ -47,9 +47,7 @@
     
     // tell the level manager to initialize the level.
     [[LevelManager sharedLevelManager] setupCurrentLevel];
-    
-    NSLog(@"%@",[[LevelManager sharedLevelManager] pointsCollectedInLevel]);
-    
+        
     // Init the mothership
     _mothership = [[Mothership alloc] initWithLife:100];
     [self addChild:_mothership];
@@ -117,6 +115,7 @@
  * This method only occurs, if the touch was inside this node. Furthermore if
  * the Button is enabled, the texture should change to "selectedTexture".
  */
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint myTouch = [touch locationInNode:self];

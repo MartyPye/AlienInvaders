@@ -10,7 +10,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 #import "GameScene.h"
+#import "PRPCircleGestureRecognizer.h"
 
-@interface GameSceneViewController : UIViewController<GameSceneDelegate>
+@interface GameSceneViewController : UIViewController<GameSceneDelegate,UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) PRPCircleGestureRecognizer *circleRecognizer;
 
 @end

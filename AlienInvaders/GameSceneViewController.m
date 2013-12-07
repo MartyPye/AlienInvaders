@@ -9,6 +9,7 @@
 #import "GameSceneViewController.h"
 #import "LevelManager.h"
 #import "WeaponManager.h"
+#import "ShieldManager.h"
 
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
@@ -132,6 +133,17 @@
     
     // setup weapon view
     [self.skView addSubview:self.weaponSelectionView];
+    
+    //adding circle gesture recognizer
+    _circleRecognizer = [[PRPCircleGestureRecognizer alloc] initWithTarget:self action:@selector(addShield)];
+    [self.view addGestureRecognizer:_circleRecognizer];
+}
+
+- (void) addShield
+{
+    NSLog(@"Activate shield");
+    int time = [[ShieldManager sharedShieldManager] shieldTime];
+    [self.gameScene.mothership addShieldWithDuration:time];
 }
 
 

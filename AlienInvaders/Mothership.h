@@ -23,5 +23,6 @@
 - (void) moveToY:(int)yCoord;
 - (void) addBurst;
 - (void) mothershipGotHitWithDamage:(float)damage;
+- (void) addShieldWithDuration:(float)duration;
 
 @end

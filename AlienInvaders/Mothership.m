@@ -9,9 +9,16 @@
 #import "Mothership.h"
 #import "GameScene.h"
 
+#define MAX_SHIELD_ACTIVATIONS 3
+
+@interface Mothership ()
+
+@property (nonatomic, assign) int shieldActivations;
+@property (nonatomic, assign) SKSpriteNode *shieldNode;
+
+@end
+
 @implementation Mothership
-
-
 
 - (id) initWithLife:(float)life
 {
@@ -22,6 +29,8 @@
     
     _dying = NO;
     
+    _shieldActivations = 0;
+    
     _lifePercentage = [NSNumber numberWithFloat:100];
     
     self.position = CGPointMake(50, 160);
@@ -29,9 +38,7 @@
     
     [self addBodyToMothership];
     [self addBurst];
-    
-    [self addShieldWithDuration:3.0];
-    
+        
     return self;
 }
 
@@ -103,26 +110,30 @@
 
 - (void) addShieldWithDuration:(float)duration
 {
-    SKSpriteNode *shieldNode = [SKSpriteNode spriteNodeWithImageNamed:@"shield"];
-    shieldNode.position = CGPointMake(-10, 0);
-    [self addChild:shieldNode];
-    
-    shieldNode.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:35];
-    shieldNode.physicsBody.dynamic = YES;
-    shieldNode.physicsBody.categoryBitMask = [Categories getCategoryBitMask:cShield];
-    shieldNode.physicsBody.contactTestBitMask =   [Categories getCategoryBitMask:cEnemy] |
-                                            [Categories getCategoryBitMask:cEnemyProjectile] |
-                                            [Categories getCategoryBitMask:cMeteor];
-    shieldNode.physicsBody.collisionBitMask = 0;
-    shieldNode.physicsBody.usesPreciseCollisionDetection = YES;
-    
-    [self performSelector:@selector(removeShield) withObject:self afterDelay:duration];
+    if (_shieldActivations < MAX_SHIELD_ACTIVATIONS) {
+        _shieldActivations += 1;
+        
+        _shieldNode = [SKSpriteNode spriteNodeWithImageNamed:@"shield"];
+        _shieldNode.position = CGPointMake(-10, 0);
+        [self addChild:_shieldNode];
+        
+        _shieldNode.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:35];
+        _shieldNode.physicsBody.dynamic = YES;
+        _shieldNode.physicsBody.categoryBitMask = [Categories getCategoryBitMask:cShield];
+        _shieldNode.physicsBody.contactTestBitMask =   [Categories getCategoryBitMask:cEnemy] |
+        [Categories getCategoryBitMask:cEnemyProjectile] |
+        [Categories getCategoryBitMask:cMeteor];
+        _shieldNode.physicsBody.collisionBitMask = 0;
+        _shieldNode.physicsBody.usesPreciseCollisionDetection = YES;
+        
+        [self performSelector:@selector(removeShield) withObject:self afterDelay:duration];
+    }
 }
 
 
 - (void) removeShield
 {
-    [self removeAllChildren];
+    [_shieldNode removeFromParent];
 }
 
 

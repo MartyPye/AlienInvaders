@@ -71,6 +71,7 @@
 		9524D9F4184B6152006A398A /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9524D9F2184B6152006A398A /* star@2x.png */; };
 		952826151850A27C0040D01E /* enemyBullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 952826141850A27C0040D01E /* enemyBullet@2x.png */; };
 		954123AF184210900033FBD8 /* tempShield.png in Resources */ = {isa = PBXBuildFile; fileRef = 954123AE184210900033FBD8 /* tempShield.png */; };
+		955543621853764F00CBD736 /* PRPCircleGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 955543611853764F00CBD736 /* PRPCircleGestureRecognizer.m */; };
 		95640EDB1842256B00D67AAB /* ShieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95640EDA1842256B00D67AAB /* ShieldManager.m */; };
 		9573ACBA1845587D0030F8F3 /* MothershipWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACB91845587D0030F8F3 /* MothershipWeapon.m */; };
 		9573ACBE184558D60030F8F3 /* MothershipSingleShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9573ACBD184558D60030F8F3 /* MothershipSingleShot.m */; };
@@ -199,6 +200,8 @@
 		9524D9F2184B6152006A398A /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star@2x.png"; sourceTree = "<group>"; };
 		952826141850A27C0040D01E /* enemyBullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemyBullet@2x.png"; sourceTree = "<group>"; };
 		954123AE184210900033FBD8 /* tempShield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tempShield.png; sourceTree = "<group>"; };
+		955543601853764F00CBD736 /* PRPCircleGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRPCircleGestureRecognizer.h; sourceTree = "<group>"; };
+		955543611853764F00CBD736 /* PRPCircleGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPCircleGestureRecognizer.m; sourceTree = "<group>"; };
 		95640ED91842256B00D67AAB /* ShieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShieldManager.h; sourceTree = "<group>"; };
 		95640EDA1842256B00D67AAB /* ShieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShieldManager.m; sourceTree = "<group>"; };
 		9573ACB81845587D0030F8F3 /* MothershipWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MothershipWeapon.h; sourceTree = "<group>"; };
@@ -369,6 +372,7 @@
 		7811549D183D1AD300A61AD2 /* AlienInvaders */ = {
 			isa = PBXGroup;
 			children = (
+				9555435F1853763700CBD736 /* Gesture Recognizer */,
 				40DB3C87183F82E6009FD3FA /* Levels */,
 				781154DE183D2EC300A61AD2 /* Highscores */,
 				959219C018410452005645B1 /* Weapons and Shields */,
@@ -480,6 +484,15 @@
 				40D25B8418439865009D24F8 /* Atom Bomb@2x.png */,
 			);
 			name = Weapons;
+			sourceTree = "<group>";
+		};
+		9555435F1853763700CBD736 /* Gesture Recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				955543601853764F00CBD736 /* PRPCircleGestureRecognizer.h */,
+				955543611853764F00CBD736 /* PRPCircleGestureRecognizer.m */,
+			);
+			name = "Gesture Recognizer";
 			sourceTree = "<group>";
 		};
 		9573ACBB184558900030F8F3 /* Mothership */ = {
@@ -795,6 +808,7 @@
 				959219C3184104B0005645B1 /* WeaponManager.m in Sources */,
 				95950ED51845FF3000CBF5E0 /* MothershipShotgun.m in Sources */,
 				40DB3C8D183F8319009FD3FA /* Level.m in Sources */,
+				955543621853764F00CBD736 /* PRPCircleGestureRecognizer.m in Sources */,
 				781154DD183D2AF200A61AD2 /* UpgradeStoreViewController.m in Sources */,
 				95D589DD1844D0080069BCC6 /* StandardEnemy.m in Sources */,
 				781154E4183D30D200A61AD2 /* Highscore.m in Sources */,
